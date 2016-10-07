@@ -14,7 +14,7 @@
 }
 
 #header {
-  margin-top:40px;
+  margin-top:20px;
 }
 
 @media (max-width:767px) {
@@ -25,5 +25,10 @@
 
 #contact {
   border-top:1px solid #eee;
+}
+
+#version {
+  border-bottom:10px solid #fdb020;
+  padding-top:10px;
 }
 

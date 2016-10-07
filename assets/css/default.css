@@ -1,5 +1,5 @@
 #header .cv-section:first-child {
-  border-top:10px solid #fdb020;
+  /*border-top:10px solid #fdb020;*/
 }
 
 @media (max-width:767px) {

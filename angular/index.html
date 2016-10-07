@@ -17,9 +17,21 @@
 
 <body ng-app="app" id="#top">
     <div ng-include="'templates/layout.navbar.html'"></div>
-    <div class="container" id="wrap" ui-view></div>
+    <div class="container" id="wrap">
+
+        <div class="row" id="version">
+            <div class="col-md-12">
+                <div role="group" class="btn-group btn-group-sm pull-right">
+                    <a class="btn btn- " role="button" href="/static">Static </a>
+                    <a class="btn btn- active" role="button" href="/angular">Angular 1.x</a>
+                </div>
+            </div>
+        </div>
+
+        <div ui-view></div>
+    </div>
     <div>
-        <a href="#top" class="back-to-top" title="Back to top"><i class="fa fa-arrow-circle-o-up"></i> </a>
+        <a href="" class="back-to-top" title="Back to top"><i class="fa fa-arrow-circle-o-up"></i> </a>
     </div>
 
     <script src="../assets/js/jquery.min.js"></script>
