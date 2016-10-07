@@ -1,0 +1,29 @@
+#wrap {
+  margin:50px auto 0 auto;
+  max-width:1060px;
+}
+
+@media (max-width:767px) {
+  #wrap {
+    margin-top:0px;
+  }
+}
+
+.col-md-12.no-padding {
+  padding:0;
+}
+
+#header {
+  margin-top:40px;
+}
+
+@media (max-width:767px) {
+  #header {
+    margin-top:0px;
+  }
+}
+
+#contact {
+  border-top:1px solid #eee;
+}
+
