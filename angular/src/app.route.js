@@ -16,7 +16,11 @@
                 .otherwise('/home')
             ;
 
-            var pages = ['home', 'recommend'];
+            var pages = [
+                'home', 'recommend', 'experience',
+                'architect', 'component', 'misc',
+                'contact'
+            ];
             _.each(pages, function(page) {
                 $stateProvider.state(page, {
                     url: '/' + page,
