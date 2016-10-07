@@ -1,8 +1,8 @@
 /**
  * App route module
  *
- * @date 08/12/16
- * @author Fang Jin <fang-a.jin@db.com>
+ * @date 10/7/16
+ * @author Fang Jin <windmaomao@gmail.com>
  */
 
  (function () {
@@ -27,7 +27,7 @@
                     templateUrl: 'templates/page.' + page + '.html'
                 });
             });
-        }]
-    );
+        }])
+    ;
 
 })();

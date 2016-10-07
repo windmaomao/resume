@@ -26,6 +26,7 @@
             // Features
             // 'app.lodash',               // -> _
             // 'app.api',                  // -> central
+            'app.data',
             'app.route',
             // 'app.layout',
             // 'app.aof',
