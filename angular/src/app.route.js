@@ -16,11 +16,13 @@
                 .otherwise('/home')
             ;
 
-            $stateProvider
-                .state('home', {
-                    url: '/home',
-                    templateUrl: 'templates/page.home.html'
-                })
+            var pages = ['home', 'recommend'];
+            _.each(pages, function(page) {
+                $stateProvider.state(page, {
+                    url: '/' + page,
+                    templateUrl: 'templates/page.' + page + '.html'
+                });
+            });
         }]
     );
 
