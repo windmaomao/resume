@@ -17,6 +17,7 @@
 
     function RootCtrl($scope, Data) {
         $scope.app = Data.app;
+        $scope.profile = Data.profile;
     }
 
 })();

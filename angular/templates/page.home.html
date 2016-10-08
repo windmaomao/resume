@@ -2,14 +2,27 @@
     <div class="row cv-section">
         <div class="col-sm-8">
             <div class="cv-section-title"><img src="../assets/img/robot.jpg" width="140" height="140" class="img-circle">
-                <h1>Fang Jin<small>front-end Architect</small></h1></div>
+                <h1>
+                    <span ng-bind="profile.name"></span>
+                    <small ng-bind="profile.title"></small>
+                </h1>
+            </div>
         </div>
         <div class="col-sm-4">
             <div class="cv-item">
                 <div class="social-media clearfix"><a href="https://www.linkedin.com/in/windmaomao" target="_blank" title="LinkedIN Profile"><i class="fa fa-linkedin-square"></i></a></div>
-                <p class="last"> <span>Email: </span>windmaomao at gmail</p>
-                <p class="last"> <span>Phone: </span>(949) 302-7928</p>
-                <p class="last"> <span>Location: </span>Raleigh NC, USA</p>
+                <p class="last">
+                    <span>Email: </span>
+                    <span ng-bind="profile.email"></span>
+                </p>
+                <p class="last">
+                    <span>Phone: </span>
+                    <span ng-bind="profile.phone"></span>
+                </p>
+                <p class="last">
+                    <span>Location: </span>
+                    <span ng-bind="profile.location"></span>
+                </p>
             </div>
         </div>
     </div>
@@ -21,8 +34,11 @@
             <h2> Professional Profile</h2></div>
     </div>
     <div class="col-md-9">
-        <p>I specialize in developing websites in healthcare, banking, real estate and university sectors. Overall my projects have reached 11 million users in production. I enjoy drafting and architecting front facing websites that talk to large
-            enterprise dataset, most of time involving <em>UI/UX</em> design tailored for your business workflow. </p>
-        <p><small>Keywords: AngularJS, Sass, Bootstrap, Webpack, Gulp, Git </small></p>
+        <p ng-bind="profile.description"></p>
+        <p>
+            <small>
+                <strong>Keywords:</strong> <span ng-bind="profile.keywords"></span>
+            </small>
+        </p>
     </div>
 </div>
