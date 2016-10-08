@@ -28,47 +28,14 @@
             </div>
         </div>
 
-        <div id="header">
-            <div class="row cv-section">
-                <div class="col-sm-8">
-                    <div class="cv-section-title"><img src="../assets/img/robot.jpg" width="140" height="140" class="img-circle">
-                        <h1>
-                            <span ng-bind="profile.name"></span>
-                            <small ng-bind="profile.title"></small>
-                        </h1>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="cv-item">
-                        <div class="social-media clearfix"><a href="https://www.linkedin.com/in/windmaomao" target="_blank" title="LinkedIN Profile"><i class="fa fa-linkedin-square"></i></a></div>
-                        <p class="last">
-                            <span>Email: </span>
-                            <span ng-bind="profile.email"></span>
-                        </p>
-                        <p class="last">
-                            <span>Phone: </span>
-                            <span ng-bind="profile.phone"></span>
-                        </p>
-                        <p class="last">
-                            <span>Location: </span>
-                            <span ng-bind="profile.location"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div ng-include="'templates/layout.header.html'"></div>
+
         <hr>
-        
+
         <div ui-view></div>
 
-        <div id="footer">
-            <div class="row">
-                <div class="col-md-12 no-padding">
-                    <div class="cv-contact">
-                        <h4 class="copyright">@ 2000 - 2016 Fang Jin. <span>All rights reserved.</span></h4></div>
-                </div>
-            </div>
-        </div>
+        <div ng-include="'templates/layout.footer.html'"></div>
+
     </div>
     <div>
         <a href="" class="back-to-top" title="Back to top"><i class="fa fa-arrow-circle-o-up"></i> </a>
