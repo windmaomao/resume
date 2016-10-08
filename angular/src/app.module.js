@@ -27,6 +27,7 @@
             // 'app.lodash',               // -> _
             // 'app.api',                  // -> central
             'app.data',
+            'app.controller',
             'app.route',
             // 'app.layout',
             // 'app.aof',

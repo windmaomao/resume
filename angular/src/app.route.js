@@ -16,6 +16,11 @@
                 .otherwise('/home')
             ;
 
+            // $stateProvider.state('/', {
+            //     abstract: true,
+            //     template: '<ui-view />',
+            // });
+
             var pages = [
                 'home', 'recommend', 'experience',
                 'architect', 'component', 'misc',
@@ -23,6 +28,7 @@
             ];
             _.each(pages, function(page) {
                 $stateProvider.state(page, {
+                    // parent: '/',
                     url: '/' + page,
                     templateUrl: 'templates/page.' + page + '.html'
                 });
