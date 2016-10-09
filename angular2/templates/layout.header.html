@@ -3,25 +3,25 @@
         <div class="col-sm-8">
             <div class="cv-section-title"><img src="../assets/img/robot.jpg" width="140" height="140" class="img-circle">
                 <h1>
-                    <span ng-bind="profile.name"></span>
-                    <small ng-bind="profile.title"></small>
+                    <span [innerText]="profile.name"></span>
+                    <small [innerText]="profile.title"></small>
                 </h1>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="cv-item">
-                <div class="social-media clearfix"><a href="https://www.linkedin.com/in/windmaomao" target="_blank" title="LinkedIN Profile"><i class="fa fa-linkedin-square"></i></a></div>
+                <div class="social-media clearfix"><a [href]="profile.url" target="_blank" title="LinkedIN Profile"><i class="fa fa-linkedin-square"></i></a></div>
                 <p class="last">
                     <span>Email: </span>
-                    <span ng-bind="profile.email"></span>
+                    <span [innerText]="profile.email"></span>
                 </p>
                 <p class="last">
                     <span>Phone: </span>
-                    <span ng-bind="profile.phone"></span>
+                    <span [innerText]="profile.phone"></span>
                 </p>
                 <p class="last">
                     <span>Location: </span>
-                    <span ng-bind="profile.location"></span>
+                    <span [innerText]="profile.location"></span>
                 </p>
             </div>
         </div>
