@@ -33,17 +33,8 @@ export class CVVersionComponent { }
 })
 export class CVHeaderComponent {
   profile: any;
-
   constructor(private profileService: ProfileService) {
     this.profile = profileService;
-    // this.profile = {
-    //   url: 'https://www.linkedin.com/in/windmaomao',
-    //   name: 'Fang Jin',
-    //   title: 'Front-end Architect',
-    //   email: 'windmaomao @ gmail',
-    //   phone: '(949) 302-7928',
-    //   location: 'Raleigh, North Carolina',
-    // };
   }
 }
 
