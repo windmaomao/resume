@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
     <div class="container" id="wrap">
       <cv-version></cv-version>
       <cv-header></cv-header>
+      <cv-recommend></cv-recommend>
       <cv-footer></cv-footer>
     </div>
   `

@@ -1,18 +1,18 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
 
 import {
   AppComponent,
-} from './app.component';
+}                         from './app.component';
 
 import {
   CVNavbarComponent, CVVersionComponent,
   CVHeaderComponent, CVFooterComponent,
-} from './layout.component';
+}                         from './layout.component';
 
 import {
   CVRecommendComponent
-} from './page.component';
+}                         from './page.component';
 
 @NgModule({
   imports:      [ BrowserModule ],
