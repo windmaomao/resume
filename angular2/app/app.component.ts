@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProfileService } from './profile/profile.service';
 
 @Component({
   selector: 'my-app',
@@ -27,20 +28,22 @@ export class CVVersionComponent { }
 
 @Component({
   selector: 'cv-header',
-  templateUrl: 'templates/layout.header.html'
+  templateUrl: 'templates/layout.header.html',
+  providers: [ProfileService]
 })
 export class CVHeaderComponent {
   profile: any;
 
-  constructor() {
-    this.profile = {
-      url: 'https://www.linkedin.com/in/windmaomao',
-      name: 'Fang Jin',
-      title: 'Front-end Architect',
-      email: 'windmaomao @ gmail',
-      phone: '(949) 302-7928',
-      location: 'Raleigh, North Carolina',
-    };
+  constructor(private profileService: ProfileService) {
+    this.profile = profileService;
+    // this.profile = {
+    //   url: 'https://www.linkedin.com/in/windmaomao',
+    //   name: 'Fang Jin',
+    //   title: 'Front-end Architect',
+    //   email: 'windmaomao @ gmail',
+    //   phone: '(949) 302-7928',
+    //   location: 'Raleigh, North Carolina',
+    // };
   }
 }
 
