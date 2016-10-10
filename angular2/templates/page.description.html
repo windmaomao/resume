@@ -5,10 +5,10 @@
         </div>
     </div>
     <div class="col-md-9">
-        <p ng-bind="profile.description"></p>
+        <p [innerText]="profile.description"></p>
         <p>
             <small>
-                <strong>Keywords:</strong> <span ng-bind="profile.keywords"></span>
+                <strong>Keywords:</strong> <span [innerText]="profile.keywords"></span>
             </small>
         </p>
     </div>

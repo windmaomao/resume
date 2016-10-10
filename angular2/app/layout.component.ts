@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProfileService } from './profile/profile.service';
 
 @Component({
   selector: 'cv-navbar',
@@ -15,15 +14,10 @@ export class CVVersionComponent { }
 
 @Component({
   selector: 'cv-header',
+  inputs: ['profile'],
   templateUrl: 'templates/layout.header.html',
-  providers: [ProfileService]
 })
-export class CVHeaderComponent {
-  profile: any;
-  constructor(private profileService: ProfileService) {
-    this.profile = profileService;
-  }
-}
+export class CVHeaderComponent { }
 
 @Component({
   selector: 'cv-footer',

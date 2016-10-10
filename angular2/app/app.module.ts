@@ -11,7 +11,7 @@ import {
 }                         from './layout.component';
 
 import {
-  CVRecommendComponent
+  CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent
 }                         from './page.component';
 
 @NgModule({
@@ -20,7 +20,7 @@ import {
     AppComponent,
     CVNavbarComponent, CVVersionComponent,
     CVHeaderComponent, CVFooterComponent,
-    CVRecommendComponent
+    CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent
   ],
   bootstrap:    [ AppComponent ]
 })
