@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { ProfileService } from './profile.service';
 
 @Component({
   selector: 'cv-description',
   inputs: ['profile'],
   templateUrl: 'templates/page.description.html'
 })
-export class CVDescriptionComponent { }
+export class CVDescriptionComponent {
+  constructor(private profile: ProfileService) { }
+}
 
 @Component({
   selector: 'cv-recommend',

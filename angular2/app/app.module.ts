@@ -1,9 +1,9 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { RouterModule }   from '@angular/router';
 
-import {
-  AppComponent,
-}                         from './app.component';
+import { AppComponent }   from './app.component';
+import { AppRoutes }      from './app.route';
 
 import {
   CVNavbarComponent, CVVersionComponent,
@@ -15,7 +15,10 @@ import {
 }                         from './page.component';
 
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports:      [
+    BrowserModule,
+    RouterModule.forRoot(AppRoutes)
+  ],
   declarations: [
     AppComponent,
     CVNavbarComponent, CVVersionComponent,

@@ -9,9 +9,7 @@ import { ProfileService } from './profile.service';
     <div class="container" id="wrap">
       <cv-version></cv-version>
       <cv-header [profile]="profile"></cv-header>
-      <cv-description [profile]="profile"></cv-description>
-      <cv-recommend></cv-recommend>
-      <cv-experience></cv-experience>
+      <router-outlet></router-outlet>
       <cv-footer></cv-footer>
     </div>
   `
@@ -22,3 +20,6 @@ export class AppComponent {
     this.profile = profileService;
   }
 }
+
+
+// <cv-description [profile]="profile"></cv-description>
