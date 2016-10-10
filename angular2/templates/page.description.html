@@ -8,7 +8,12 @@
         <p [innerText]="profile.description"></p>
         <p>
             <small>
-                <strong>Keywords:</strong> <span [innerText]="profile.keywords"></span>
+                <strong>Keywords:</strong>
+
+                <span *ngFor="let keyword of profile.keywords"
+                  class="label label-default label-keyword"
+                  [innerText]="keyword"
+                ></span>
             </small>
         </p>
     </div>
