@@ -20,6 +20,3 @@ export class AppComponent {
     this.profile = profileService;
   }
 }
-
-
-// <cv-description [profile]="profile"></cv-description>
