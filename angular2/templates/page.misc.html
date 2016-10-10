@@ -1,29 +1,7 @@
 <div class="row cv-section">
     <div class="col-md-3">
         <div class="cv-section-title">
-            <h2>Professional Profile</h2>
-        </div>
-    </div>
-    <div class="col-md-9">
-        <p [innerText]="profile.description"></p>
-        <p>
-            <small>
-                <strong>Keywords:</strong>
-
-                <span *ngFor="let keyword of profile.keywords"
-                  class="label label-default label-keyword"
-                  [innerText]="keyword"
-                ></span>
-            </small>
-        </p>
-        <p>Please click here for more information on <a [routerLink]="['/experience']">my experience</a> of UI/UX, <a [routerLink]="['/architect']">architect skills</a> as well as <a [routerLink]="['/component']">business components</a>. And feel free to read <a [routerLink]="['/recommend']">recommendation letters</a> that people have written to me.</p>
-    </div>
-</div>
-
-<div class="row cv-section">
-    <div class="col-md-3">
-        <div class="cv-section-title">
-            <h2>Education </h2>
+            <h2><i class="glyphicon glyphicon-education"></i> Education </h2>
             <h4> </h4></div>
     </div>
     <div class="col-md-9">
@@ -38,9 +16,8 @@
 <div class="row cv-section">
     <div class="col-md-3">
         <div class="cv-section-title">
-            <h2>Activities </h2>
-            <h4></h4>
-          </div>
+            <h2><i class="fa fa-motorcycle"></i> Misc </h2>
+            <h4>Award and etc.</h4></div>
     </div>
     <div class="col-md-9">
         <div class="cv-item">
@@ -63,6 +40,15 @@
             <h3>College math class teacher</h3>
             <h4>University of California Irvine</h4>
             <p>I taught three semesters advanced college math class at UC Irvine when I took post doc there. The teaching experience taught me teaching and learning are two different aspects of life, both are art on itself. </p>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="row">
+        <div class="col-md-12 no-padding">
+            <div class="cv-contact">
+                <h4 class="copyright">@ 2000 - 2016 Fang Jin. <span>All rights reserved.</span></h4></div>
         </div>
     </div>
 </div>

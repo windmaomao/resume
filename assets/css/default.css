@@ -272,7 +272,7 @@ p strong {
 a {
   text-decoration:initial;
   /*font-weight:bold;*/
-  /*color:#666;*/
+  color:#666;
 }
 
 a:visited {

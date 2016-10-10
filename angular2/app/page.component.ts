@@ -21,3 +21,21 @@ export class CVRecommendComponent { }
   templateUrl: 'templates/page.experience.html'
 })
 export class CVExperienceComponent { }
+
+@Component({
+  selector: 'cv-architect',
+  templateUrl: 'templates/page.architect.html'
+})
+export class CVArchitectComponent { }
+
+@Component({
+  selector: 'cv-component',
+  templateUrl: 'templates/page.component.html'
+})
+export class CVComponentComponent { }
+
+@Component({
+  selector: 'cv-misc',
+  templateUrl: 'templates/page.misc.html'
+})
+export class CVMiscComponent { }
