@@ -22,7 +22,9 @@ export class CVDescriptionComponent {
   selector: 'cv-recommend',
   templateUrl: 'templates/page.recommend.html'
 })
-export class CVRecommendComponent { }
+export class CVRecommendComponent {
+  constructor(private profile: ProfileService) { }
+}
 
 @Component({
   selector: 'cv-experience',
