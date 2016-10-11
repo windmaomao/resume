@@ -30,14 +30,84 @@ export class ProfileService {
     this.keywords = ['AngularJS', 'Sass', 'Bootstrap', 'Gulp', 'Git'];
 
     this.sections = {
+      professional: {
+        name: 'professional',
+        type: 'abstract',
+        title: 'Professional',
+        subtitle: '',
+        icon: '',
+        items: this.professional()
+      },
+      education: {
+        name: 'education',
+        type: '',
+        title: 'Education',
+        subtitle: '',
+        icon: '',
+        items: this.education(),
+      },
+      activity: {
+        name: 'activity',
+        type: '',
+        title: 'Activities',
+        subtitle: '',
+        icon: '',
+        items: this.activities(),
+      },
       recommend: {
         name: 'recommend',
+        type: 'quote',
         title: 'Recommend <span class="badge">13</span>',
         subtitle: '<a href="https://www.linkedin.com/in/windmaomao" target="_blank" title="More from LinkedIN"><i class="icon ion-social-linkedin"></i></a>',
         icon: 'bullhorn',
         items: this.recommends(),
       }
     };
+  }
+
+  professional() {
+    return [
+      {
+        description: "I specialize in developing websites in healthcare, banking, real estate and university sectors. Overall my projects have reached 11 million users in production. I enjoy drafting and architecting front facing websites that talk to large enterprise dataset, most of time involving <em>UI/UX</em> design tailored for your business workflow.",
+        keywords: ['AngularJS', 'Sass', 'Bootstrap', 'Gulp', 'Git'],
+        footer: 'You can find more information here on my <a ng-reflect-router-link="/experience" ng-reflect-href="#/experience" href="#/experience">project experience</a> , <a ng-reflect-router-link="/architect" ng-reflect-href="#/architect" href="#/architect">architect skills</a> as well as list of <a ng-reflect-router-link="/component" ng-reflect-href="#/component" href="#/component">business components</a> that I have worked with.'
+      }
+    ];
+  }
+
+  education() {
+    return [
+      {
+        title: 'Johns Hopkins University',
+        subtitle: 'Bio-molecular chemical engineering, Ph.D.',
+        description: "This is when I got chance with the advanced mathematic model. My job was to model water droplet dripping from the bathroom facet. Of course this was for NASA sponsored project, so this bathroom was on the moon with relatively smaller gravity ;) And later I took another project of modeling cancer cell migration inside human body.",
+      }
+    ]
+  }
+
+  activities() {
+    return [
+      {
+        title: 'Volunteer site builder',
+        subtitle: 'RecoveryHub for disaster and Humanitarian Relief',
+        description: "After hurrican striked, lots of people lost home and they tried to find help on rebuilding their home. This is where I volunteered to build a site so that people can find useful information quickly during or after.",
+      },
+      {
+        title: '"Multiscale Modeling of Cancer" book',
+        subtitle: 'Co-author, Cambridge University Press, 2010',
+        description: "My advisor wrote the book, andI participated in contributing two three chapters including mathematical modeling and computational framework for our cancer research. You can find this book at Amazon.com"
+      },
+      {
+        title: 'Front cover picture design',
+        subtitle: 'Author, Journal of Nonlinearity, 2010',
+        description: "One of the challenge of cancer cell modeling is to visualize the vivid form formation and migration in realtime in 3D. I was fascinated on the visualization schema, and afterwards, the work is published as the front cover picture of Journal of Nonlinearity. You might be able to find this online."
+      },
+      {
+        title: 'College math class teacher',
+        subtitle: 'University of California Irvine',
+        description: "I taught three semesters advanced college math class at UC Irvine when I took post doc there. The teaching experience taught me teaching and learning are two different aspects of life, both are art on itself."
+      }
+    ]
   }
 
   recommends() {
@@ -80,4 +150,6 @@ export class ProfileService {
       },
     ];
   }
+
+
 }

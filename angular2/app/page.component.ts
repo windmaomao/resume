@@ -12,21 +12,33 @@ import { ProfileService } from './profile.service';
 @Component({
   selector: 'cv-description',
   inputs: ['profile'],
-  templateUrl: 'templates/page.description.html'
+  // templateUrl: 'templates/page.description.html'
+  template: `
+    <cv-section [section]="professional"></cv-section>
+    <cv-section [section]="education"></cv-section>
+    <cv-section [section]="activity"></cv-section>
+  `
 })
 export class CVDescriptionComponent {
-  constructor(private profile: ProfileService) { }
+  professional: any;
+  education: any;
+  activity: any;
+  constructor(private profile: ProfileService) {
+    this.professional = profile.sections.professional;
+    this.education = profile.sections.education;
+    this.activity = profile.sections.activity;
+  }
 }
 
 @Component({
   selector: 'cv-recommend',
   // templateUrl: 'templates/page.recommend.html'
-  template: '<cv-section [section]="section"></cv-section>'
+  template: '<cv-section [section]="recommend"></cv-section>'
 })
 export class CVRecommendComponent {
-  section: any;
+  recommend: any;
   constructor(private profile: ProfileService) {
-    this.section = profile.sections.recommend;
+    this.recommend = profile.sections.recommend;
   }
 }
 

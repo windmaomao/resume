@@ -10,15 +10,29 @@
     </div>
     <div class="col-md-9">
         <div class="cv-item" *ngFor="let item of section.items">
-            <h3 [innerText]="item.title"></h3>
-            <h4 [innerText]="item.subtitle"></h4>
-            <blockquote>
+            <h3 *ngIf="item.title" [innerText]="item.title"></h3>
+            <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
+            <p *ngIf="item.description" [innerHtml]="item.description"></p>
+            <blockquote *ngIf="section.type == 'quote'">
                 <p>
                   <i class="fa fa-quote-left"></i>
                   <span [innerHtml]="item.description"></span>
                 </p>
                 <footer [innerHtml]="item.note"></footer>
             </blockquote>
+            <p *ngIf="item.keywords">
+                <small>
+                    <strong>Keywords:</strong>
+                    <span *ngFor="let keyword of item.keywords"
+                      class="label label-default label-keyword"
+                      [innerText]="keyword"
+                    ></span>
+                </small>
+            </p>
+            <div *ngIf="item.footer">
+              <hr />
+              <small [innerHtml]="item.footer"></small>
+            </div>
         </div>
     </div>
 </div>
