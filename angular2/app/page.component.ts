@@ -23,7 +23,10 @@ export class CVDescriptionComponent {
   templateUrl: 'templates/page.recommend.html'
 })
 export class CVRecommendComponent {
-  constructor(private profile: ProfileService) { }
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.recommend;
+  }
 }
 
 @Component({
