@@ -1,3 +1,12 @@
+/**
+ * App component module
+ * App component serves as layout container including
+ * all child components such as navbar, header, footer
+ * as well as route view entry
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/08/16
+ */
 import { Component } from '@angular/core';
 import { ProfileService } from './profile.service';
 

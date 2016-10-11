@@ -1,3 +1,11 @@
+/**
+ * Page component module
+ * Components inside main page body
+ * including components from various sections
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/09/16
+ */
 import { Component } from '@angular/core';
 import { ProfileService } from './profile.service';
 

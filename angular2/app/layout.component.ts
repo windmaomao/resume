@@ -1,3 +1,11 @@
+/**
+ * Layout component module
+ * Components used for page layouts,
+ * such as navbar, version, header and footer
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/09/16
+ */
 import { Component } from '@angular/core';
 
 @Component({

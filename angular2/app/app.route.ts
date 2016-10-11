@@ -1,3 +1,10 @@
+/**
+ * App route  module
+ * Define application routes
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/10/16
+ */
 import { Routes }         from '@angular/router';
 
 import {

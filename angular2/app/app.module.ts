@@ -1,3 +1,10 @@
+/**
+ * App module
+ * Setup components, routers and etc.
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/08/16
+ */
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
@@ -12,7 +19,7 @@ import {
 
 import {
   CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
-  CVArchitectComponent, CVComponentComponent, CVMiscComponent
+  CVArchitectComponent,   CVComponentComponent, CVMiscComponent
 }                         from './page.component';
 
 @NgModule({
@@ -25,7 +32,7 @@ import {
     CVNavbarComponent, CVVersionComponent,
     CVHeaderComponent, CVFooterComponent,
     CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
-    CVArchitectComponent, CVComponentComponent, CVMiscComponent
+    CVArchitectComponent,   CVComponentComponent, CVMiscComponent
   ],
   bootstrap:    [ AppComponent ]
 })

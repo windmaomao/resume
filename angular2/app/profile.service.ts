@@ -1,3 +1,10 @@
+/**
+ * Profile service module
+ * Profile object for all resume info
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/10/16
+ */
 import {Injectable} from '@angular/core';
 
 @Injectable()
