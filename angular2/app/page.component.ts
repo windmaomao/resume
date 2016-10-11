@@ -44,12 +44,20 @@ export class CVRecommendComponent {
 
 @Component({
   selector: 'cv-experience',
-  templateUrl: 'templates/page.experience.html'
+  // templateUrl: 'templates/page.experience.html'
+  template: `
+    <cv-timeline-current></cv-timeline-current>
+    <cv-section [section]="current"></cv-section>
+    <cv-timeline-before></cv-timeline-before>
+    <cv-section [section]="before"></cv-section>
+  `
 })
 export class CVExperienceComponent {
-  experience: any;
+  current: any;
+  before: any;
   constructor(private profile: ProfileService) {
-    this.experience = profile.sections.experience;
+    this.current = profile.sections.experience.current;
+    this.before = profile.sections.experience.before;
   }
 }
 

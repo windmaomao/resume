@@ -59,11 +59,20 @@ export class ProfileService {
         items: this.recommends(),
       },
       experience: {
-        name: 'experience',
-        title: 'Work Experience',
-        subtitle: '2010 - current',
-        icon: 'slideshare',
-        items: this.experienceCurrent(),
+        current: {
+          name: 'experience-current',
+          title: 'Work Experience',
+          subtitle: '2010 - current',
+          icon: 'slideshare',
+          items: this.experienceCurrent(),
+        },
+        before: {
+          name: 'experience-before',
+          title: 'Work Experience',
+          subtitle: '2000 - 2010',
+          icon: 'slideshare',
+          items: this.experienceBefore(),
+        }
       }
     };
   }
@@ -365,6 +374,29 @@ export class ProfileService {
             ]
           }
         ]
+      },
+    ]
+  }
+
+  experienceBefore() {
+    return [
+      {
+        title: 'Hobby projects',
+        subtitle: 'HTML + CSS',
+        period: 'Sep 1999 - Dec 2000',
+        description: 'I started to make websites back in college. I remember the first publlished one was a college graduation book one for classmates back in 1999. It took me three weeks to finish it, and the results is rewarding. We saved the website in CDs and gave everyone a copy. I believe I still have that CD with me.'
+      },
+      {
+        title: 'NASA fluid dynamic project',
+        subtitle: 'C++ Lead programmer',
+        period: 'Jun 2003 - Jun 2006',
+        description: 'From 2000, I joined Johns HopkinsUniversity and spent five years writing scientific software using <em>C++ </em>for NASA funded fluid dynamic projects, 12000 lines in <em>C++</em> in linux environment, integrated with parallel open source PETSC solver. A windows GUI front-end was written for data post-processing and visualization purpose using <em>Borland Delphi</em>. '
+      },
+      {
+        title: 'NIH cancer research',
+        subtitle: 'C++ Lead programmer',
+        period: 'Oct 2007 - Dec 2009',
+        description: 'After 2006, I started to write computationaland visualization software using <em>C++ </em>for NIH funded cancer research at UC Irvine. A data post-processing andvisualization package was written in <em>Matlab</em> to facilitate the job. The packagedeveloped has been used and tested with many collaborators throughout USA.'
       },
     ]
   }

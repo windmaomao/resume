@@ -13,3 +13,15 @@ import { Component } from '@angular/core';
   templateUrl: 'templates/page.section.html'
 })
 export class CVSectionComponent { }
+
+@Component({
+  selector: 'cv-timeline-current',
+  templateUrl: 'templates/timeline.current.html'
+})
+export class CVTimelineCurrentComponent { }
+
+@Component({
+  selector: 'cv-timeline-before',
+  templateUrl: 'templates/timeline.before.html'
+})
+export class CVTimelineBeforeComponent { }
