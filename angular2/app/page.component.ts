@@ -46,7 +46,12 @@ export class CVRecommendComponent {
   selector: 'cv-experience',
   templateUrl: 'templates/page.experience.html'
 })
-export class CVExperienceComponent { }
+export class CVExperienceComponent {
+  experience: any;
+  constructor(private profile: ProfileService) {
+    this.experience = profile.sections.experience;
+  }
+}
 
 @Component({
   selector: 'cv-architect',

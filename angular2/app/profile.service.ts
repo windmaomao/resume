@@ -32,7 +32,6 @@ export class ProfileService {
     this.sections = {
       professional: {
         name: 'professional',
-        type: 'abstract',
         title: 'Professional',
         subtitle: '',
         icon: '',
@@ -40,7 +39,6 @@ export class ProfileService {
       },
       education: {
         name: 'education',
-        type: '',
         title: 'Education',
         subtitle: '',
         icon: '',
@@ -48,7 +46,6 @@ export class ProfileService {
       },
       activity: {
         name: 'activity',
-        type: '',
         title: 'Activities',
         subtitle: '',
         icon: '',
@@ -56,11 +53,17 @@ export class ProfileService {
       },
       recommend: {
         name: 'recommend',
-        type: 'quote',
         title: 'Recommend <span class="badge">13</span>',
         subtitle: '<a href="https://www.linkedin.com/in/windmaomao" target="_blank" title="More from LinkedIN"><i class="icon ion-social-linkedin"></i></a>',
         icon: 'bullhorn',
         items: this.recommends(),
+      },
+      experience: {
+        name: 'experience',
+        title: 'Work Experience',
+        subtitle: '2010 - current',
+        icon: 'slideshare',
+        items: this.experienceCurrent(),
       }
     };
   }
@@ -151,5 +154,33 @@ export class ProfileService {
     ];
   }
 
+  experienceCurrent() {
+    return [
+      {
+        title: 'Deutsche Bank, Cary NC',
+        subtitle: 'AngularJS / NodeJS architect and UI/UX designer',
+        period: 'Sep 2015 - Current',
+        projects: [
+          {
+            description: "Provided <em>AngularJS</em> UI architect for GMI West AOF applications. Served as the tech lead and project manager of six team members (UIs, API, backend developers and business analysts). Large banking account open form, categorized by pages and regions, needs to be displayed, validated and submitted for end-users. I <strong>held morning standup meeting in daily basis, and provided demos to shareholder in weekly basis, as well as providing architect training for entry level UI developers</strong>. <small>since Jun 2016</small></p>",
+            tasks: [
+              'Theme Design: Extend <em>Bootstrap</em> following corporate theme guideline',
+              'Front-end Build: <em>AngularJS</em> custom <strong><em>Gulp</em></strong> build within corporate infrastructure',
+              'Hierarchy Routes: Book-like chapter navigation between different forms for multiple regions',
+              'Form Design: Consistent form element between <em>IE/Chrome</em> browser, including radio, date and dropdown',
+              'Continuous Integration: <em>Jenkins</em> deployment with every <em>Git</em> commit',
+              'Fields Meta: Remapping of form fields and styling between API and UI',
+              'Modular CSS: <em>CSS</em> framework extending bootstrap, other vendors and individual page components',
+              'Modular JS: <em>AngularJS</em> framework with each feature linked as dependency',
+              'Async Operations: series of async calls chained together to perform UI tasks',
+              'Form validation: Validation driven by meta data provided by form API',
+              'Page action: <em>Excel</em> like validation and action rules based on user input',
+              'MVC Model: Extremely fat model design in <em>MVC</em> approach handling business logic'
+            ]
+          }
+        ]
+      }
+    ]
+  }
 
 }

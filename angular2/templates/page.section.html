@@ -11,9 +11,18 @@
     </div>
     <div class="col-md-9">
         <div class="cv-item" *ngFor="let item of section.items">
+            <p *ngIf="item.period" class="period" [innerText]="item.period"></p>
             <h3 *ngIf="item.title" [innerText]="item.title"></h3>
             <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
             <p *ngIf="item.description" [innerHtml]="item.description"></p>
+            <div *ngIf="item.projects">
+                <div *ngFor="let project of item.projects">
+                  <p [innerHtml]="project.description"></p>
+                  <ul *ngIf="project.tasks" class="fill-circle">
+                    <li *ngFor="let task of project.tasks" [innerHtml]="task"></li>
+                  </ul>
+                </div>
+            </div>
             <blockquote *ngIf="section.type == 'quote'">
                 <p>
                   <i class="fa fa-quote-left"></i>
