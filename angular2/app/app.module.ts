@@ -22,6 +22,10 @@ import {
   CVArchitectComponent,   CVComponentComponent, CVMiscComponent
 }                         from './page.component';
 
+import {
+  CVSectionComponent
+}                         from './section.component';
+
 @NgModule({
   imports:      [
     BrowserModule,
@@ -31,6 +35,7 @@ import {
     AppComponent,
     CVNavbarComponent, CVVersionComponent,
     CVHeaderComponent, CVFooterComponent,
+    CVSectionComponent,
     CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
     CVArchitectComponent,   CVComponentComponent, CVMiscComponent
   ],

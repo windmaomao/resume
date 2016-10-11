@@ -20,7 +20,8 @@ export class CVDescriptionComponent {
 
 @Component({
   selector: 'cv-recommend',
-  templateUrl: 'templates/page.recommend.html'
+  // templateUrl: 'templates/page.recommend.html'
+  template: '<cv-section [section]="section"></cv-section>'
 })
 export class CVRecommendComponent {
   section: any;
