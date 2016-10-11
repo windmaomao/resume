@@ -5,7 +5,7 @@
 
 @media (max-width:767px) {
   #wrap {
-    margin-top:0px;
+    margin-top:40px;
   }
 }
 
@@ -30,5 +30,5 @@
 #version {
   border-bottom:10px solid #fdb020;
   padding-top:10px;
+  margin-top: 20px;
 }
-
