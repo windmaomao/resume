@@ -68,15 +68,33 @@ export class CVExperienceComponent {
 
 @Component({
   selector: 'cv-architect',
-  templateUrl: 'templates/page.architect.html'
+  template: `
+  <hr />
+  <cv-grid-architect></cv-grid-architect>
+  <cv-section [section]="architect"></cv-section>
+  `
 })
-export class CVArchitectComponent { }
+export class CVArchitectComponent {
+  architect: any;
+  constructor(private profile: ProfileService) {
+    this.architect = profile.sections.skillset.architect;
+  }
+}
 
 @Component({
   selector: 'cv-component',
-  templateUrl: 'templates/page.component.html'
+  template: `
+  <hr />
+  <cv-grid-component></cv-grid-component>
+  <cv-section [section]="component"></cv-section>
+  `
 })
-export class CVComponentComponent { }
+export class CVComponentComponent {
+  component: any;
+  constructor(private profile: ProfileService) {
+    this.component = profile.sections.skillset.component;
+  }
+}
 
 @Component({
   selector: 'cv-misc',

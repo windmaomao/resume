@@ -24,7 +24,8 @@ import {
 
 import {
   CVSectionComponent,
-  CVTimelineCurrentComponent, CVTimelineBeforeComponent
+  CVTimelineCurrentComponent, CVTimelineBeforeComponent,
+  CVGridArchitectComponent, CVGridComponentComponent
 }                         from './section.component';
 
 @NgModule({
@@ -38,6 +39,7 @@ import {
     CVHeaderComponent, CVFooterComponent,
     CVSectionComponent,
     CVTimelineCurrentComponent, CVTimelineBeforeComponent,
+    CVGridArchitectComponent, CVGridComponentComponent,
     CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
     CVArchitectComponent,   CVComponentComponent, CVMiscComponent
   ],

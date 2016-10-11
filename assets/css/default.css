@@ -206,6 +206,10 @@
   text-transform:uppercase;
 }
 
+.cv-metric table {
+  margin-top: 65px;  
+}
+
 .cv-metric table th {
   font-weight:bold;
   text-align:center;

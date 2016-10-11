@@ -25,3 +25,15 @@ export class CVTimelineCurrentComponent { }
   templateUrl: 'templates/timeline.before.html'
 })
 export class CVTimelineBeforeComponent { }
+
+@Component({
+  selector: 'cv-grid-architect',
+  templateUrl: 'templates/grid.architect.html'
+})
+export class CVGridArchitectComponent { }
+
+@Component({
+  selector: 'cv-grid-component',
+  templateUrl: 'templates/grid.component.html'
+})
+export class CVGridComponentComponent { }

@@ -73,7 +73,24 @@ export class ProfileService {
           icon: 'slideshare',
           items: this.experienceBefore(),
         }
-      }
+      },
+      skillset: {
+        architect: {
+          name: 'skillset-architect',
+          title: 'Skillset',
+          subtitle: 'UI/UX Architect',
+          icon: 'balance-scale',
+          items: this.skillsetArchitect(),
+        },
+        component: {
+          name: 'skillset-component',
+          title: 'Skillset',
+          subtitle: 'UI/UX Component',
+          icon: 'comments-o',
+          items: this.skillsetComponent(),
+        }
+      },
+
     };
   }
 
@@ -386,7 +403,7 @@ export class ProfileService {
         period: 'Sep 1999 - Dec 2000',
         description: 'I started to make websites back in college. I remember the first publlished one was a college graduation book one for classmates back in 1999. It took me three weeks to finish it, and the results is rewarding. We saved the website in CDs and gave everyone a copy. I believe I still have that CD with me.'
       },
-      {
+          {
         title: 'NASA fluid dynamic project',
         subtitle: 'C++ Lead programmer',
         period: 'Jun 2003 - Jun 2006',
@@ -401,4 +418,61 @@ export class ProfileService {
     ]
   }
 
+  skillsetArchitect() {
+    return [
+      {
+        title: 'Layout Sketch',
+        subtitle: 'Design + HTML + CSS',
+        period: 'Advanced',
+        description: 'Based on the business requirement, I design the page layout. My way is to quickly deliver results that meets the eye, and hit the point, especially in the first roud of proposal. Tools that I used including <em>Sketch</em>, <em>HTML</em>, <em>Photoshop</em> and <em>Bootstrap</em>. What\'s really important here is to miminize un-neccesary cost while maintaining the prosperity of the potential business workflow.'
+      },
+      {
+        title: 'Frontend Build',
+        subtitle: 'Grunt + Gulp + Deployment',
+        period: 'Advanced',
+        description: 'One key aspect of the web application depends on the efficiency of the front-end build where various of tools and pipelines are blended together to achieve project compilation and deployment. Therefore be able to customerize the build, especially within your corporate infrastracture, is becoming vital to the success of the web application. Tools that I have used including <em>Grunt</em> and <em>Gulp</em>.'
+      },
+      {
+        title: 'AngularJS',
+        subtitle: 'Javascript + API + Form + Grid',
+        period: 'Expert',
+        description: 'For serious Javascript development, I chose <em>AngularJS</em> with modular <em>CSS</em> and <em>Javascript</em> compartment design. Within each module, MVC pattern is strictly followed, especially with fat model. Serial and parallel tasks (both in front and back) are chained together and fired rapidly via promises talking to various API hosting either in the same domain or proxyed to external servers. For more complicated widget, directive is used between multiple projects to increase usibility.'
+      },
+    ]
+  }
+
+  skillsetComponent() {
+    return [
+      {
+        title: 'Auth & Roles',
+        subtitle: 'Login, logout, remember, reset, roles and etc.',
+        period: 'Advanced',
+        description: 'Auth integration with third party authentication/authorization server, such as LDAP, custom API etc.'
+      },
+      {
+        title: 'Hierachy Book Chapters',
+        subtitle: 'Book, forms, blogs, and etc.',
+        period: 'Expert',
+        description: 'Information that needs to be present in hierarchyorder and navigated with a back-and-forth fashion.'
+      },
+      {
+        title: 'Form + Grid Design',
+        subtitle: 'Forms with tabs and sections, and records with groups',
+        period: 'Expert',
+        description: 'Large set of elements (&gt;500) needs to be displayed in form format to collect user information. large set of records (&gt;10,000) needs to be displayedin table and requires sorting, filtering and grouping capability.'
+      },
+      {
+        title: 'Video + Audio Media',
+        subtitle: 'Youtube, custom video, onsite narration etc.',
+        period: 'Medium',
+        description: 'Capability of embedding video and audio and controlling their playback after page load. '
+      },
+      {
+        title: 'Editorial Workflow',
+        subtitle: 'Approve, reject, review, audit and etc.',
+        period: 'Advanced',
+        description: 'The workflow process that resources go through additional approval &amp; rejection before going alive. '
+      },
+    ]
+  }
 }
