@@ -12,10 +12,12 @@ import { ProfileService } from './profile.service';
 @Component({
   selector: 'cv-description',
   inputs: ['profile'],
-  // templateUrl: 'templates/page.description.html'
   template: `
+    <hr />
     <cv-section [section]="professional"></cv-section>
+    <hr />
     <cv-section [section]="education"></cv-section>
+    <hr />
     <cv-section [section]="activity"></cv-section>
   `
 })
@@ -32,8 +34,10 @@ export class CVDescriptionComponent {
 
 @Component({
   selector: 'cv-recommend',
-  // templateUrl: 'templates/page.recommend.html'
-  template: '<cv-section [section]="recommend"></cv-section>'
+  template: `
+    <hr />
+    <cv-section [section]="recommend"></cv-section>
+  `
 })
 export class CVRecommendComponent {
   recommend: any;
@@ -44,10 +48,11 @@ export class CVRecommendComponent {
 
 @Component({
   selector: 'cv-experience',
-  // templateUrl: 'templates/page.experience.html'
   template: `
+    <hr />
     <cv-timeline-current></cv-timeline-current>
     <cv-section [section]="current"></cv-section>
+    <hr />
     <cv-timeline-before></cv-timeline-before>
     <cv-section [section]="before"></cv-section>
   `
