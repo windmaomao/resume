@@ -13,6 +13,10 @@ import { AppComponent }   from './app.component';
 import { AppRoutes }      from './app.route';
 
 import {
+  CVHighlightDirective
+}                         from './app.directive';
+
+import {
   CVNavbarComponent, CVVersionComponent,
   CVHeaderComponent, CVFooterComponent,
 }                         from './layout.component';
@@ -35,6 +39,7 @@ import {
   ],
   declarations: [
     AppComponent,
+    CVHighlightDirective,
     CVNavbarComponent, CVVersionComponent,
     CVHeaderComponent, CVFooterComponent,
     CVSectionComponent,
