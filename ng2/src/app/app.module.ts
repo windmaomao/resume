@@ -1,20 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule }      from '@angular/platform-browser';
+import { NgModule }           from '@angular/core';
+// import { FormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HighlightDirective } from './shared/highlight.directive';
+import { AppComponent }       from './app.component';
+import { LayoutComponent }    from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HighlightDirective
+    LayoutComponent,
+    // CVNavbarComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    // FormsModule,
+    // HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
