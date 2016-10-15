@@ -4,10 +4,16 @@ import { NgModule }           from '@angular/core';
 // import { HttpModule } from '@angular/http';
 
 import { AppComponent }       from './app.component';
+import {
+  CVLayoutComponent,
+  CVNavbarComponent
+}                             from './layout';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CVLayoutComponent,
+    CVNavbarComponent
   ],
   imports: [
     BrowserModule,
