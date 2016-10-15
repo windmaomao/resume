@@ -11,7 +11,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'cv-layout',
   template: `
-    <h3>Layout works</h3>
     <cv-navbar></cv-navbar>
   `,
 })
@@ -19,8 +18,7 @@ export class CVLayoutComponent { }
 
 @Component({
   selector: 'cv-navbar',
-  template: 'Navbar works',
-  // templateUrl: 'templates/layout.navbar.html'
+  templateUrl: './layout.navbar.html'
 })
 export class CVNavbarComponent { }
 
