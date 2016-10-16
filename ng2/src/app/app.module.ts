@@ -3,6 +3,7 @@ import { NgModule }           from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
+import { ProfileService }       from './app.service';
 import { AppComponent }       from './app.component';
 import {
   CVLayoutComponent,
@@ -22,7 +23,7 @@ import {
     // FormsModule,
     // HttpModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
