@@ -1,9 +1,17 @@
+/**
+ * App module
+ * Module for bootstraping all components
+ *
+ * @author Fang Jin <windmaomao@gmail.com>
+ * @date 10/15/16
+ */
 import { BrowserModule }      from '@angular/platform-browser';
 import { NgModule }           from '@angular/core';
 // import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
 import { ProfileService }     from './app.service';
+import { HighlightDirective } from './app.directive';
 import { AppComponent }       from './app.component';
 import {
   CVLayoutComponent,
@@ -22,6 +30,7 @@ import {
 
 @NgModule({
   declarations: [
+    // components
     AppComponent,
     CVLayoutComponent,
     CVNavbarComponent, CVVersionComponent,
@@ -32,6 +41,9 @@ import {
     CVExperienceComponent,
     CVGridArchitectComponent, CVGridComponentComponent,
     CVArchitectComponent, CVComponentComponent,
+
+    // directives
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
