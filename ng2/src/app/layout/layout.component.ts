@@ -11,7 +11,7 @@ import { ProfileService } from '../app.service';
 
 @Component({
   selector: 'cv-layout',
-  providers: [ProfileService],
+  inputs: ['profile'],
   template: `
     <cv-navbar></cv-navbar>
     <div class="container" id="wrap">
@@ -21,12 +21,7 @@ import { ProfileService } from '../app.service';
     </div>
   `,
 })
-export class CVLayoutComponent {
-  profile: any;
-  constructor(private profileService: ProfileService) {
-    this.profile = profileService;
-  }
-}
+export class CVLayoutComponent { }
 
 @Component({
   selector: 'cv-navbar',
