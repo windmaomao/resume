@@ -39,26 +39,32 @@ export class CVDescriptionComponent { }
 })
 export class CVRecommendComponent { }
 
-// @Component({
-//   selector: 'cv-experience',
-//   template: `
-//     <hr />
-//     <cv-timeline-current></cv-timeline-current>
-//     <cv-section [section]="current"></cv-section>
-//     <hr />
-//     <cv-timeline-before></cv-timeline-before>
-//     <cv-section [section]="before"></cv-section>
-//   `
-// })
-// export class CVExperienceComponent {
-//   current: any;
-//   before: any;
-//   constructor(private profile: ProfileService) {
-//     this.current = profile.sections.experience.current;
-//     this.before = profile.sections.experience.before;
-//   }
-// }
-//
+@Component({
+  selector: 'cv-timeline-current',
+  templateUrl: './timeline.current.html'
+})
+export class CVTimelineCurrentComponent { }
+
+@Component({
+  selector: 'cv-timeline-before',
+  templateUrl: './timeline.before.html'
+})
+export class CVTimelineBeforeComponent { }
+
+@Component({
+  selector: 'cv-experience',
+  inputs: ['sections'],
+  template: `
+    <hr />
+    <cv-timeline-current></cv-timeline-current>
+    <cv-section [section]="sections.current"></cv-section>
+    <hr />
+    <cv-timeline-before></cv-timeline-before>
+    <cv-section [section]="sections.before"></cv-section>
+  `
+})
+export class CVExperienceComponent { }
+
 // @Component({
 //   selector: 'cv-architect',
 //   template: `

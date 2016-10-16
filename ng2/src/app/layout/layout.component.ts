@@ -19,6 +19,7 @@ import { ProfileService } from '../app.service';
       <cv-header [profile]="profile"></cv-header>
       <cv-description [sections]="profile.sections"></cv-description>
       <cv-recommend [section]="profile.sections.recommend"></cv-recommend>
+      <cv-experience [sections]="profile.sections.experience"></cv-experience>
       <cv-footer></cv-footer>
     </div>
   `,
