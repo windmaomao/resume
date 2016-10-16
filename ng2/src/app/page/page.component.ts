@@ -17,41 +17,28 @@ export class CVSectionComponent { }
 
 @Component({
   selector: 'cv-description',
-  inputs: ['profile'],
+  inputs: ['sections'],
   template: `
     <hr />
-    <cv-section [section]="profile.sections.professional"></cv-section>
+    <cv-section [section]="sections.professional"></cv-section>
     <hr />
-    <cv-section [section]="profile.sections.education"></cv-section>
+    <cv-section [section]="sections.education"></cv-section>
     <hr />
-    <cv-section [section]="profile.sections.activity"></cv-section>
+    <cv-section [section]="sections.activity"></cv-section>
   `
 })
-export class CVDescriptionComponent {
-  // professional: any;
-  // education: any;
-  // activity: any;
-  // constructor(private profile: ProfileService) {
-  //   this.professional = profile.sections.professional;
-  //   this.education = profile.sections.education;
-  //   this.activity = profile.sections.activity;
-  // }
-}
+export class CVDescriptionComponent { }
 
-// @Component({
-//   selector: 'cv-recommend',
-//   template: `
-//     <hr />
-//     <cv-section [section]="recommend"></cv-section>
-//   `
-// })
-// export class CVRecommendComponent {
-//   recommend: any;
-//   constructor(private profile: ProfileService) {
-//     this.recommend = profile.sections.recommend;
-//   }
-// }
-//
+@Component({
+  selector: 'cv-recommend',
+  inputs: ['section'],
+  template: `
+    <hr />
+    <cv-section [section]="section"></cv-section>
+  `
+})
+export class CVRecommendComponent { }
+
 // @Component({
 //   selector: 'cv-experience',
 //   template: `

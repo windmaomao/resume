@@ -17,7 +17,8 @@ import { ProfileService } from '../app.service';
     <div class="container" id="wrap">
       <cv-version></cv-version>
       <cv-header [profile]="profile"></cv-header>
-      <cv-description [profile]="profile"></cv-description>
+      <cv-description [sections]="profile.sections"></cv-description>
+      <cv-recommend [section]="profile.sections.recommend"></cv-recommend>
       <cv-footer></cv-footer>
     </div>
   `,

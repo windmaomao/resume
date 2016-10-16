@@ -9,11 +9,11 @@ import {
   CVLayoutComponent,
   CVNavbarComponent, CVVersionComponent,
   CVHeaderComponent, CVFooterComponent,
-}                             from './layout';
+}                             from './layout/layout.component';
 
 import {
   CVSectionComponent,
-  CVDescriptionComponent
+  CVDescriptionComponent, CVRecommendComponent
 }                             from './page/page.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import {
     CVNavbarComponent, CVVersionComponent,
     CVHeaderComponent, CVFooterComponent,
     CVSectionComponent,
-    CVDescriptionComponent
+    CVDescriptionComponent, CVRecommendComponent
   ],
   imports: [
     BrowserModule,
