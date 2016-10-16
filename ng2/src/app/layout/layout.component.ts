@@ -16,16 +16,18 @@ import { Component } from '@angular/core';
     <div class="container" id="wrap">
       <cv-version></cv-version>
       <cv-header [profile]="profile"></cv-header>
-      <cv-description [sections]="profile.sections"></cv-description>
-      <cv-recommend [section]="profile.sections.recommend"></cv-recommend>
-      <cv-experience [sections]="profile.sections.experience"></cv-experience>
-      <cv-architect [section]="profile.sections.skillset.architect"></cv-architect>
-      <cv-component [section]="profile.sections.skillset.component"></cv-component>
+      <router-outlet></router-outlet>
       <cv-footer></cv-footer>
     </div>
   `,
+  // <cv-description [sections]="profile.sections"></cv-description>
+  // <cv-recommend [section]="profile.sections.recommend"></cv-recommend>
+  // <cv-experience [sections]="profile.sections.experience"></cv-experience>
+  // <cv-architect [section]="profile.sections.skillset.architect"></cv-architect>
+  // <cv-component [section]="profile.sections.skillset.component"></cv-component>
 })
 export class CVLayoutComponent { }
+
 
 @Component({
   selector: 'cv-navbar',

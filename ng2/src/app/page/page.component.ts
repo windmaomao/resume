@@ -7,6 +7,7 @@
  * @date 10/09/16
  */
 import { Component } from '@angular/core';
+import { ProfileService } from '../app.service';
 
 @Component({
   selector: 'cv-section',
@@ -27,7 +28,12 @@ export class CVSectionComponent { }
     <cv-section [section]="sections.activity"></cv-section>
   `
 })
-export class CVDescriptionComponent { }
+export class CVDescriptionComponent {
+  sections: any[];
+  constructor(private profile: ProfileService) {
+    this.sections = profile.sections;
+  }
+}
 
 @Component({
   selector: 'cv-recommend',
@@ -37,7 +43,12 @@ export class CVDescriptionComponent { }
     <cv-section [section]="section"></cv-section>
   `
 })
-export class CVRecommendComponent { }
+export class CVRecommendComponent {
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.recommend;
+  }
+}
 
 @Component({
   selector: 'cv-timeline-current',
@@ -63,7 +74,12 @@ export class CVTimelineBeforeComponent { }
     <cv-section [section]="sections.before"></cv-section>
   `
 })
-export class CVExperienceComponent { }
+export class CVExperienceComponent {
+  sections: any[];
+  constructor(private profile: ProfileService) {
+    this.sections = profile.sections.experience;
+  }
+}
 
 @Component({
   selector: 'cv-grid-architect',
@@ -86,7 +102,12 @@ export class CVGridComponentComponent { }
   <cv-section [section]="section"></cv-section>
   `
 })
-export class CVArchitectComponent { }
+export class CVArchitectComponent {
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.skillset.architect;
+  }
+}
 
 @Component({
   selector: 'cv-component',
@@ -97,4 +118,9 @@ export class CVArchitectComponent { }
   <cv-section [section]="section"></cv-section>
   `
 })
-export class CVComponentComponent { }
+export class CVComponentComponent {
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.skillset.component;
+  }
+}

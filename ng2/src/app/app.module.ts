@@ -7,12 +7,14 @@
  */
 import { BrowserModule }      from '@angular/platform-browser';
 import { NgModule }           from '@angular/core';
+import { RouterModule }       from '@angular/router';
 // import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
 import { ProfileService }     from './app.service';
 import { HighlightDirective } from './app.directive';
 import { AppComponent }       from './app.component';
+import { AppRoutes }          from './app.route';
 import {
   CVLayoutComponent,
   CVNavbarComponent, CVVersionComponent,
@@ -47,6 +49,7 @@ import {
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(AppRoutes, { useHash: true }),
     // FormsModule,
     // HttpModule
   ],

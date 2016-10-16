@@ -1,28 +1,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand hidden-sm navbar-link" > Fang's CV</a>
+            <a class="navbar-brand hidden-sm navbar-link" [routerLink]="['/']"> Fang's CV</a>
             <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav">
                 <li role="presentation">
-                  <a>
+                  <a [routerLink]="['/recommend']">
                     <i class="fa fa-bullhorn"></i> Recommend
                   </a>
                 </li>
                 <li role="presentation">
-                  <a>
+                  <a [routerLink]="['/experience']">
                     <i class="fa fa-slideshare"></i> Experience
                   </a>
                 </li>
                 <li role="presentation">
-                  <a>
+                  <a [routerLink]="['/architect']">
                     <i class="fa fa-balance-scale"></i> Architect
                   </a>
                 </li>
                 <li role="presentation">
-                  <a>
+                  <a [routerLink]="['/component']">
                     <i class="fa fa-comments-o"></i> Component
                   </a>
                 </li>
