@@ -98,9 +98,3 @@ export class CVArchitectComponent { }
   `
 })
 export class CVComponentComponent { }
-
-// @Component({
-//   selector: 'cv-misc',
-//   templateUrl: 'templates/page.misc.html'
-// })
-// export class CVMiscComponent { }
