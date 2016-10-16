@@ -16,11 +16,11 @@
       "mobile": false,
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "assets/fonts/font-awesome.min.css",
+        "assets/fonts/ionicons.min.css",
         "assets/css/base.css",
         "assets/css/layout.css",
         "assets/css/default.css",
-        "assets/fonts/font-awesome.min.css",
-        "assets/fonts/ionicons.min.css",
         "styles.css"
       ],
       "scripts": [
