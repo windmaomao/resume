@@ -1,0 +1,47 @@
+<div class="row cv-section">
+    <div class="col-md-3">
+        <div class="cv-section-title">
+            <h2>
+              <i class="fa fa-{{ section.icon }}"></i>
+              <span [innerHtml]='section.title'></span>
+            </h2>
+            <h4 [innerHtml]='section.subtitle'></h4>
+          </div>
+    </div>
+    <div class="col-md-9">
+        <div class="cv-item" *ngFor="let item of section.items">
+            <p *ngIf="item.period" class="period" [innerText]="item.period"></p>
+            <h3 *ngIf="item.title" [innerText]="item.title"></h3>
+            <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
+            <p *ngIf="item.description" [innerHtml]="item.description"></p>
+            <div *ngIf="item.projects">
+                <div *ngFor="let project of item.projects">
+                  <p [innerHtml]="project.description"></p>
+                  <ul *ngIf="project.tasks" class="fill-circle">
+                    <li *ngFor="let task of project.tasks" [innerHtml]="task"></li>
+                  </ul>
+                </div>
+            </div>
+            <blockquote *ngIf="section.type == 'quote'">
+                <p>
+                  <i class="fa fa-quote-left"></i>
+                  <span [innerHtml]="item.description"></span>
+                </p>
+                <footer [innerHtml]="item.note"></footer>
+            </blockquote>
+            <p *ngIf="item.keywords">
+                <small>
+                    <strong>Keywords:</strong>
+                    <span *ngFor="let keyword of item.keywords"
+                      class="label label-default label-keyword"
+                      [innerText]="keyword"
+                    ></span>
+                </small>
+            </p>
+            <div *ngIf="item.footer">
+              <hr />
+              <small [innerHtml]="item.footer"></small>
+            </div>
+        </div>
+    </div>
+</div>
