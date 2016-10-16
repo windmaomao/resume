@@ -15,7 +15,9 @@ import {
   CVSectionComponent,
   CVDescriptionComponent, CVRecommendComponent,
   CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-  CVExperienceComponent
+  CVExperienceComponent,
+  CVGridArchitectComponent, CVGridComponentComponent,
+  CVArchitectComponent, CVComponentComponent,
 }                             from './page/page.component';
 
 @NgModule({
@@ -27,7 +29,9 @@ import {
     CVSectionComponent,
     CVDescriptionComponent, CVRecommendComponent,
     CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-    CVExperienceComponent
+    CVExperienceComponent,
+    CVGridArchitectComponent, CVGridComponentComponent,
+    CVArchitectComponent, CVComponentComponent,
   ],
   imports: [
     BrowserModule,
