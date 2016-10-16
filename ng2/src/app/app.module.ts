@@ -6,14 +6,16 @@ import { NgModule }           from '@angular/core';
 import { AppComponent }       from './app.component';
 import {
   CVLayoutComponent,
-  CVNavbarComponent
+  CVNavbarComponent, CVVersionComponent,
+  CVHeaderComponent, CVFooterComponent
 }                             from './layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     CVLayoutComponent,
-    CVNavbarComponent
+    CVNavbarComponent, CVVersionComponent,
+    CVHeaderComponent, CVFooterComponent
   ],
   imports: [
     BrowserModule,
