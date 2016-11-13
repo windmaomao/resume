@@ -7,6 +7,18 @@
   "installed": {
     "jquery/jquery.d.ts": {
       "commit": "255ae20ac7888a164440bd6ee0fe7c1806ff8d7e"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "255ae20ac7888a164440bd6ee0fe7c1806ff8d7e"
+    },
+    "chai/chai.d.ts": {
+      "commit": "255ae20ac7888a164440bd6ee0fe7c1806ff8d7e"
+    },
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "255ae20ac7888a164440bd6ee0fe7c1806ff8d7e"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "255ae20ac7888a164440bd6ee0fe7c1806ff8d7e"
     }
   }
 }

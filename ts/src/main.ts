@@ -1,1 +1,1 @@
-let i: number = 1;
+let i:Number = 1;
