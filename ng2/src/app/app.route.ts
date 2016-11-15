@@ -9,8 +9,11 @@ import { Routes }         from '@angular/router';
 
 import {
   CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
-  CVArchitectComponent, CVComponentComponent,
+  CVArchitectComponent, CVComponentComponent
 }                         from './page/page.component';
+import {
+  CVUpdateComponent
+}                         from './page/update.component';
 
 export const AppRoutes: Routes = [
   { path: '',             component: CVDescriptionComponent },
@@ -18,4 +21,5 @@ export const AppRoutes: Routes = [
   { path: 'experience',   component: CVExperienceComponent },
   { path: 'architect',    component: CVArchitectComponent },
   { path: 'component',    component: CVComponentComponent },
+  { path: 'update',       component: CVUpdateComponent }
 ];

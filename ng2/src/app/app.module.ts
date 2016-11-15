@@ -29,6 +29,10 @@ import {
   CVGridArchitectComponent, CVGridComponentComponent,
   CVArchitectComponent, CVComponentComponent,
 }                             from './page/page.component';
+import {
+  CVUpdateComponent
+}                             from './page/update.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +47,7 @@ import {
     CVExperienceComponent,
     CVGridArchitectComponent, CVGridComponentComponent,
     CVArchitectComponent, CVComponentComponent,
+    CVUpdateComponent,
 
     // directives
     HighlightDirective,
