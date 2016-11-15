@@ -5,6 +5,25 @@
  * @date 10/10/16
  */
 import {Injectable} from '@angular/core';
+import * as PouchDB from 'pouchdb';
+
+/**
+ * Profile store service
+ */
+@Injectable()
+export class ProfileStoreService {
+  _db: any;
+  constructor() {
+    this._db = new PouchDB('lists');
+  }
+  getProfile() {
+    // return 'abc';
+    return this._db.allDocs({ include_docs: true });
+  }
+  // addProfile(profile: any) {
+  //   this._db.post(profile);
+  // }
+}
 
 /**
  * Profile service

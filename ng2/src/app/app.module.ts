@@ -11,7 +11,9 @@ import { RouterModule }       from '@angular/router';
 // import { FormsModule } from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
-import { ProfileService }     from './app.service';
+import {
+  ProfileService, ProfileStoreService
+}                             from './app.service';
 import { HighlightDirective } from './app.directive';
 import { AppComponent }       from './app.component';
 import { AppRoutes }          from './app.route';
@@ -58,7 +60,7 @@ import {
     // FormsModule,
     // HttpModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService, ProfileStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
