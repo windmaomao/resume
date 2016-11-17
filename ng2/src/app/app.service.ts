@@ -14,16 +14,14 @@ import * as _ from "lodash";
 @Injectable()
 export class ProfileStoreService {
   _id: string;
-  private _profile: any;
+  private _profile: {};
+  private _local: any;
+  private _remote: any;
 
-  _local: any;
-  _remote: any;
   constructor() {
-    this._id = 'windmaomao';
-    this._profile = {
-      _id: this._id
-    };
     this._local = new PouchDB('profiles');
+    this._id = 'windmaomao';
+    this._profile = { _id: this._id };
     this.load();
   }
   get profile(): any {
@@ -39,7 +37,6 @@ export class ProfileStoreService {
       that.profile = doc;
     }, function(err) {
       console.error(err);
-      // that.profile = { name: 'Fang Jin' };
       that.save();
     });
   }
@@ -64,7 +61,7 @@ export class ProfileService {
   keywords: string[];
   sections: any;
 
-  constructor() {
+  constructor(ps: ProfileStoreService) {
     this.url = 'https://www.linkedin.com/in/windmaomao';
     this.name = 'Fang Jin';
     this.title = 'Front-end Architect';
@@ -73,6 +70,12 @@ export class ProfileService {
     this.location = 'Raleigh, North Carolina';
     this.description = 'I specialize in developing websites in healthcare, banking, real estate and university sectors. Overall my projects have reached 11 million users in production. I enjoy drafting and architecting front facing websites that talk to large enterprise dataset, most of time involving <em>UI/UX</em> design tailored for your business workflow.';
     this.keywords = ['AngularJS', 'Sass', 'Bootstrap', 'Gulp', 'Git'];
+
+    // let profile = _.cloneDeep(ps.profile);
+    // console.log(profile);
+    // delete(profile._id);
+    // delete(profile._rev);
+    // _.merge(this, profile);
 
     this.sections = {
       professional: {
