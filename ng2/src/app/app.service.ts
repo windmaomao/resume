@@ -19,10 +19,11 @@ export class ProfileStoreService {
   private _remote: any;
 
   constructor() {
+    console.log('ProfileStoreService created');
     this._local = new PouchDB('profiles');
     this._id = 'windmaomao';
     this._profile = { _id: this._id };
-    this.load();
+    // this.load();
   }
   get profile(): any {
     return this._profile;
@@ -32,16 +33,18 @@ export class ProfileStoreService {
   }
   load() {
     let that = this;
-    this._local.get(this._id).then(function(doc) {
-      // console.log('Doc', doc);
+    return this._local.get(this._id).then((doc) => {
+      console.log('Doc', doc);
       that.profile = doc;
-    }, function(err) {
+      return that.profile;
+    }, (err) => {
       console.error(err);
       that.save();
+      return that.profile;
     });
   }
   save() {
-    this._local.put(this._profile);
+    return this._local.put(this._profile);
   }
 }
 
@@ -62,6 +65,15 @@ export class ProfileService {
   sections: any;
 
   constructor(ps: ProfileStoreService) {
+    // load data from db
+    let that = this;
+    ps.load().then(function(doc) {
+      let profile = _.cloneDeep(doc);
+      delete(profile._id);
+      delete(profile._rev);
+      _.merge(that, profile);
+    });
+
     this.url = 'https://www.linkedin.com/in/windmaomao';
     this.name = 'Fang Jin';
     this.title = 'Front-end Architect';
@@ -70,12 +82,6 @@ export class ProfileService {
     this.location = 'Raleigh, North Carolina';
     this.description = 'I specialize in developing websites in healthcare, banking, real estate and university sectors. Overall my projects have reached 11 million users in production. I enjoy drafting and architecting front facing websites that talk to large enterprise dataset, most of time involving <em>UI/UX</em> design tailored for your business workflow.';
     this.keywords = ['AngularJS', 'Sass', 'Bootstrap', 'Gulp', 'Git'];
-
-    // let profile = _.cloneDeep(ps.profile);
-    // console.log(profile);
-    // delete(profile._id);
-    // delete(profile._rev);
-    // _.merge(this, profile);
 
     this.sections = {
       professional: {
