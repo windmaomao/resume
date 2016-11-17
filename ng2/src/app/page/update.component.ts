@@ -12,8 +12,7 @@ import { ProfileStoreService } from '../app.service';
   inputs: [],
   template: `
     <h2>Edit</h2>
-    <button class="btn btn-primary" (click)="onGetProfile()">Get profile</button>
-    <button class="btn btn-danger" (click)="onAddProfile()">Add profile</button>
+    <button class="btn btn-primary" (click)="onGetProfile()">Edit</button>
     <p>{{ profile | json }}</p>
   `
 })
@@ -22,9 +21,15 @@ export class CVUpdateComponent {
   profile: any;
   constructor(private ps: ProfileStoreService) {
     this._ps = ps;
+    this.profile = ps.getProfile();
   }
   onGetProfile() {
-    // this.profile = 'abc';
-    this.profile = this._ps.getProfile();
+    // this.profile = this._ps.getProfile();
+  }
+  onAddProfile() {
+    // var p = {
+    //   name: 'todo lists'
+    // };
+    // this._ps.addProfile(p);
   }
 }

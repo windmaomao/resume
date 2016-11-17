@@ -12,17 +12,36 @@ import * as PouchDB from 'pouchdb';
  */
 @Injectable()
 export class ProfileStoreService {
-  _db: any;
+  _id: string;
+  _profile: any;
+  _local: any;
+  _remote: any;
   constructor() {
-    this._db = new PouchDB('lists');
+    this._id = 'windmaomao';
+    this._profile = {
+      _id: this._id
+    };
+    this._local = new PouchDB('profiles');
+    this._fetchProfile();
   }
   getProfile() {
-    // return 'abc';
-    return this._db.allDocs({ include_docs: true });
+    return this._profile;
   }
-  // addProfile(profile: any) {
-  //   this._db.post(profile);
-  // }
+  setProfile(profile: any) {
+    this._profile.name = profile.name;
+    this._local.put(this._profile);
+  }
+  _fetchProfile() {
+    let that = this;
+    this._local.get(this._id).then(function(doc) {
+      console.log('Doc', doc);
+      that._profile.name = doc.name;
+    }, function(err) {
+      console.error(err);
+      let profile = { name: 'Fang Jin' };
+      that.setProfile(profile);
+    });
+  }
 }
 
 /**
