@@ -6,6 +6,7 @@
  */
 import {Injectable} from '@angular/core';
 import * as PouchDB from 'pouchdb';
+import * as _ from "lodash";
 
 /**
  * Profile store service
@@ -29,17 +30,16 @@ export class ProfileStoreService {
     return this._profile;
   }
   set profile(profile: any) {
-    this._profile._rev = profile._rev;
-    this._profile.name = profile.name;
+    _.merge(this._profile, profile);
   }
   load() {
     let that = this;
     this._local.get(this._id).then(function(doc) {
-      console.log('Doc', doc);
+      // console.log('Doc', doc);
       that.profile = doc;
     }, function(err) {
       console.error(err);
-      that.profile = { name: 'Fang Jin' };
+      // that.profile = { name: 'Fang Jin' };
       that.save();
     });
   }
