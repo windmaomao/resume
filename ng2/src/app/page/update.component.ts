@@ -12,24 +12,24 @@ import { ProfileStoreService } from '../app.service';
   inputs: [],
   template: `
     <h2>Edit</h2>
-    <button class="btn btn-primary" (click)="onGetProfile()">Edit</button>
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="profile.name" name="name" />
+      </div>
+    </form>
+    <button type="submit" class="btn btn-primary" (click)="onUpdateProfile()">Update</button>
     <p>{{ profile | json }}</p>
   `
 })
 export class CVUpdateComponent {
-  _ps: any;
+  private _ps: any;
   profile: any;
   constructor(private ps: ProfileStoreService) {
     this._ps = ps;
-    this.profile = ps.getProfile();
+    this.profile = ps.profile;
   }
-  onGetProfile() {
-    // this.profile = this._ps.getProfile();
-  }
-  onAddProfile() {
-    // var p = {
-    //   name: 'todo lists'
-    // };
-    // this._ps.addProfile(p);
+  onUpdateProfile() {
+    this._ps.save();
   }
 }

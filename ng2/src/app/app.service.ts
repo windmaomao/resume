@@ -13,7 +13,8 @@ import * as PouchDB from 'pouchdb';
 @Injectable()
 export class ProfileStoreService {
   _id: string;
-  _profile: any;
+  private _profile: any;
+
   _local: any;
   _remote: any;
   constructor() {
@@ -22,25 +23,28 @@ export class ProfileStoreService {
       _id: this._id
     };
     this._local = new PouchDB('profiles');
-    this._fetchProfile();
+    this.load();
   }
-  getProfile() {
+  get profile(): any {
     return this._profile;
   }
-  setProfile(profile: any) {
+  set profile(profile: any) {
+    this._profile._rev = profile._rev;
     this._profile.name = profile.name;
-    this._local.put(this._profile);
   }
-  _fetchProfile() {
+  load() {
     let that = this;
     this._local.get(this._id).then(function(doc) {
       console.log('Doc', doc);
-      that._profile.name = doc.name;
+      that.profile = doc;
     }, function(err) {
       console.error(err);
-      let profile = { name: 'Fang Jin' };
-      that.setProfile(profile);
+      that.profile = { name: 'Fang Jin' };
+      that.save();
     });
+  }
+  save() {
+    this._local.put(this._profile);
   }
 }
 
