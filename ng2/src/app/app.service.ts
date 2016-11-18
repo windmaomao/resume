@@ -19,11 +19,11 @@ export class ProfileStoreService {
   private _remote: any;
 
   constructor() {
-    console.log('ProfileStoreService created');
     this._local = new PouchDB('profiles');
+    this._remote = new PouchDB('https://windmaomao.cloudant.com/profiles');
     this._id = 'windmaomao';
     this._profile = { _id: this._id };
-    // this.load();
+    this.sync();
   }
   get profile(): any {
     return this._profile;
@@ -31,6 +31,7 @@ export class ProfileStoreService {
   set profile(profile: any) {
     _.merge(this._profile, profile);
   }
+  // load from database
   load() {
     let that = this;
     return this._local.get(this._id).then((doc) => {
@@ -43,8 +44,25 @@ export class ProfileStoreService {
       return that.profile;
     });
   }
+  // save to database
   save() {
     return this._local.put(this._profile);
+  }
+  // sync to remote database
+  sync() {
+    this._local.sync(this._remote, {
+      live: true,
+      retry: true,
+    }).on('change', (change) => {
+      if (change.direction == "pull" && change.change.docs.length > 0) {
+        console.log("Change occurred. Synchronizing with remote.");
+        this.load();
+      }
+    }).on('paused', (info) => {
+    }).on('active', (info) => {
+    }).on('error', (err) => {
+      console.error(err);
+    })
   }
 }
 

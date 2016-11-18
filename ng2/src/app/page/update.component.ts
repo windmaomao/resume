@@ -34,7 +34,6 @@ export class CVUpdateComponent {
   private _ps: any;
   profile: any;
   constructor(private ps: ProfileStoreService) {
-    console.log('CVUpdateComponent created');
     this._ps = ps;
     this.profile = ps.profile;
   }
