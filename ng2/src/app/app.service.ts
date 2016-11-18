@@ -17,6 +17,7 @@ export class ProfileStoreService {
   private _profile: {};
   private _local: any;
   private _remote: any;
+  onAfterLoad: any;
 
   constructor() {
     this._local = new PouchDB('profiles');
@@ -37,12 +38,18 @@ export class ProfileStoreService {
     return this._local.get(this._id).then((doc) => {
       console.log('Doc', doc);
       that.profile = doc;
+      this._afterLoad(that.profile);
       return that.profile;
     }, (err) => {
       console.error(err);
       that.save();
       return that.profile;
     });
+  }
+  _afterLoad(doc: any) {
+    if (this.onAfterLoad) {
+      this.onAfterLoad(doc);
+    }
   }
   // save to database
   save() {
@@ -85,12 +92,13 @@ export class ProfileService {
   constructor(ps: ProfileStoreService) {
     // load data from db
     let that = this;
-    ps.load().then(function(doc) {
+    ps.onAfterLoad = function(doc) {
       let profile = _.cloneDeep(doc);
       delete(profile._id);
       delete(profile._rev);
       _.merge(that, profile);
-    });
+    }
+    ps.load().then((doc) => {});
 
     this.url = 'https://www.linkedin.com/in/windmaomao';
     this.name = 'Fang Jin';
