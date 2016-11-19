@@ -39,5 +39,9 @@ export class CVUpdateComponent {
   }
   onUpdateProfile() {
     this._ps.save();
+
+    // after save you need to load again
+    // if you want the static page to refresh
+    // this._ps.load();
   }
 }

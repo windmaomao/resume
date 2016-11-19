@@ -36,7 +36,7 @@ export class ProfileStoreService {
   load() {
     let that = this;
     return this._local.get(this._id).then((doc) => {
-      console.log('Doc', doc);
+      // console.log('Doc', doc);
       that.profile = doc;
       this._afterLoad(that.profile);
       return that.profile;
@@ -53,7 +53,12 @@ export class ProfileStoreService {
   }
   // save to database
   save() {
-    return this._local.put(this._profile);
+    return this._local.put(this._profile).then(() => {
+    }).catch((err) => {
+      if (err.name === 'conflict') {
+      }
+      console.error(err);
+    })
   }
   // sync to remote database
   sync() {
@@ -61,8 +66,8 @@ export class ProfileStoreService {
       live: true,
       retry: true,
     }).on('change', (change) => {
+      console.log("Change occurred. Synchronizing with remote. " + change.direction.toUpperCase());
       if (change.direction == "pull" && change.change.docs.length > 0) {
-        console.log("Change occurred. Synchronizing with remote.");
         this.load();
       }
     }).on('paused', (info) => {
@@ -93,6 +98,7 @@ export class ProfileService {
     // load data from db
     let that = this;
     ps.onAfterLoad = function(doc) {
+      console.log('After Load');
       let profile = _.cloneDeep(doc);
       delete(profile._id);
       delete(profile._rev);
