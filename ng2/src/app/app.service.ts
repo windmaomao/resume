@@ -53,10 +53,11 @@ export class ProfileStoreService {
   }
   // save to database
   save() {
-    return this._local.put(this._profile).then(() => {
+    var that = this;
+    return this._local.put(this._profile).then((res) => {
+      // store rev to keep it latest
+      that._profile["_rev"] = res.rev;
     }).catch((err) => {
-      if (err.name === 'conflict') {
-      }
       console.error(err);
     })
   }
@@ -98,7 +99,6 @@ export class ProfileService {
     // load data from db
     let that = this;
     ps.onAfterLoad = function(doc) {
-      console.log('After Load');
       let profile = _.cloneDeep(doc);
       delete(profile._id);
       delete(profile._rev);
