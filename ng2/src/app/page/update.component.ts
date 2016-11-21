@@ -10,25 +10,7 @@ import { ProfileStoreService } from '../app.service';
 @Component({
   selector: 'cv-update',
   inputs: [],
-  template: `
-    <h2>Update CV</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <form>
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" [(ngModel)]="profile.name" name="name" />
-          </div>
-          <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control" [(ngModel)]="profile.title" name="title" />
-          </div>
-        </form>
-        <button type="submit" class="btn btn-primary" (click)="onUpdateProfile()">Update</button>
-      </div>
-    </div>
-    <p>{{ profile | json }}</p>
-  `
+  templateUrl: './profile.update.html'
 })
 export class CVUpdateComponent {
   private _ps: any;
