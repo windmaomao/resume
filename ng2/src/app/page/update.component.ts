@@ -38,10 +38,8 @@ export class CVUpdateComponent {
     this.profile = ps.profile;
   }
   onUpdateProfile() {
-    this._ps.save();
-
-    // after save you need to load again
-    // if you want the static page to refresh
-    // this._ps.load();
+    this._ps.save().then(() => {
+      this._ps.load();
+    });
   }
 }
