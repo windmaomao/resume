@@ -7,7 +7,7 @@
  * @date 11/22/16
  */
 import { Component } from '@angular/core';
-import { ProfileStoreService } from '../app.service';
+import { ProfileModelService } from '../profile/profile.service';
 
 @Component({
   selector: 'cv-edit',
@@ -15,10 +15,10 @@ import { ProfileStoreService } from '../app.service';
   templateUrl: './profile.edit.html'
 })
 export class CVEditComponent {
-  private _ps: any;
+  private _pm: any;
   // profile: any;
-  constructor(private ps: ProfileStoreService) {
-    this._ps = ps;
+  constructor(private pm: ProfileModelService) {
+    this._pm = pm;
     // this.profile = ps.profile;
   }
   onUpdateProfile() {

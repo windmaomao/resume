@@ -35,6 +35,9 @@ import {
   CVUpdateComponent
 }                             from './page/update.component';
 import {
+  ProfileModelService
+}                             from './profile/profile.service';
+import {
   CVEditComponent
 }                             from './edit/edit.component';
 
@@ -64,7 +67,7 @@ import {
     FormsModule,
     // HttpModule
   ],
-  providers: [ProfileService, ProfileStoreService],
+  providers: [ProfileService, ProfileStoreService, ProfileModelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
