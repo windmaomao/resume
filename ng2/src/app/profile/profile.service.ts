@@ -45,6 +45,22 @@ export class ProfileModelService {
           profile: { belongsTo: 'profile' }
         }
       }
-    ])
+    ]);
+    var db = this._local.rel;
+    db.save('profile', {
+      id: 'windmaomao3',
+      name: 'Fang',
+      experiences: ['windmaomao3:experience']
+    }).then(function() {
+      db.save('experience', {
+        id: 'windmaomao3:experience',
+        title: 'abc',
+        profile: 'windmaomao'
+      });
+    }).then(function() {
+      db.find('profile').then(function(res) {
+        console.log(res);
+      })
+    });
   }
 }
