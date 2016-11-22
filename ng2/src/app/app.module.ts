@@ -34,6 +34,9 @@ import {
 import {
   CVUpdateComponent
 }                             from './page/update.component';
+import {
+  CVEditComponent
+}                             from './edit/edit.component';
 
 
 @NgModule({
@@ -50,6 +53,7 @@ import {
     CVGridArchitectComponent, CVGridComponentComponent,
     CVArchitectComponent, CVComponentComponent,
     CVUpdateComponent,
+    CVEditComponent,
 
     // directives
     HighlightDirective,

@@ -14,6 +14,9 @@ import {
 import {
   CVUpdateComponent
 }                         from './page/update.component';
+import {
+  CVEditComponent
+}                         from './edit/edit.component';
 
 export const AppRoutes: Routes = [
   { path: '',             component: CVDescriptionComponent },
@@ -21,5 +24,6 @@ export const AppRoutes: Routes = [
   { path: 'experience',   component: CVExperienceComponent },
   { path: 'architect',    component: CVArchitectComponent },
   { path: 'component',    component: CVComponentComponent },
-  { path: 'update',       component: CVUpdateComponent }
+  { path: 'update',       component: CVUpdateComponent },
+  { path: 'edit',         component: CVEditComponent }
 ];
