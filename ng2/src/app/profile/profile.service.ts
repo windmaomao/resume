@@ -7,7 +7,10 @@
  */
 import {Injectable} from '@angular/core';
 import * as PouchDB from 'pouchdb';
+import * as Relational from 'relational-pouch';
 import * as _ from "lodash";
+
+PouchDB.plugin(Relational);
 
 /**
  * Profile store service
@@ -21,7 +24,27 @@ export class ProfileModelService {
 
   constructor() {
     this._id = 'windmaomao';
-    this._local = new PouchDB('cvs');
+    this._setupLocal();
     this._remote = new PouchDB('https://windmaomao.cloudant.com/cvs');
+  }
+
+  private _setupLocal() {
+    this._local = new PouchDB('cvs');
+    this._local.setSchema([
+      {
+        singular: 'profile',
+        plural: 'profiles',
+        relations: {
+          experiences: { hasMany: 'experience' }
+        }
+      },
+      {
+        singular: 'experience',
+        plural: 'experiences',
+        relations: {
+          profile: { belongsTo: 'profile' }
+        }
+      }
+    ])
   }
 }
