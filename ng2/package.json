@@ -26,6 +26,7 @@
     "jquery": "^3.1.1",
     "lodash": "^4.17.2",
     "pouchdb": "^6.0.7",
+    "pouchdb-find": "^0.10.4",
     "relational-pouch": "^1.4.5",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",

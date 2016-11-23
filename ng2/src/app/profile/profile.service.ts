@@ -7,9 +7,11 @@
  */
 import {Injectable} from '@angular/core';
 import * as PouchDB from 'pouchdb';
+import * as PouchDBFind from 'pouchdb-find';
 import * as Relational from 'relational-pouch';
 import * as _ from "lodash";
 
+PouchDB.plugin(PouchDBFind);
 PouchDB.plugin(Relational);
 
 /**
@@ -30,12 +32,18 @@ export class ProfileModelService {
 
   private _setupLocal() {
     this._local = new PouchDB('cvs');
-    this._local.setSchema([
+    let db = this._local;
+
+    // setup schema
+    db.setSchema([
       {
         singular: 'profile',
         plural: 'profiles',
         relations: {
-          experiences: { hasMany: 'experience' }
+          // experiences: { hasMany: 'experience' }
+          experiences: {
+            hasMany: { type: 'experience', options: {queryInverse: 'profile'}}
+          }
         }
       },
       {
@@ -46,21 +54,23 @@ export class ProfileModelService {
         }
       }
     ]);
-    var db = this._local.rel;
-    db.save('profile', {
-      id: 'windmaomao3',
-      name: 'Fang',
-      experiences: ['windmaomao3:experience']
+
+    return db.createIndex({
+      index: { fields: ['data.experience', '_id'] }
     }).then(function() {
-      db.save('experience', {
-        id: 'windmaomao3:experience',
-        title: 'abc',
+      return db.rel.save('profile', {
+        name: 'Fang',
+        id: 'windmaomao',
+      });
+    }).then(function () {
+      return db.rel.save('experience', {
+        title: 'DB',
         profile: 'windmaomao'
       });
-    }).then(function() {
-      db.find('profile').then(function(res) {
-        console.log(res);
-      })
+    }).then(function () {
+      return db.rel.find('profile', 'windmaomao');
+    }).then(function (res) {
+      console.log(res);
     });
   }
 }
