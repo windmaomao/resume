@@ -118,11 +118,11 @@ export class ProfileModelService {
   }
 
   // load from database
-  load() {
+  load(type = "profile") {
     let db = this._local;
     let store = this;
-    return db.rel.find('profile', this._id).then((res) => {
-      _.merge(store._data, res);
+    return db.rel.find(type).then((res) => {
+      _.assign(store._data, res);
       return store._data;
     }, (err) => {
       console.error(err);
@@ -135,10 +135,7 @@ export class ProfileModelService {
     let store = this;
     let id = doc.id;
     return this._local.rel.save(type, doc).then(() => {
-      if (!id) {
-        let items = this._plural(type);
-        store.data[items].push(doc);
-      }
+      return store.load(type);
     });
   }
 
@@ -147,10 +144,7 @@ export class ProfileModelService {
     let store = this;
     let id = doc.id;
     return this._local.rel.del(type, doc).then(() => {
-      let items = this._plural(type);
-      _.remove(store.data[items], (item) => {
-        return item['id'] === id;
-      });
+      return store.load(type);
     });
   }
 

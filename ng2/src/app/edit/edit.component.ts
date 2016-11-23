@@ -18,25 +18,24 @@ import * as _ from "lodash";
 export class CVEditComponent {
   private _pm: any;
   data: any;
-  profile: any;
+  private _profile: any;
   experience: any;
   experienceEdit: any;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
     this.data = this._pm.data;
-    this.profile = this.data.profiles[0];
     this.onResetExperience(false);
     this.onLoadProfile();
   }
+  get profile() {
+    return this.data.profiles[0];
+  }
   onLoadProfile() {
-    return this._pm.load().then((res) => {
-      console.log('Profile', res);
-    });
+    let edit = this;
+    return this._pm.load('profile');
   }
   onUpdateProfile() {
-    let edit = this;
-    return this._pm.save('profile', this.profile).then(() => {
-    });
+    return this._pm.save('profile', this.profile);
   }
   onResetExperience(on) {
     this.experience = {
