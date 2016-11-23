@@ -1,6 +1,10 @@
 <div class="row">
   <!-- <small>{{ data | json }}</small> -->
 </div>
+
+<a class="btn btn- pull-right" (click)="onLoadProfile()" title="refresh">
+  <i class="fa fa-refresh"></i>
+</a>
 <h2>Edit CV</h2>
 <div class="row">
   <div class="col-md-6">
@@ -18,12 +22,12 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-5">
-    <a class="btn btn-xs btn-primary pull-right" (click)="onAddExperience()">
+    <a class="btn btn-xs btn-primary pull-right" (click)="onResetExperience()">
       <i class="fa fa-plus"></i> New Exp
     </a>
     <h3>Experiences</h3>
     <div class="well">
-      <p>{{ experience | json }}</p>
+      <!-- <p>{{ experience | json }}</p> -->
       <form class="form-horizontal">
         <div class="form-group form-group-sm">
           <label for="inputEmail3" class="col-sm-2 control-label">Title</label>

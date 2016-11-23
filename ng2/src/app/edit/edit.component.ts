@@ -24,31 +24,33 @@ export class CVEditComponent {
     this._pm = pm;
     this.data = this._pm.data;
     this.profile = this.data.profiles[0];
-    this.experience = {};
-    this.resetExperience();
-
-    let edit = this;
-    pm.load().then((res) => {
+    this.onResetExperience();
+    this.onLoadProfile();
+  }
+  onLoadProfile() {
+    return this._pm.load().then((res) => {
       console.log('Profile', res);
     });
   }
-  resetExperience() {
-    _.merge(this.experience, {
+  onUpdateProfile() {
+    let edit = this;
+    return this._pm.save('profile', this.profile).then(() => {
+    });
+  }
+  onResetExperience() {
+    this.experience = {
       profile: this._pm.id,
       id: "", rev: "",
       title: "", period: ""
-    });
+    };
   }
   onUpdateExperience() {
-    this._pm.save('experience', _.cloneDeep(this.experience));
-    this.resetExperience();
+    let edit = this;
+    return this._pm.save('experience', this.experience).then(() => {
+      edit.onResetExperience();
+    });
   }
   onSelectExperience(exp) {
-    _.merge(this.experience, exp);
-  }
-  onUpdateProfile() {
-    // this._ps.save().then(() => {
-    //   this._ps.load();
-    // });
+    this.experience = exp;
   }
 }
