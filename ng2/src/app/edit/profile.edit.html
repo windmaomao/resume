@@ -22,7 +22,7 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-5">
-    <a class="btn btn-xs btn-primary pull-right" (click)="onResetExperience(true)">
+    <a class="btn btn-xs btn-primary pull-right" (click)="onResetExperience('create')">
       <i class="fa fa-plus"></i> New
     </a>
     <h3>Experiences</h3>
@@ -43,7 +43,9 @@
         </div>
         <div class="form-group form-group-sm">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary btn-sm" (click)="onUpdateExperience()">Update</button>
+            <a type="submit" class="btn btn-danger btn-xs" (click)="onDeleteExperience()" *ngIf="experienceEdit == 'edit'">Remove</a>
+            <a type="submit" class="btn btn-primary btn-xs" (click)="onUpdateExperience()">Update</a>
+            <a class="btn btn-info btn-xs pull-right" (click)="onResetExperience(false)">Cancel</a>
           </div>
         </div>
       </form>
@@ -54,7 +56,7 @@
          <tr>
            <th>Company</th>
            <th>Duration</th>
-           <th>Action</th>
+           <th width="40">Edit</th>
          </tr>
        </thead>
        <tbody>
@@ -65,9 +67,9 @@
              <a class="btn btn-xs btn-primary" (click)="onSelectExperience(experience)">
                <i class="fa fa-pencil"></i>
              </a>
-             <a class="btn btn-xs btn-danger">
+             <!-- <a class="btn btn-xs btn-danger">
                <i class="fa fa-close"></i>
-             </a>
+             </a> -->
            </td>
          </tr>
        </tbody>

@@ -46,14 +46,20 @@ export class CVEditComponent {
     };
     this.experienceEdit = on;
   }
+  onSelectExperience(exp) {
+    this.experience = exp;
+    this.experienceEdit = 'edit';
+  }
   onUpdateExperience() {
     let edit = this;
     return this._pm.save('experience', this.experience).then(() => {
       edit.onResetExperience(false);
     });
   }
-  onSelectExperience(exp) {
-    this.experience = exp;
-    this.experienceEdit = true;
+  onDeleteExperience() {
+    let edit = this;
+    return this._pm.del('experience', this.experience).then(() => {
+      edit.onResetExperience(false);
+    });
   }
 }

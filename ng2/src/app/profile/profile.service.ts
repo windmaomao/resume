@@ -120,8 +120,24 @@ export class ProfileModelService {
 
   // add type doc
   save(type: string, doc: any) {
-    let db = this._local;
-    return db.rel.save(type, doc);
+    let store = this;
+    let id = doc.id;
+    return this._local.rel.save(type, doc).then(() => {
+      if (!id) {
+        store.data.experiences.push(doc);
+      }
+    });
+  }
+
+  // delete type doc
+  del(type: string, doc: any) {
+    let store = this;
+    let id = doc.id;
+    return this._local.rel.del(type, doc).then(() => {
+      _.remove(store.data.experiences, (item) => {
+        return item['id'] === id;
+      });
+    });
   }
 
 }
