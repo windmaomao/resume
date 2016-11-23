@@ -97,6 +97,10 @@ export class ProfileModelService {
     // });
   }
 
+  get id(): string {
+    return this._id;
+  }
+
   get data(): any {
     return this._data;
   }
@@ -112,6 +116,12 @@ export class ProfileModelService {
       console.error(err);
       return err;
     });
+  }
+
+  // add type doc
+  save(type: string, doc: any) {
+    let db = this._local;
+    return db.rel.save(type, doc);
   }
 
 }

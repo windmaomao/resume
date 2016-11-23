@@ -8,6 +8,7 @@
  */
 import { Component } from '@angular/core';
 import { ProfileModelService } from '../profile/profile.service';
+import * as _ from "lodash";
 
 @Component({
   selector: 'cv-edit',
@@ -18,14 +19,29 @@ export class CVEditComponent {
   private _pm: any;
   data: any;
   profile: any;
+  experience: any;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
     this.data = this._pm.data;
     this.profile = this.data.profiles[0];
+    this.experience = {};
+    this.resetExperience();
+
     let edit = this;
     pm.load().then((res) => {
       console.log('Profile', res);
     });
+  }
+  resetExperience() {
+    this.experience = _.merge(this.experience, {
+      profile: this._pm.id,
+      id: "", rev: "",
+      title: "", period: ""
+    });
+  }
+  onAddExperience() {
+    this._pm.save('experience', _.cloneDeep(this.experience));
+    this.resetExperience();
   }
   onUpdateProfile() {
     // this._ps.save().then(() => {

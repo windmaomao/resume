@@ -18,10 +18,22 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-5">
-    <a class="btn btn-xs btn-primary pull-right">
+    <a class="btn btn-xs btn-primary pull-right" (click)="onAddExperience()">
       <i class="fa fa-plus"></i> Add experience
     </a>
     <h3>Experiences</h3>
+    <p>{{ experience | json }}</p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" [(ngModel)]="experience.title" name="expTitle" />
+      </div>
+      <div class="form-group">
+        <label>Period</label>
+        <input type="text" class="form-control input-sm" [(ngModel)]="experience.period" name="expPeriod" />
+      </div>
+    </form>
+
     <table class="table table-condensed">
        <thead>
          <tr>
