@@ -21,6 +21,8 @@ PouchDB.plugin(Relational);
 export class ProfileModelService {
   // profile id
   private _id: string;
+  // database schema
+  private _schema: any;
   // local database
   private _local: any;
   // remote database
@@ -43,7 +45,7 @@ export class ProfileModelService {
     let db = this._local;
 
     // setup schema
-    db.setSchema([
+    this._schema = [
       {
         singular: 'profile',
         plural: 'profiles',
@@ -61,7 +63,8 @@ export class ProfileModelService {
           profile: { belongsTo: 'profile' }
         }
       }
-    ]);
+    ];
+    db.setSchema(this._schema);
 
     // setup sync
     db.sync(this._remote, {
@@ -105,6 +108,15 @@ export class ProfileModelService {
     return this._data;
   }
 
+  // find type plural
+  _plural(type): string {
+    let item = _.find(this._schema, { singular: type });
+    if (item) {
+      return item['plural'];
+    }
+    return '';
+  }
+
   // load from database
   load() {
     let db = this._local;
@@ -124,7 +136,8 @@ export class ProfileModelService {
     let id = doc.id;
     return this._local.rel.save(type, doc).then(() => {
       if (!id) {
-        store.data.experiences.push(doc);
+        let items = this._plural(type);
+        store.data[items].push(doc);
       }
     });
   }
@@ -134,7 +147,8 @@ export class ProfileModelService {
     let store = this;
     let id = doc.id;
     return this._local.rel.del(type, doc).then(() => {
-      _.remove(store.data.experiences, (item) => {
+      let items = this._plural(type);
+      _.remove(store.data[items], (item) => {
         return item['id'] === id;
       });
     });
