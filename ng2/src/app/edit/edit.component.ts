@@ -24,7 +24,7 @@ export class CVEditComponent {
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
     this.data = this._pm.data;
-    this.onResetExperience(false);
+    // this.onResetExperience(false);
     this.onLoadProfile();
   }
   get profile() {
@@ -36,6 +36,47 @@ export class CVEditComponent {
   }
   onUpdateProfile() {
     return this._pm.save('profile', this.profile);
+  }
+  // onResetExperience(on) {
+  //   this.experience = {
+  //     profile: this._pm.id,
+  //     id: "", rev: "",
+  //     title: "", period: ""
+  //   };
+  //   this.experienceEdit = on;
+  // }
+  // onSelectExperience(exp) {
+  //   this.experience = exp;
+  //   this.experienceEdit = 'edit';
+  // }
+  // onUpdateExperience() {
+  //   let edit = this;
+  //   return this._pm.save('experience', this.experience).then(() => {
+  //     edit.onResetExperience(false);
+  //   });
+  // }
+  // onDeleteExperience() {
+  //   let edit = this;
+  //   return this._pm.del('experience', this.experience).then(() => {
+  //     edit.onResetExperience(false);
+  //   });
+  // }
+}
+
+@Component({
+  selector: 'cv-experience-edit',
+  inputs: [],
+  templateUrl: './experience.edit.html'
+})
+export class CVExperienceEditComponent {
+  private _pm: any;
+  private data: any;
+  experience: any;
+  experienceEdit: any;
+  constructor(private pm: ProfileModelService) {
+    this._pm = pm;
+    this.data = this._pm.data;
+    this.onResetExperience(false);
   }
   onResetExperience(on) {
     this.experience = {
