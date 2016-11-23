@@ -33,15 +33,18 @@ export class CVEditComponent {
     });
   }
   resetExperience() {
-    this.experience = _.merge(this.experience, {
+    _.merge(this.experience, {
       profile: this._pm.id,
       id: "", rev: "",
       title: "", period: ""
     });
   }
-  onAddExperience() {
+  onUpdateExperience() {
     this._pm.save('experience', _.cloneDeep(this.experience));
     this.resetExperience();
+  }
+  onSelectExperience(exp) {
+    _.merge(this.experience, exp);
   }
   onUpdateProfile() {
     // this._ps.save().then(() => {
