@@ -1,3 +1,6 @@
+<div class="row">
+  <!-- <small>{{ data | json }}</small> -->
+</div>
 <h2>Edit CV</h2>
 <div class="row">
   <div class="col-md-6">
@@ -11,6 +14,36 @@
         <input type="text" class="form-control" [(ngModel)]="profile.title" name="title" />
       </div>
     </form>
-    <!-- <button type="submit" class="btn btn-primary" (click)="onUpdateProfile()">Update</button> -->
+    <button type="submit" class="btn btn-primary" (click)="onUpdateProfile()">Update</button>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
+    <a class="btn btn-xs btn-primary pull-right">
+      <i class="fa fa-plus"></i> Add experience
+    </a>
+    <h3>Experiences</h3>
+    <table class="table table-condensed">
+       <thead>
+         <tr>
+           <th>Company</th>
+           <th>Duration</th>
+           <th>Action</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let experience of data.experiences">
+           <td>{{ experience.title }}</td>
+           <td>{{ experience.period }}</td>
+           <td>
+             <a class="btn btn-xs btn-primary">
+               <i class="fa fa-pencil"></i>
+             </a>
+             <a class="btn btn-xs btn-danger">
+               <i class="fa fa-close"></i>
+             </a>
+           </td>
+         </tr>
+       </tbody>
+     </table>
   </div>
 </div>

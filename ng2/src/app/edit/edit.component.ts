@@ -18,12 +18,10 @@ export class CVEditComponent {
   private _pm: any;
   data: any;
   profile: any;
-  experiences: any;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
     this.data = this._pm.data;
     this.profile = this.data.profiles[0];
-    this.experiences = this.data.experiences;
     let edit = this;
     pm.load().then((res) => {
       console.log('Profile', res);
