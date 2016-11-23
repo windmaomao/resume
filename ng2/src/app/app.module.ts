@@ -38,7 +38,7 @@ import {
   ProfileModelService
 }                             from './profile/profile.service';
 import {
-  CVEditComponent, CVExperienceEditComponent
+  CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent
 }                             from './edit/edit.component';
 
 
@@ -56,7 +56,7 @@ import {
     CVGridArchitectComponent, CVGridComponentComponent,
     CVArchitectComponent, CVComponentComponent,
     CVUpdateComponent,
-    CVEditComponent, CVExperienceEditComponent,
+    CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
 
     // directives
     HighlightDirective,
