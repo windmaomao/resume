@@ -39,7 +39,7 @@ export class CVProfileEditComponent {
   get profile() {
     return this._pm.data.profiles[0];
   }
-  onUpdateProfile() {
+  onUpdate() {
     return this._pm.save('profile', this.profile);
   }
 }
@@ -52,36 +52,36 @@ export class CVProfileEditComponent {
 export class CVExperienceEditComponent {
   private _pm: any;
   experience: any;
-  experienceEdit: any;
+  mode: string;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
-    this.onResetExperience(false);
+    this.onInit(false);
   }
   get experiences() {
     return this._pm.data.experiences;
   }
-  onResetExperience(on) {
+  onInit(on) {
     this.experience = {
       profile: this._pm.id,
       id: "", rev: "",
       title: "", period: ""
     };
-    this.experienceEdit = on;
+    this.mode = on;
   }
-  onSelectExperience(exp) {
+  onSelect(exp) {
     this.experience = exp;
-    this.experienceEdit = 'edit';
+    this.mode = 'edit';
   }
-  onUpdateExperience() {
+  onUpdate() {
     let edit = this;
     return this._pm.save('experience', this.experience).then(() => {
-      edit.onResetExperience(false);
+      edit.onInit(false);
     });
   }
-  onDeleteExperience() {
+  onDelete() {
     let edit = this;
     return this._pm.del('experience', this.experience).then(() => {
-      edit.onResetExperience(false);
+      edit.onInit(false);
     });
   }
 }

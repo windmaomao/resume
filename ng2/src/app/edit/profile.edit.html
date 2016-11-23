@@ -1,11 +1,18 @@
-<form>
-  <div class="form-group">
-    <label>Name</label>
-    <input type="text" class="form-control" [(ngModel)]="profile.name" name="name" />
+<div class="row">
+  <div class="col-md-6">
+    <a class="btn btn-xs btn-primary pull-right" (click)="onUpdate()">
+      <i class="fa fa-save"></i> Save
+    </a>
+    <h3>Profile</h3>
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="profile.name" name="name" />
+      </div>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" [(ngModel)]="profile.title" name="title" />
+      </div>
+    </form>
   </div>
-  <div class="form-group">
-    <label>Title</label>
-    <input type="text" class="form-control" [(ngModel)]="profile.title" name="title" />
-  </div>
-</form>
-<button type="submit" class="btn btn-primary" (click)="onUpdate()">Update</button>
+</div>
