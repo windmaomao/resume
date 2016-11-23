@@ -22,11 +22,11 @@
   </div>
   <div class="col-md-1"></div>
   <div class="col-md-5">
-    <a class="btn btn-xs btn-primary pull-right" (click)="onResetExperience()">
-      <i class="fa fa-plus"></i> New Exp
+    <a class="btn btn-xs btn-primary pull-right" (click)="onResetExperience(true)">
+      <i class="fa fa-plus"></i> New
     </a>
     <h3>Experiences</h3>
-    <div class="well">
+    <div class="well" *ngIf="experienceEdit">
       <!-- <p>{{ experience | json }}</p> -->
       <form class="form-horizontal">
         <div class="form-group form-group-sm">
@@ -43,7 +43,7 @@
         </div>
         <div class="form-group form-group-sm">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-primary btn-sm" (click)="onUpdateExperience()">Add / Edit</button>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="onUpdateExperience()">Update</button>
           </div>
         </div>
       </form>
