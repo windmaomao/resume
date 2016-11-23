@@ -16,10 +16,18 @@ import { ProfileModelService } from '../profile/profile.service';
 })
 export class CVEditComponent {
   private _pm: any;
-  // profile: any;
+  data: any;
+  profile: any;
+  experiences: any;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
-    // this.profile = ps.profile;
+    this.data = this._pm.data;
+    this.profile = this.data.profiles[0];
+    this.experiences = this.data.experiences;
+    let edit = this;
+    pm.load().then((res) => {
+      console.log('Profile', res);
+    });
   }
   onUpdateProfile() {
     // this._ps.save().then(() => {
