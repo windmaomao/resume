@@ -1,0 +1,24 @@
+{
+  "_id": "_design/idx-502990732b28a2895a1ff63f0941503a",
+  "language": "query",
+  "views": {
+    "idx-502990732b28a2895a1ff63f0941503a": {
+      "map": {
+        "fields": {
+          "data.experience": "asc",
+          "_id": "asc"
+        }
+      },
+      "reduce": "_count",
+      "options": {
+        "def": {
+          "fields": [
+            "data.experience",
+            "_id"
+          ]
+        }
+      }
+    }
+  },
+  "_rev": "1-b2f42e1ee74b9f9f37f3ed6ee2998b5e"
+}
