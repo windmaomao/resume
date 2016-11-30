@@ -1,5 +1,6 @@
 {
   "_id": "_design/idx-502990732b28a2895a1ff63f0941503a",
+  "_rev": "1-b2f42e1ee74b9f9f37f3ed6ee2998b5e",
   "language": "query",
   "views": {
     "idx-502990732b28a2895a1ff63f0941503a": {
@@ -19,6 +20,5 @@
         }
       }
     }
-  },
-  "_rev": "1-b2f42e1ee74b9f9f37f3ed6ee2998b5e"
+  }
 }

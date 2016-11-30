@@ -58,6 +58,10 @@ export class CVExperienceEditComponent {
     this.onInit(false);
   }
   get experiences() {
+     _.assign(this._pm.data.experiences,
+       _.sortBy(this._pm.data.experiences, ['order']));
+    //  this._pm.data.experiences =
+    //    _.sortBy(this._pm.data.experiences, ['order']);
     return this._pm.data.experiences;
   }
   onInit(on) {

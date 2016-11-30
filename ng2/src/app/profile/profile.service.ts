@@ -122,6 +122,7 @@ export class ProfileModelService {
     let db = this._local;
     let store = this;
     return db.rel.find(type).then((res) => {
+      console.log('Profile', res);
       _.assign(store._data, res);
       return store._data;
     }, (err) => {
