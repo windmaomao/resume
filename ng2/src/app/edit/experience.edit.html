@@ -40,9 +40,15 @@
            </div>
          </div>
          <div class="form-group form-group-sm">
-           <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
+           <label for="inputEmail3" class="col-sm-2 control-label">Company</label>
            <div class="col-sm-10">
              <input type="text" class="form-control" [(ngModel)]="experience.title" name="expTitle" />
+           </div>
+         </div>
+         <div class="form-group form-group-sm">
+           <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
+           <div class="col-sm-10">
+             <input type="text" class="form-control" [(ngModel)]="experience.location" name="expLocation" />
            </div>
          </div>
          <div class="form-group form-group-sm">
@@ -84,7 +90,10 @@
       </div>
     <div class="cv-item" *ngFor="let item of experiences">
         <small *ngIf="item.period" class="pull-right" [innerText]="item.period"></small>
-        <h3 *ngIf="item.title" [innerText]="item.title"></h3>
+        <h3 *ngIf="item.title">
+          <span [innerText]="item.title"></span>,
+          <span [innerText]="item.location"></span>
+        </h3>
         <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
         <p *ngIf="item.description" [innerHtml]="item.description"></p>
     </div>

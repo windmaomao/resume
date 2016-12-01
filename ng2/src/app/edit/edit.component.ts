@@ -68,7 +68,7 @@ export class CVExperienceEditComponent {
     this.experience = {
       profile: this._pm.id,
       id: "", rev: "",
-      title: "", period: ""
+      title: "", period: "", location: ""
     };
     this.mode = on;
   }
