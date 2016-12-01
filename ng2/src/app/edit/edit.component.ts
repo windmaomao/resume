@@ -14,7 +14,7 @@ import * as _ from "lodash";
   selector: 'cv-edit',
   inputs: [],
   template: `
-    <hr />
+    <br />
     <cv-profile-edit></cv-profile-edit>
     <cv-experience-edit></cv-experience-edit>
   `

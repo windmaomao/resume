@@ -15,7 +15,6 @@ import { Component } from '@angular/core';
     <cv-navbar></cv-navbar>
     <div class="container" id="wrap">
       <cv-version></cv-version>
-      <cv-header [profile]="profile"></cv-header>
       <router-outlet></router-outlet>
       <cv-footer></cv-footer>
     </div>

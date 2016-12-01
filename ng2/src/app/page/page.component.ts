@@ -20,6 +20,7 @@ export class CVSectionComponent { }
   selector: 'cv-description',
   inputs: ['sections'],
   template: `
+    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-section [section]="sections.professional"></cv-section>
     <hr />
@@ -39,6 +40,7 @@ export class CVDescriptionComponent {
   selector: 'cv-recommend',
   inputs: ['section'],
   template: `
+    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-section [section]="section"></cv-section>
   `
@@ -66,6 +68,7 @@ export class CVTimelineBeforeComponent { }
   selector: 'cv-experience',
   inputs: ['sections'],
   template: `
+    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-timeline-current></cv-timeline-current>
     <cv-section [section]="sections.current"></cv-section>
@@ -97,9 +100,10 @@ export class CVGridComponentComponent { }
   selector: 'cv-architect',
   inputs: ['section'],
   template: `
-  <hr />
-  <cv-grid-architect></cv-grid-architect>
-  <cv-section [section]="section"></cv-section>
+    <cv-header [profile]="profile"></cv-header>
+    <hr />
+    <cv-grid-architect></cv-grid-architect>
+    <cv-section [section]="section"></cv-section>
   `
 })
 export class CVArchitectComponent {
@@ -113,9 +117,10 @@ export class CVArchitectComponent {
   selector: 'cv-component',
   inputs: ['section'],
   template: `
-  <hr />
-  <cv-grid-component></cv-grid-component>
-  <cv-section [section]="section"></cv-section>
+    <cv-header [profile]="profile"></cv-header>
+    <hr />
+    <cv-grid-component></cv-grid-component>
+    <cv-section [section]="section"></cv-section>
   `
 })
 export class CVComponentComponent {
