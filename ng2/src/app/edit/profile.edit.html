@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-md-12">
-    <a class="btn btn-xs btn-primary pull-right" (click)="onUpdate()">
-      <i class="fa fa-save"></i> Save
-    </a>
-    <h3>Profile</h3>
   </div>
 </div>
 <div class="row">
   <div class="col-md-6">
+    <a class="btn btn-xs btn-primary pull-right" (click)="onUpdate()">
+      <i class="fa fa-save"></i> Save
+    </a>
+    <h3>Profile</h3>
     <form class="form-horizontal">
       <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label">Name</label>
@@ -27,10 +27,6 @@
           <input type="text" class="form-control" [(ngModel)]="profile.location" name="profileLocation" />
         </div>
       </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <form class="form-horizontal">
       <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
@@ -50,5 +46,31 @@
         </div>
       </div>
     </form>
+  </div>
+  <div class="col-md-offset-1 col-md-5">
+    <h4>Preview</h4>
+    <h2>
+        <span [innerText]="profile.name"></span>
+        <small [innerText]="profile.title"></small>
+    </h2>
+    <div class="cv-item">
+        <div class="social-media clearfix pull-right">
+          <a [href]="profile.url" target="_blank" title="LinkedIN Profile">
+            <i class="fa fa-linkedin-square"></i>
+          </a>
+        </div>
+        <p class="last">
+            <span highlight>Email: </span>
+            <span [innerText]="profile.email"></span>
+        </p>
+        <p class="last">
+            <span>Phone: </span>
+            <span [innerText]="profile.phone"></span>
+        </p>
+        <p class="last">
+            <span>Location: </span>
+            <span [innerText]="profile.location"></span>
+        </p>
+    </div>
   </div>
 </div>
