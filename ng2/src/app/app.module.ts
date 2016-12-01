@@ -32,9 +32,6 @@ import {
   CVArchitectComponent, CVComponentComponent,
 }                             from './page/page.component';
 import {
-  CVUpdateComponent
-}                             from './page/update.component';
-import {
   ProfileModelService
 }                             from './profile/profile.service';
 import {
@@ -55,7 +52,6 @@ import {
     CVExperienceComponent,
     CVGridArchitectComponent, CVGridComponentComponent,
     CVArchitectComponent, CVComponentComponent,
-    CVUpdateComponent,
     CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
 
     // directives

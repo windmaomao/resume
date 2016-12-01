@@ -24,6 +24,5 @@ export const AppRoutes: Routes = [
   { path: 'experience',   component: CVExperienceComponent },
   { path: 'architect',    component: CVArchitectComponent },
   { path: 'component',    component: CVComponentComponent },
-  { path: 'update',       component: CVUpdateComponent },
   { path: 'edit',         component: CVEditComponent }
 ];
