@@ -3,7 +3,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-5">
     <a class="btn btn-xs btn-primary pull-right" (click)="onUpdate()">
       <i class="fa fa-save"></i> Save
     </a>
@@ -47,13 +47,16 @@
       </div>
     </form>
   </div>
-  <div class="col-md-offset-1 col-md-5">
+  <div class="col-md-offset-1 col-md-6">
     <h4>Preview</h4>
-    <h2>
-        <span [innerText]="profile.name"></span>
-        <small [innerText]="profile.title"></small>
-    </h2>
-    <div class="cv-item">
+    <div class="cv-section-title">
+      <img src="../assets/img/robot.jpg" width="140" height="140" class="img-circle">
+      <h1>
+          <span [innerText]="profile.name"></span>
+          <small [innerText]="profile.title"></small>
+      </h1>
+    </div>
+    <div class="cv-item" style="margin-left: 170px">
         <div class="social-media clearfix pull-right">
           <a [href]="profile.url" target="_blank" title="LinkedIN Profile">
             <i class="fa fa-linkedin-square"></i>

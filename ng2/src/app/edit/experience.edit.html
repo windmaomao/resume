@@ -1,13 +1,10 @@
+<br />
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-5">
     <a class="btn btn-xs btn-primary pull-right" (click)="onInit('create')">
       <i class="fa fa-plus"></i> New
     </a>
     <h3>Experiences</h3>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
     <table class="table table-condensed">
        <thead>
          <tr>
@@ -33,50 +30,63 @@
          </tr>
        </tbody>
      </table>
+     <div class="" *ngIf="mode">
+       <!-- <p>{{ experience | json }}</p> -->
+       <form class="form-horizontal">
+         <div class="form-group form-group-sm">
+           <label for="inputEmail3" class="col-sm-2 control-label">Order</label>
+           <div class="col-sm-10">
+             <input type="text" class="form-control" [(ngModel)]="experience.order" name="expOrder" />
+           </div>
+         </div>
+         <div class="form-group form-group-sm">
+           <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
+           <div class="col-sm-10">
+             <input type="text" class="form-control" [(ngModel)]="experience.title" name="expTitle" />
+           </div>
+         </div>
+         <div class="form-group form-group-sm">
+           <label for="inputEmail3" class="col-sm-2 control-label">Subtitle</label>
+           <div class="col-sm-10">
+             <input type="text" class="form-control" [(ngModel)]="experience.subtitle" name="expSubtitle" />
+           </div>
+         </div>
+         <div class="form-group form-group-sm">
+           <label for="inputPassword3" class="col-sm-2 control-label">Period</label>
+           <div class="col-sm-10">
+             <input type="text" class="form-control input-sm" [(ngModel)]="experience.period" name="expPeriod" />
+           </div>
+         </div>
+         <div class="form-group form-group-sm">
+           <label for="inputPassword3" class="col-sm-2 control-label">Description</label>
+           <div class="col-sm-10">
+             <textarea type="text" class="form-control input-sm" rows="5" [(ngModel)]="experience.description" name="expDescription">
+             </textarea>
+           </div>
+         </div>
+         <div class="form-group form-group-sm">
+           <div class="col-sm-offset-2 col-sm-10">
+             <a type="submit" class="btn btn-primary btn-xs pull-right" (click)="onUpdate()">Update</a>
+             <a type="submit" class="btn btn-danger btn-xs" (click)="onDelete()" *ngIf="mode == 'edit'">Remove</a>
+             <a class="btn btn-info btn-xs" (click)="onInit(false)">Cancel</a>
+           </div>
+         </div>
+       </form>
+     </div>
   </div>
-  <div class="col-md-6">
-    <div class="" *ngIf="mode">
-      <!-- <p>{{ experience | json }}</p> -->
-      <form class="form-horizontal">
-        <div class="form-group form-group-sm">
-          <label for="inputEmail3" class="col-sm-2 control-label">Order</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="experience.order" name="expOrder" />
-          </div>
-        </div>
-        <div class="form-group form-group-sm">
-          <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="experience.title" name="expTitle" />
-          </div>
-        </div>
-        <div class="form-group form-group-sm">
-          <label for="inputEmail3" class="col-sm-2 control-label">Subtitle</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="experience.subtitle" name="expSubtitle" />
-          </div>
-        </div>
-        <div class="form-group form-group-sm">
-          <label for="inputPassword3" class="col-sm-2 control-label">Period</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control input-sm" [(ngModel)]="experience.period" name="expPeriod" />
-          </div>
-        </div>
-        <div class="form-group form-group-sm">
-          <label for="inputPassword3" class="col-sm-2 control-label">Description</label>
-          <div class="col-sm-10">
-            <textarea type="text" class="form-control input-sm" rows="5" [(ngModel)]="experience.description" name="expDescription">
-            </textarea>
-          </div>
-        </div>
-        <div class="form-group form-group-sm">
-          <div class="col-sm-offset-2 col-sm-10">
-            <a type="submit" class="btn btn-primary btn-xs pull-right" (click)="onUpdate()">Update</a>
-            <a type="submit" class="btn btn-danger btn-xs" (click)="onDelete()" *ngIf="mode == 'edit'">Remove</a>
-            <a class="btn btn-info btn-xs" (click)="onInit(false)">Cancel</a>
-          </div>
-        </div>
-      </form>
+  <div class="col-md-offset-1 col-md-6" style="height: 600px; overflow-y: scroll">
+    <div class="cv-section-title">
+        <h2>
+          <i class="fa fa-slideshare"></i>
+          <span>Work Experience</span>
+        </h2>
+        <h4></h4>
+      </div>
+    <div class="cv-item" *ngFor="let item of experiences">
+        <small *ngIf="item.period" class="pull-right" [innerText]="item.period"></small>
+        <h3 *ngIf="item.title" [innerText]="item.title"></h3>
+        <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
+        <p *ngIf="item.description" [innerHtml]="item.description"></p>
     </div>
   </div>
 </div>
