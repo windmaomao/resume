@@ -80,22 +80,24 @@
        </form>
      </div>
   </div>
-  <div class="col-md-offset-1 col-md-6" style="height: 600px; overflow-y: scroll">
+  <div class="col-md-offset-1 col-md-6">
     <div class="cv-section-title">
-        <h2>
-          <i class="fa fa-slideshare"></i>
-          <span>Work Experience</span>
-        </h2>
-        <h4></h4>
+      <h2>
+        <i class="fa fa-slideshare"></i>
+        <span>Work Experience</span>
+      </h2>
+      <h4></h4>
+    </div>
+    <div style="height: 600px; overflow-y: scroll">
+      <div class="cv-item" *ngFor="let item of experiences">
+          <small *ngIf="item.period" class="pull-right" [innerText]="item.period"></small>
+          <h3 *ngIf="item.title">
+            <span [innerText]="item.title"></span>,
+            <span [innerText]="item.location"></span>
+          </h3>
+          <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
+          <p *ngIf="item.description" [innerHtml]="item.description"></p>
       </div>
-    <div class="cv-item" *ngFor="let item of experiences">
-        <small *ngIf="item.period" class="pull-right" [innerText]="item.period"></small>
-        <h3 *ngIf="item.title">
-          <span [innerText]="item.title"></span>,
-          <span [innerText]="item.location"></span>
-        </h3>
-        <h4 *ngIf="item.subtitle" [innerText]="item.subtitle"></h4>
-        <p *ngIf="item.description" [innerHtml]="item.description"></p>
     </div>
   </div>
 </div>
