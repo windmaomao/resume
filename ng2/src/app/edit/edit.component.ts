@@ -77,6 +77,10 @@ export class CVExperienceEditComponent {
     this.mode = 'edit';
   }
   onUpdate() {
+    // assign a fixed id
+    // if (!this.experience.id) {
+    //   this.experience.id = _.camelCase(this.experience.title);
+    // }
     let edit = this;
     return this._pm.save('experience', this.experience).then(() => {
       edit.onInit(false);
