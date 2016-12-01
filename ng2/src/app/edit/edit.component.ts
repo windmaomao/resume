@@ -13,7 +13,11 @@ import * as _ from "lodash";
 @Component({
   selector: 'cv-edit',
   inputs: [],
-  templateUrl: './edit.html'
+  template: `
+    <hr />
+    <cv-profile-edit></cv-profile-edit>
+    <cv-experience-edit></cv-experience-edit>
+  `
 })
 export class CVEditComponent {
   private _pm: any;
