@@ -12,7 +12,7 @@
  import {
    ProfileService, ProfileStoreService
  }                             from '../app.service';
- import { HighlightDirective } from '../app.directive'; 
+ import { HighlightDirective } from '../app.directive';
  import {
    PageComponent, TestComponent, ProfileComponent,
    SectionComponent, DescriptionComponent, RecommendComponent,
@@ -39,7 +39,7 @@
      ArchitectComponent, ComponentComponent,
      HighlightDirective,
    ],
-   exports: [PageComponent],
+   exports: [],
    //  providers: [ProfileService, ProfileStoreService, ProfileModelService],
    providers: [ProfileService, ProfileStoreService],
  })

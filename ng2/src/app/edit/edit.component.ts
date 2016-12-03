@@ -19,7 +19,7 @@ import * as _ from "lodash";
     <cv-experience-edit></cv-experience-edit>
   `
 })
-export class CVEditComponent {
+export class EditComponent {
   private _pm: any;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
@@ -35,7 +35,7 @@ export class CVEditComponent {
   inputs: [],
   templateUrl: './profile.edit.html'
 })
-export class CVProfileEditComponent {
+export class ProfileEditComponent {
   private _pm: any;
   constructor(private pm: ProfileModelService) {
     this._pm = pm;
@@ -53,7 +53,7 @@ export class CVProfileEditComponent {
   inputs: [],
   templateUrl: './experience.edit.html'
 })
-export class CVExperienceEditComponent {
+export class ExperienceEditComponent {
   private _pm: any;
   experience: any;
   mode: string;
