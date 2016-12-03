@@ -7,10 +7,20 @@
  */
 import { NgModule }               from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
-import { TestComponent }          from './page.component';
+import { PageComponent, TestComponent }          from './page.component';
 
 export const pageRoutes: Routes = [
-  { path: 'test',             component: TestComponent },
+  {
+    path: 'test',
+    component: PageComponent,
+    children: [
+      {
+        path: '',
+        component: TestComponent
+      }
+    ]
+    // component: TestComponent
+  },
   // { path: '',             component: CVDescriptionComponent },
   // { path: 'recommend',    component: CVRecommendComponent },
   // { path: 'experience',   component: CVExperienceComponent },

@@ -13,13 +13,14 @@ import { Component } from '@angular/core';
   selector: 'page',
   // inputs: ['profile'],
   template: `
-    Page
+    <h1>Page</h1>
+    <router-outlet></router-outlet>
   `,
 })
 export class PageComponent { }
 
 @Component({
-  template: `Test Page 2`
+  template: `Page content`
 })
 export class TestComponent { }
 
