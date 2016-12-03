@@ -12,8 +12,8 @@ import { Component } from '@angular/core';
   selector: 'layout',
   // inputs: ['profile'],
   template: `
-    <h2>Layout</h2>
-    <router-outlet></router-outlet>    
+    <navbar></navbar>
+    <router-outlet></router-outlet>
   `,
 
   // <cv-navbar></cv-navbar>
@@ -31,12 +31,11 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent { }
 
-
-// @Component({
-//   selector: 'cv-navbar',
-//   templateUrl: './layout.navbar.html'
-// })
-// export class CVNavbarComponent { }
+@Component({
+  selector: 'navbar',
+  templateUrl: './layout.navbar.html'
+})
+export class NavbarComponent { }
 //
 // @Component({
 //   selector: 'cv-version',

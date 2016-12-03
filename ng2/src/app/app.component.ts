@@ -34,7 +34,7 @@ export class AppComponent {
 @Component({
   // selector: 'app-root',
   template: `
-    Test
+    Test Content
   `
 })
 export class AppTestComponent {

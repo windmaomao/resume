@@ -18,11 +18,14 @@
  // import { AppComponent }       from './app.component';
  // import { AppRoutes }          from './app.route';
  // import {
- //   CVLayoutComponent,
+  //  CVLayoutComponent,
  //   CVNavbarComponent, CVVersionComponent,
  //   CVHeaderComponent, CVFooterComponent,
  // }                             from './layout.component';
- import { LayoutComponent }          from './layout.component';
+ import {
+   LayoutComponent,
+   NavbarComponent,
+ }                                from './layout.component';
 
  // import {
  //   CVSectionComponent,
@@ -50,6 +53,7 @@
    declarations: [
     //  AppComponent,
      LayoutComponent,
+     NavbarComponent,
     //  CVNavbarComponent, CVVersionComponent,
     //  CVHeaderComponent, CVFooterComponent,
     //  CVSectionComponent,
