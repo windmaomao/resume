@@ -5,7 +5,7 @@
  * @date 10/15/16
  */
 import { Component } from '@angular/core';
-import { ProfileService } from './app.service';
+// import { ProfileService } from './app.service';
 
 /**
  * App component
@@ -13,7 +13,9 @@ import { ProfileService } from './app.service';
  */
 @Component({
   selector: 'app-root',
-  template: ``,
+  template: `
+    <router-outlet></router-outlet>
+  `,
   // <cv-layout [profile]="profile"></cv-layout>
   // styleUrls: ['./app.component.css']
 })
@@ -23,4 +25,17 @@ export class AppComponent {
   // constructor(private profileService: ProfileService) {
   //   this.profile = profileService;
   // }
+}
+
+/**
+ * App test component
+ */
+@Component({
+  // selector: 'app-root',
+  template: `
+    Test
+  `
+})
+export class AppTestComponent {
+  constructor() {}
 }

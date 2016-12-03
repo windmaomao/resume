@@ -16,8 +16,9 @@ import { RouterModule }       from '@angular/router';
 // }                             from './app.service';
 // import { HighlightDirective } from './app.directive';
 // import { LayoutModule }       from './layout/layout.module';
-import { AppComponent }       from './app.component';
-import { AppRoutes }          from './app.route';
+import { AppComponent, AppTestComponent }
+                              from './app.component';
+import { AppRouteModule }     from './app.route';
 // import {
 //   CVLayoutComponent,
 //   CVNavbarComponent, CVVersionComponent,
@@ -43,6 +44,7 @@ import { AppRoutes }          from './app.route';
 @NgModule({
   imports: [
     BrowserModule,
+    AppRouteModule,
     // LayoutModule,
     // RouterModule.forRoot(AppRoutes, { useHash: true }),
     // FormsModule,
@@ -50,7 +52,7 @@ import { AppRoutes }          from './app.route';
   ],
   declarations: [
     // components
-    AppComponent,
+    AppComponent, AppTestComponent
     // CVLayoutComponent,
     // CVNavbarComponent, CVVersionComponent,
     // CVHeaderComponent, CVFooterComponent,
