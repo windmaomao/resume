@@ -105,48 +105,46 @@ export class ExperienceComponent {
   }
 }
 
-// @Component({
-//   selector: 'cv-grid-architect',
-//   templateUrl: './grid.architect.html'
-// })
-// export class CVGridArchitectComponent { }
-//
-// @Component({
-//   selector: 'cv-grid-component',
-//   templateUrl: './grid.component.html'
-// })
-// export class CVGridComponentComponent { }
-//
-// @Component({
-//   selector: 'cv-architect',
-//   inputs: ['section'],
-//   template: `
-//     <cv-header [profile]="profile"></cv-header>
-//     <hr />
-//     <cv-grid-architect></cv-grid-architect>
-//     <cv-section [section]="section"></cv-section>
-//   `
-// })
-// export class CVArchitectComponent {
-//   section: any;
-//   constructor(private profile: ProfileService) {
-//     this.section = profile.sections.skillset.architect;
-//   }
-// }
-//
-// @Component({
-//   selector: 'cv-component',
-//   inputs: ['section'],
-//   template: `
-//     <cv-header [profile]="profile"></cv-header>
-//     <hr />
-//     <cv-grid-component></cv-grid-component>
-//     <cv-section [section]="section"></cv-section>
-//   `
-// })
-// export class CVComponentComponent {
-//   section: any;
-//   constructor(private profile: ProfileService) {
-//     this.section = profile.sections.skillset.component;
-//   }
-// }
+@Component({
+  selector: 'cv-grid-architect',
+  templateUrl: './grid.architect.html'
+})
+export class GridArchitectComponent { }
+
+@Component({
+  selector: 'cv-grid-component',
+  templateUrl: './grid.component.html'
+})
+export class GridComponentComponent { }
+
+@Component({
+  selector: 'cv-architect',
+  inputs: ['section'],
+  template: `
+    <hr />
+    <cv-grid-architect></cv-grid-architect>
+    <cv-section [section]="section"></cv-section>
+  `
+})
+export class ArchitectComponent {
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.skillset.architect;
+  }
+}
+
+@Component({
+  selector: 'cv-component',
+  inputs: ['section'],
+  template: `
+    <hr />
+    <cv-grid-component></cv-grid-component>
+    <cv-section [section]="section"></cv-section>
+  `
+})
+export class ComponentComponent {
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.skillset.component;
+  }
+}

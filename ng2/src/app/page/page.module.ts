@@ -19,13 +19,12 @@
    PageComponent, TestComponent, ProfileComponent,
    SectionComponent, DescriptionComponent, RecommendComponent,
    TimelineCurrentComponent, TimelineBeforeComponent, ExperienceComponent,
-  //  CVRecommendComponent,
+   GridArchitectComponent, GridComponentComponent,
+   ArchitectComponent, ComponentComponent,
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
 
  // import {
- //   CVGridArchitectComponent, CVGridComponentComponent,
- //   CVArchitectComponent, CVComponentComponent,
  // }                             from './page/page.component';
  // import {
  //   ProfileModelService
@@ -45,16 +44,9 @@
      PageComponent, TestComponent, ProfileComponent,
      SectionComponent, DescriptionComponent, RecommendComponent,
      TimelineCurrentComponent, TimelineBeforeComponent, ExperienceComponent,
-    //  CVNavbarComponent, CVVersionComponent,
-    //  CVHeaderComponent, CVFooterComponent,
-    //  CVSectionComponent,
-    //  CVDescriptionComponent, CVRecommendComponent,
-    //  CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-    //  CVExperienceComponent,
-    //  CVGridArchitectComponent, CVGridComponentComponent,
-    //  CVArchitectComponent, CVComponentComponent,
+     GridArchitectComponent, GridComponentComponent,
+     ArchitectComponent, ComponentComponent,
     //  CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
-     //
     //  // directives
     //  HighlightDirective,
    ],

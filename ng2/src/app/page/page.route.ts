@@ -13,6 +13,8 @@ import {
   DescriptionComponent,
   RecommendComponent,
   ExperienceComponent,
+  ArchitectComponent,
+  ComponentComponent,
 }                                 from './page.component';
 
 export const pageRoutes: Routes = [
@@ -35,11 +37,17 @@ export const pageRoutes: Routes = [
       {
         path: 'experience',
         component: ExperienceComponent
+      },
+      {
+        path: 'architect',
+        component: ArchitectComponent
+      },
+      {
+        path: 'component',
+        component: ComponentComponent
       }
     ]
   },
-  // { path: 'architect',    component: CVArchitectComponent },
-  // { path: 'component',    component: CVComponentComponent },
   // { path: 'edit',         component: CVEditComponent }
 ];
 
