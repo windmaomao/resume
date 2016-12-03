@@ -10,15 +10,26 @@ import { Routes, RouterModule }   from '@angular/router';
 import {
   PageComponent,
   // TestComponent,
-  DescriptionComponent,
+  DescriptionComponent, RecommendComponent
 }                                 from './page.component';
 
 export const pageRoutes: Routes = [
   {
-    path: 'test',                 component: PageComponent,
+    path: '',
+    component: PageComponent,
     children: [
-      // { path: '',                 component: TestComponent },
-      { path: '',                 component: DescriptionComponent },
+      // {
+      //   path: '',
+      //   component: TestComponent
+      // },
+      {
+        path: '',
+        component: DescriptionComponent
+      },
+      {
+        path: 'recommend',
+        component: RecommendComponent
+      },
     ]
     // component: TestComponent
   },

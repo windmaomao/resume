@@ -60,22 +60,21 @@ export class DescriptionComponent {
   }
 }
 
-// @Component({
-//   selector: 'cv-recommend',
-//   inputs: ['section'],
-//   template: `
-//     <cv-header [profile]="profile"></cv-header>
-//     <hr />
-//     <cv-section [section]="section"></cv-section>
-//   `
-// })
-// export class CVRecommendComponent {
-//   section: any;
-//   constructor(private profile: ProfileService) {
-//     this.section = profile.sections.recommend;
-//   }
-// }
-//
+@Component({
+  selector: 'cv-recommend',
+  inputs: ['section'],
+  template: `
+    <hr />
+    <cv-section [section]="section"></cv-section>
+  `
+})
+export class RecommendComponent {
+  section: any;
+  constructor(private profile: ProfileService) {
+    this.section = profile.sections.recommend;
+  }
+}
+
 // @Component({
 //   selector: 'cv-timeline-current',
 //   templateUrl: './timeline.current.html'

@@ -17,7 +17,7 @@
  // import { PageRoutes }         from './page.route';
  import {
    PageComponent, TestComponent, ProfileComponent,
-   SectionComponent, DescriptionComponent,
+   SectionComponent, DescriptionComponent, RecommendComponent,
   //  CVRecommendComponent,
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
@@ -46,7 +46,7 @@
    ],
    declarations: [
      PageComponent, TestComponent, ProfileComponent,
-     SectionComponent, DescriptionComponent,
+     SectionComponent, DescriptionComponent, RecommendComponent,
     //  CVNavbarComponent, CVVersionComponent,
     //  CVHeaderComponent, CVFooterComponent,
     //  CVSectionComponent,
