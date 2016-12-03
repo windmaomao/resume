@@ -7,125 +7,139 @@
  * @date 10/09/16
  */
 import { Component } from '@angular/core';
-import { ProfileService } from '../app.service';
+// import { ProfileService } from '../app.service';
 
 @Component({
-  selector: 'cv-section',
-  inputs: ['section'],
-  templateUrl: './page.section.html'
-})
-export class CVSectionComponent { }
-
-@Component({
-  selector: 'cv-description',
-  inputs: ['sections'],
+  selector: 'page',
+  // inputs: ['profile'],
   template: `
-    <cv-header [profile]="profile"></cv-header>
-    <hr />
-    <cv-section [section]="sections.professional"></cv-section>
-    <hr />
-    <cv-section [section]="sections.education"></cv-section>
-    <hr />
-    <cv-section [section]="sections.activity"></cv-section>
-  `
+    Page
+  `,
 })
-export class CVDescriptionComponent {
-  sections: any[];
-  constructor(private profile: ProfileService) {
-    this.sections = profile.sections;
-  }
-}
+export class PageComponent { }
 
 @Component({
-  selector: 'cv-recommend',
-  inputs: ['section'],
-  template: `
-    <cv-header [profile]="profile"></cv-header>
-    <hr />
-    <cv-section [section]="section"></cv-section>
-  `
+  template: `Test Page 2`
 })
-export class CVRecommendComponent {
-  section: any;
-  constructor(private profile: ProfileService) {
-    this.section = profile.sections.recommend;
-  }
-}
+export class TestComponent { }
 
-@Component({
-  selector: 'cv-timeline-current',
-  templateUrl: './timeline.current.html'
-})
-export class CVTimelineCurrentComponent { }
-
-@Component({
-  selector: 'cv-timeline-before',
-  templateUrl: './timeline.before.html'
-})
-export class CVTimelineBeforeComponent { }
-
-@Component({
-  selector: 'cv-experience',
-  inputs: ['sections'],
-  template: `
-    <cv-header [profile]="profile"></cv-header>
-    <hr />
-    <cv-timeline-current></cv-timeline-current>
-    <cv-section [section]="sections.current"></cv-section>
-    <hr />
-    <cv-timeline-before></cv-timeline-before>
-    <cv-section [section]="sections.before"></cv-section>
-  `
-})
-export class CVExperienceComponent {
-  sections: any[];
-  constructor(private profile: ProfileService) {
-    this.sections = profile.sections.experience;
-  }
-}
-
-@Component({
-  selector: 'cv-grid-architect',
-  templateUrl: './grid.architect.html'
-})
-export class CVGridArchitectComponent { }
-
-@Component({
-  selector: 'cv-grid-component',
-  templateUrl: './grid.component.html'
-})
-export class CVGridComponentComponent { }
-
-@Component({
-  selector: 'cv-architect',
-  inputs: ['section'],
-  template: `
-    <cv-header [profile]="profile"></cv-header>
-    <hr />
-    <cv-grid-architect></cv-grid-architect>
-    <cv-section [section]="section"></cv-section>
-  `
-})
-export class CVArchitectComponent {
-  section: any;
-  constructor(private profile: ProfileService) {
-    this.section = profile.sections.skillset.architect;
-  }
-}
-
-@Component({
-  selector: 'cv-component',
-  inputs: ['section'],
-  template: `
-    <cv-header [profile]="profile"></cv-header>
-    <hr />
-    <cv-grid-component></cv-grid-component>
-    <cv-section [section]="section"></cv-section>
-  `
-})
-export class CVComponentComponent {
-  section: any;
-  constructor(private profile: ProfileService) {
-    this.section = profile.sections.skillset.component;
-  }
-}
+// @Component({
+//   selector: 'cv-section',
+//   inputs: ['section'],
+//   templateUrl: './page.section.html'
+// })
+// export class CVSectionComponent { }
+//
+// @Component({
+//   selector: 'cv-description',
+//   inputs: ['sections'],
+//   template: `
+//     <cv-header [profile]="profile"></cv-header>
+//     <hr />
+//     <cv-section [section]="sections.professional"></cv-section>
+//     <hr />
+//     <cv-section [section]="sections.education"></cv-section>
+//     <hr />
+//     <cv-section [section]="sections.activity"></cv-section>
+//   `
+// })
+// export class CVDescriptionComponent {
+//   sections: any[];
+//   constructor(private profile: ProfileService) {
+//     this.sections = profile.sections;
+//   }
+// }
+//
+// @Component({
+//   selector: 'cv-recommend',
+//   inputs: ['section'],
+//   template: `
+//     <cv-header [profile]="profile"></cv-header>
+//     <hr />
+//     <cv-section [section]="section"></cv-section>
+//   `
+// })
+// export class CVRecommendComponent {
+//   section: any;
+//   constructor(private profile: ProfileService) {
+//     this.section = profile.sections.recommend;
+//   }
+// }
+//
+// @Component({
+//   selector: 'cv-timeline-current',
+//   templateUrl: './timeline.current.html'
+// })
+// export class CVTimelineCurrentComponent { }
+//
+// @Component({
+//   selector: 'cv-timeline-before',
+//   templateUrl: './timeline.before.html'
+// })
+// export class CVTimelineBeforeComponent { }
+//
+// @Component({
+//   selector: 'cv-experience',
+//   inputs: ['sections'],
+//   template: `
+//     <cv-header [profile]="profile"></cv-header>
+//     <hr />
+//     <cv-timeline-current></cv-timeline-current>
+//     <cv-section [section]="sections.current"></cv-section>
+//     <hr />
+//     <cv-timeline-before></cv-timeline-before>
+//     <cv-section [section]="sections.before"></cv-section>
+//   `
+// })
+// export class CVExperienceComponent {
+//   sections: any[];
+//   constructor(private profile: ProfileService) {
+//     this.sections = profile.sections.experience;
+//   }
+// }
+//
+// @Component({
+//   selector: 'cv-grid-architect',
+//   templateUrl: './grid.architect.html'
+// })
+// export class CVGridArchitectComponent { }
+//
+// @Component({
+//   selector: 'cv-grid-component',
+//   templateUrl: './grid.component.html'
+// })
+// export class CVGridComponentComponent { }
+//
+// @Component({
+//   selector: 'cv-architect',
+//   inputs: ['section'],
+//   template: `
+//     <cv-header [profile]="profile"></cv-header>
+//     <hr />
+//     <cv-grid-architect></cv-grid-architect>
+//     <cv-section [section]="section"></cv-section>
+//   `
+// })
+// export class CVArchitectComponent {
+//   section: any;
+//   constructor(private profile: ProfileService) {
+//     this.section = profile.sections.skillset.architect;
+//   }
+// }
+//
+// @Component({
+//   selector: 'cv-component',
+//   inputs: ['section'],
+//   template: `
+//     <cv-header [profile]="profile"></cv-header>
+//     <hr />
+//     <cv-grid-component></cv-grid-component>
+//     <cv-section [section]="section"></cv-section>
+//   `
+// })
+// export class CVComponentComponent {
+//   section: any;
+//   constructor(private profile: ProfileService) {
+//     this.section = profile.sections.skillset.component;
+//   }
+// }

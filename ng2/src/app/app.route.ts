@@ -7,7 +7,7 @@
  */
 import { NgModule }               from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
-import { AppTestComponent }       from './app.component';
+// import { AppTestComponent }       from './app.component';
 
 // import {
 //   CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
@@ -21,7 +21,7 @@ import { AppTestComponent }       from './app.component';
 // }                         from './edit/edit.component';
 
 export const appRoutes: Routes = [
-  { path: '',             component: AppTestComponent },
+  { path: '', redirectTo: 'test', pathMatch: 'full' },
   // { path: '',             component: CVDescriptionComponent },
   // { path: 'recommend',    component: CVRecommendComponent },
   // { path: 'experience',   component: CVExperienceComponent },
