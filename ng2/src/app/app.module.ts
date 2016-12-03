@@ -15,10 +15,10 @@ import { RouterModule }       from '@angular/router';
 //   ProfileService, ProfileStoreService
 // }                             from './app.service';
 // import { HighlightDirective } from './app.directive';
-// import { LayoutModule }       from './layout/layout.module';
 import { AppComponent, AppTestComponent }
                               from './app.component';
 import { AppRouteModule }     from './app.route';
+import { LayoutModule }       from './layout/layout.module';
 // import {
 //   CVLayoutComponent,
 //   CVNavbarComponent, CVVersionComponent,
@@ -45,7 +45,7 @@ import { AppRouteModule }     from './app.route';
   imports: [
     BrowserModule,
     AppRouteModule,
-    // LayoutModule,
+    LayoutModule,
     // RouterModule.forRoot(AppRoutes, { useHash: true }),
     // FormsModule,
     // HttpModule
