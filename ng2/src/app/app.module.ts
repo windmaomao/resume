@@ -5,65 +5,68 @@
  * @author Fang Jin <windmaomao@gmail.com>
  * @date 10/15/16
  */
-import { BrowserModule }      from '@angular/platform-browser';
 import { NgModule }           from '@angular/core';
+import { BrowserModule }      from '@angular/platform-browser';
 import { RouterModule }       from '@angular/router';
-import { FormsModule }        from '@angular/forms';
+// import { FormsModule }        from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
-import {
-  ProfileService, ProfileStoreService
-}                             from './app.service';
-import { HighlightDirective } from './app.directive';
+// import {
+//   ProfileService, ProfileStoreService
+// }                             from './app.service';
+// import { HighlightDirective } from './app.directive';
+// import { LayoutModule }       from './layout/layout.module';
 import { AppComponent }       from './app.component';
 import { AppRoutes }          from './app.route';
-import {
-  CVLayoutComponent,
-  CVNavbarComponent, CVVersionComponent,
-  CVHeaderComponent, CVFooterComponent,
-}                             from './layout/layout.component';
-
-import {
-  CVSectionComponent,
-  CVDescriptionComponent, CVRecommendComponent,
-  CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-  CVExperienceComponent,
-  CVGridArchitectComponent, CVGridComponentComponent,
-  CVArchitectComponent, CVComponentComponent,
-}                             from './page/page.component';
-import {
-  ProfileModelService
-}                             from './profile/profile.service';
-import {
-  CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent
-}                             from './edit/edit.component';
+// import {
+//   CVLayoutComponent,
+//   CVNavbarComponent, CVVersionComponent,
+//   CVHeaderComponent, CVFooterComponent,
+// }                             from './layout/layout.component';
+//
+// import {
+//   CVSectionComponent,
+//   CVDescriptionComponent, CVRecommendComponent,
+//   CVTimelineCurrentComponent, CVTimelineBeforeComponent,
+//   CVExperienceComponent,
+//   CVGridArchitectComponent, CVGridComponentComponent,
+//   CVArchitectComponent, CVComponentComponent,
+// }                             from './page/page.component';
+// import {
+//   ProfileModelService
+// }                             from './profile/profile.service';
+// import {
+//   CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent
+// }                             from './edit/edit.component';
 
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    // LayoutModule,
+    // RouterModule.forRoot(AppRoutes, { useHash: true }),
+    // FormsModule,
+    // HttpModule
+  ],
   declarations: [
     // components
     AppComponent,
-    CVLayoutComponent,
-    CVNavbarComponent, CVVersionComponent,
-    CVHeaderComponent, CVFooterComponent,
-    CVSectionComponent,
-    CVDescriptionComponent, CVRecommendComponent,
-    CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-    CVExperienceComponent,
-    CVGridArchitectComponent, CVGridComponentComponent,
-    CVArchitectComponent, CVComponentComponent,
-    CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
+    // CVLayoutComponent,
+    // CVNavbarComponent, CVVersionComponent,
+    // CVHeaderComponent, CVFooterComponent,
+    // CVSectionComponent,
+    // CVDescriptionComponent, CVRecommendComponent,
+    // CVTimelineCurrentComponent, CVTimelineBeforeComponent,
+    // CVExperienceComponent,
+    // CVGridArchitectComponent, CVGridComponentComponent,
+    // CVArchitectComponent, CVComponentComponent,
+    // CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
 
     // directives
-    HighlightDirective,
+    // HighlightDirective,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(AppRoutes, { useHash: true }),
-    FormsModule,
-    // HttpModule
-  ],
-  providers: [ProfileService, ProfileStoreService, ProfileModelService],
+  // providers: [ProfileService, ProfileStoreService, ProfileModelService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
