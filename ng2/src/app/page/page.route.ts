@@ -27,7 +27,7 @@ export const pageRoutes: Routes = [
         component: TestComponent
       },
       {
-        path: '',
+        path: 'professional',
         component: DescriptionComponent
       },
       {

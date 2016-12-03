@@ -7,31 +7,18 @@
  */
 import { NgModule }               from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
-// import { AppTestComponent }       from './app.component';
-
-// import {
-//   CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
-//   CVArchitectComponent, CVComponentComponent
-// }                         from './page/page.component';
-// import {
-//   CVUpdateComponent
-// }                         from './page/update.component';
-// import {
-//   CVEditComponent
-// }                         from './edit/edit.component';
 
 export const appRoutes: Routes = [
-  { path: '', redirectTo: 'test', pathMatch: 'full' },
-  // { path: '',             component: CVDescriptionComponent },
-  // { path: 'recommend',    component: CVRecommendComponent },
-  // { path: 'experience',   component: CVExperienceComponent },
-  // { path: 'architect',    component: CVArchitectComponent },
-  // { path: 'component',    component: CVComponentComponent },
-  // { path: 'edit',         component: CVEditComponent }
+  // forward to feature module
+  {
+    path: '',
+    redirectTo: 'professional',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRouteModule {}

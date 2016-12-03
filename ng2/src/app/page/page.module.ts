@@ -12,9 +12,7 @@
  import {
    ProfileService, ProfileStoreService
  }                             from '../app.service';
- // import { HighlightDirective } from './app.directive';
- // import { AppComponent }       from './app.component';
- // import { PageRoutes }         from './page.route';
+ import { HighlightDirective } from '../app.directive'; 
  import {
    PageComponent, TestComponent, ProfileComponent,
    SectionComponent, DescriptionComponent, RecommendComponent,
@@ -25,20 +23,13 @@
  import { PageRouteModule }    from './page.route';
 
  // import {
- // }                             from './page/page.component';
- // import {
  //   ProfileModelService
  // }                             from './profile/profile.service';
- // import {
- //   CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent
- // }                             from './edit/edit.component';
 
  @NgModule({
    imports: [
      CommonModule,
      PageRouteModule,
-    //  FormsModule,
-     // HttpModule
    ],
    declarations: [
      PageComponent, TestComponent, ProfileComponent,
@@ -46,13 +37,10 @@
      TimelineCurrentComponent, TimelineBeforeComponent, ExperienceComponent,
      GridArchitectComponent, GridComponentComponent,
      ArchitectComponent, ComponentComponent,
-    //  CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
-    //  // directives
-    //  HighlightDirective,
+     HighlightDirective,
    ],
    exports: [PageComponent],
+   //  providers: [ProfileService, ProfileStoreService, ProfileModelService],
    providers: [ProfileService, ProfileStoreService],
-  //  providers: [ProfileService, ProfileStoreService, ProfileModelService],
-  //  bootstrap: [AppComponent]
  })
  export class PageModule { }
