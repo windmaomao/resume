@@ -46,14 +46,7 @@ export class NavbarComponent { }
   templateUrl: './layout.version.html'
 })
 export class VersionComponent { }
-//
-// @Component({
-//   selector: 'cv-header',
-//   inputs: ['profile'],
-//   templateUrl: './layout.header.html',
-// })
-// export class CVHeaderComponent { }
-//
+
 @Component({
   selector: 'footer',
   templateUrl: './layout.footer.html'

@@ -7,13 +7,13 @@
  * @date 10/09/16
  */
 import { Component } from '@angular/core';
-// import { ProfileService } from '../app.service';
+import { ProfileService } from '../app.service';
 
 @Component({
   selector: 'page',
   // inputs: ['profile'],
   template: `
-    <h1>Page</h1>
+    <profile></profile>
     <router-outlet></router-outlet>
   `,
 })
@@ -23,6 +23,17 @@ export class PageComponent { }
   template: `Page content`
 })
 export class TestComponent { }
+
+@Component({
+  selector: 'profile',
+  // inputs: ['profile'],
+  templateUrl: './page.header.html',
+})
+export class ProfileComponent {
+  constructor(private profile: ProfileService) {
+    this.profile = profile;
+  }
+}
 
 // @Component({
 //   selector: 'cv-section',

@@ -9,14 +9,14 @@
  import { CommonModule }       from '@angular/common';
  import { RouterModule }       from '@angular/router';
 
- // import {
- //   ProfileService, ProfileStoreService
- // }                             from '../app.service';
+ import {
+   ProfileService, ProfileStoreService
+ }                             from '../app.service';
  // import { HighlightDirective } from './app.directive';
  // import { AppComponent }       from './app.component';
  // import { PageRoutes }         from './page.route';
  import {
-   PageComponent, TestComponent,
+   PageComponent, TestComponent, ProfileComponent,
   //  NavbarComponent, VersionComponent, FooterComponent
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
@@ -44,7 +44,7 @@
      // HttpModule
    ],
    declarations: [
-     PageComponent, TestComponent,
+     PageComponent, TestComponent, ProfileComponent,
     //  CVNavbarComponent, CVVersionComponent,
     //  CVHeaderComponent, CVFooterComponent,
     //  CVSectionComponent,
@@ -59,7 +59,7 @@
     //  HighlightDirective,
    ],
    exports: [PageComponent],
-   providers: [],
+   providers: [ProfileService, ProfileStoreService],
   //  providers: [ProfileService, ProfileStoreService, ProfileModelService],
   //  bootstrap: [AppComponent]
  })
