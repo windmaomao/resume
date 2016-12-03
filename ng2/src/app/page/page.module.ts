@@ -9,9 +9,6 @@
  import { CommonModule }       from '@angular/common';
  import { RouterModule }       from '@angular/router';
 
- import {
-   ProfileService, ProfileStoreService
- }                             from '../app.service';
  import { HighlightDirective } from '../app.directive';
  import {
    PageComponent, TestComponent, ProfileComponent,
@@ -21,10 +18,9 @@
    ArchitectComponent, ComponentComponent,
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
-
- // import {
- //   ProfileModelService
- // }                             from './profile/profile.service';
+ import {
+   ProfileService, ProfileStoreService
+ }                             from '../../services/profile/profile.service';
 
  @NgModule({
    imports: [
@@ -40,7 +36,6 @@
      HighlightDirective,
    ],
    exports: [],
-   //  providers: [ProfileService, ProfileStoreService, ProfileModelService],
    providers: [ProfileService, ProfileStoreService],
  })
  export class PageModule { }

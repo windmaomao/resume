@@ -6,8 +6,8 @@
  * @author Fang Jin <windmaomao@gmail.com>
  * @date 10/09/16
  */
-import { Component } from '@angular/core';
-import { ProfileService } from '../app.service';
+import { Component }          from '@angular/core';
+import { ProfileService }     from '../../services/profile/profile.service';
 
 @Component({
   selector: 'page',

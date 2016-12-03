@@ -7,7 +7,7 @@
  * @date 11/22/16
  */
 import { Component } from '@angular/core';
-import { ProfileModelService } from '../profile/profile.service';
+import { ProfileModelService } from '../../services/profile/profile.model.service';
 import * as _ from "lodash";
 
 @Component({

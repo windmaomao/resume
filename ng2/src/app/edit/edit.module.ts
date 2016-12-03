@@ -14,7 +14,7 @@
    EditComponent, ProfileEditComponent, ExperienceEditComponent,
  }                              from './edit.component';
  import { EditRouteModule }     from './edit.route';
- import { ProfileModelService } from '../profile/profile.service';
+ import { ProfileModelService } from '../../services/profile/profile.model.service'; 
 
  @NgModule({
    imports: [
