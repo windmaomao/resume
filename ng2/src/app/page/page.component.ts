@@ -11,7 +11,6 @@ import { ProfileService } from '../app.service';
 
 @Component({
   selector: 'page',
-  // inputs: ['profile'],
   template: `
     <cv-profile></cv-profile>
     <router-outlet></router-outlet>
@@ -75,38 +74,37 @@ export class RecommendComponent {
   }
 }
 
-// @Component({
-//   selector: 'cv-timeline-current',
-//   templateUrl: './timeline.current.html'
-// })
-// export class CVTimelineCurrentComponent { }
-//
-// @Component({
-//   selector: 'cv-timeline-before',
-//   templateUrl: './timeline.before.html'
-// })
-// export class CVTimelineBeforeComponent { }
-//
-// @Component({
-//   selector: 'cv-experience',
-//   inputs: ['sections'],
-//   template: `
-//     <cv-header [profile]="profile"></cv-header>
-//     <hr />
-//     <cv-timeline-current></cv-timeline-current>
-//     <cv-section [section]="sections.current"></cv-section>
-//     <hr />
-//     <cv-timeline-before></cv-timeline-before>
-//     <cv-section [section]="sections.before"></cv-section>
-//   `
-// })
-// export class CVExperienceComponent {
-//   sections: any[];
-//   constructor(private profile: ProfileService) {
-//     this.sections = profile.sections.experience;
-//   }
-// }
-//
+@Component({
+  selector: 'cv-timeline-current',
+  templateUrl: './timeline.current.html'
+})
+export class TimelineCurrentComponent { }
+
+@Component({
+  selector: 'cv-timeline-before',
+  templateUrl: './timeline.before.html'
+})
+export class TimelineBeforeComponent { }
+
+@Component({
+  selector: 'cv-experience',
+  inputs: ['sections'],
+  template: `
+    <hr />
+    <cv-timeline-current></cv-timeline-current>
+    <cv-section [section]="sections.current"></cv-section>
+    <hr />
+    <cv-timeline-before></cv-timeline-before>
+    <cv-section [section]="sections.before"></cv-section>
+  `
+})
+export class ExperienceComponent {
+  sections: any[];
+  constructor(private profile: ProfileService) {
+    this.sections = profile.sections.experience;
+  }
+}
+
 // @Component({
 //   selector: 'cv-grid-architect',
 //   templateUrl: './grid.architect.html'

@@ -18,15 +18,12 @@
  import {
    PageComponent, TestComponent, ProfileComponent,
    SectionComponent, DescriptionComponent, RecommendComponent,
+   TimelineCurrentComponent, TimelineBeforeComponent, ExperienceComponent,
   //  CVRecommendComponent,
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
 
  // import {
- //   CVSectionComponent,
- //   CVDescriptionComponent, CVRecommendComponent,
- //   CVTimelineCurrentComponent, CVTimelineBeforeComponent,
- //   CVExperienceComponent,
  //   CVGridArchitectComponent, CVGridComponentComponent,
  //   CVArchitectComponent, CVComponentComponent,
  // }                             from './page/page.component';
@@ -47,6 +44,7 @@
    declarations: [
      PageComponent, TestComponent, ProfileComponent,
      SectionComponent, DescriptionComponent, RecommendComponent,
+     TimelineCurrentComponent, TimelineBeforeComponent, ExperienceComponent,
     //  CVNavbarComponent, CVVersionComponent,
     //  CVHeaderComponent, CVFooterComponent,
     //  CVSectionComponent,

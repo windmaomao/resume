@@ -10,7 +10,9 @@ import { Routes, RouterModule }   from '@angular/router';
 import {
   PageComponent,
   TestComponent,
-  DescriptionComponent, RecommendComponent
+  DescriptionComponent,
+  RecommendComponent,
+  ExperienceComponent,
 }                                 from './page.component';
 
 export const pageRoutes: Routes = [
@@ -30,11 +32,12 @@ export const pageRoutes: Routes = [
         path: 'recommend',
         component: RecommendComponent
       },
+      {
+        path: 'experience',
+        component: ExperienceComponent
+      }
     ]
   },
-  // { path: '',             component: CVDescriptionComponent },
-  // { path: 'recommend',    component: CVRecommendComponent },
-  // { path: 'experience',   component: CVExperienceComponent },
   // { path: 'architect',    component: CVArchitectComponent },
   // { path: 'component',    component: CVComponentComponent },
   // { path: 'edit',         component: CVEditComponent }
