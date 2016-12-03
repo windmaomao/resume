@@ -6,21 +6,44 @@
  * @author Fang Jin <windmaomao@gmail.com>
  * @date 10/09/16
  */
-import { Component } from '@angular/core';
-import { ProfileService } from '../app.service';
+import { Component }          from '@angular/core';
+import { ProfileService }     from '../../services/profile/profile.service';
+
+@Component({
+  selector: 'page',
+  template: `
+    <cv-profile></cv-profile>
+    <router-outlet></router-outlet>
+  `,
+})
+export class PageComponent { }
+
+@Component({
+  template: `Page content`
+})
+export class TestComponent { }
+
+@Component({
+  selector: 'cv-profile',
+  templateUrl: './page.header.html',
+})
+export class ProfileComponent {
+  constructor(private profile: ProfileService) {
+    this.profile = profile;
+  }
+}
 
 @Component({
   selector: 'cv-section',
   inputs: ['section'],
   templateUrl: './page.section.html'
 })
-export class CVSectionComponent { }
+export class SectionComponent { }
 
 @Component({
-  selector: 'cv-description',
+  selector: 'description',
   inputs: ['sections'],
   template: `
-    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-section [section]="sections.professional"></cv-section>
     <hr />
@@ -29,7 +52,7 @@ export class CVSectionComponent { }
     <cv-section [section]="sections.activity"></cv-section>
   `
 })
-export class CVDescriptionComponent {
+export class DescriptionComponent {
   sections: any[];
   constructor(private profile: ProfileService) {
     this.sections = profile.sections;
@@ -40,12 +63,11 @@ export class CVDescriptionComponent {
   selector: 'cv-recommend',
   inputs: ['section'],
   template: `
-    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-section [section]="section"></cv-section>
   `
 })
-export class CVRecommendComponent {
+export class RecommendComponent {
   section: any;
   constructor(private profile: ProfileService) {
     this.section = profile.sections.recommend;
@@ -56,19 +78,18 @@ export class CVRecommendComponent {
   selector: 'cv-timeline-current',
   templateUrl: './timeline.current.html'
 })
-export class CVTimelineCurrentComponent { }
+export class TimelineCurrentComponent { }
 
 @Component({
   selector: 'cv-timeline-before',
   templateUrl: './timeline.before.html'
 })
-export class CVTimelineBeforeComponent { }
+export class TimelineBeforeComponent { }
 
 @Component({
   selector: 'cv-experience',
   inputs: ['sections'],
   template: `
-    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-timeline-current></cv-timeline-current>
     <cv-section [section]="sections.current"></cv-section>
@@ -77,7 +98,7 @@ export class CVTimelineBeforeComponent { }
     <cv-section [section]="sections.before"></cv-section>
   `
 })
-export class CVExperienceComponent {
+export class ExperienceComponent {
   sections: any[];
   constructor(private profile: ProfileService) {
     this.sections = profile.sections.experience;
@@ -88,25 +109,24 @@ export class CVExperienceComponent {
   selector: 'cv-grid-architect',
   templateUrl: './grid.architect.html'
 })
-export class CVGridArchitectComponent { }
+export class GridArchitectComponent { }
 
 @Component({
   selector: 'cv-grid-component',
   templateUrl: './grid.component.html'
 })
-export class CVGridComponentComponent { }
+export class GridComponentComponent { }
 
 @Component({
   selector: 'cv-architect',
   inputs: ['section'],
   template: `
-    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-grid-architect></cv-grid-architect>
     <cv-section [section]="section"></cv-section>
   `
 })
-export class CVArchitectComponent {
+export class ArchitectComponent {
   section: any;
   constructor(private profile: ProfileService) {
     this.section = profile.sections.skillset.architect;
@@ -117,13 +137,12 @@ export class CVArchitectComponent {
   selector: 'cv-component',
   inputs: ['section'],
   template: `
-    <cv-header [profile]="profile"></cv-header>
     <hr />
     <cv-grid-component></cv-grid-component>
     <cv-section [section]="section"></cv-section>
   `
 })
-export class CVComponentComponent {
+export class ComponentComponent {
   section: any;
   constructor(private profile: ProfileService) {
     this.section = profile.sections.skillset.component;

@@ -1,69 +1,35 @@
 /**
  * App module
- * Module for bootstraping all components
+ * Module for application, including application
+ * core modules, feature moduels and routes.
  *
  * @author Fang Jin <windmaomao@gmail.com>
  * @date 10/15/16
  */
-import { BrowserModule }      from '@angular/platform-browser';
 import { NgModule }           from '@angular/core';
+import { BrowserModule }      from '@angular/platform-browser';
 import { RouterModule }       from '@angular/router';
-import { FormsModule }        from '@angular/forms';
 // import { HttpModule } from '@angular/http';
 
-import {
-  ProfileService, ProfileStoreService
-}                             from './app.service';
-import { HighlightDirective } from './app.directive';
 import { AppComponent }       from './app.component';
-import { AppRoutes }          from './app.route';
-import {
-  CVLayoutComponent,
-  CVNavbarComponent, CVVersionComponent,
-  CVHeaderComponent, CVFooterComponent,
-}                             from './layout/layout.component';
-
-import {
-  CVSectionComponent,
-  CVDescriptionComponent, CVRecommendComponent,
-  CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-  CVExperienceComponent,
-  CVGridArchitectComponent, CVGridComponentComponent,
-  CVArchitectComponent, CVComponentComponent,
-}                             from './page/page.component';
-import {
-  ProfileModelService
-}                             from './profile/profile.service';
-import {
-  CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent
-}                             from './edit/edit.component';
-
+import { AppRouteModule }     from './app.route';
+import { LayoutModule }       from './layout/layout.module';
+import { PageModule }         from './page/page.module';
+import { EditModule }         from './edit/edit.module';
 
 @NgModule({
-  declarations: [
-    // components
-    AppComponent,
-    CVLayoutComponent,
-    CVNavbarComponent, CVVersionComponent,
-    CVHeaderComponent, CVFooterComponent,
-    CVSectionComponent,
-    CVDescriptionComponent, CVRecommendComponent,
-    CVTimelineCurrentComponent, CVTimelineBeforeComponent,
-    CVExperienceComponent,
-    CVGridArchitectComponent, CVGridComponentComponent,
-    CVArchitectComponent, CVComponentComponent,
-    CVEditComponent, CVProfileEditComponent, CVExperienceEditComponent,
-
-    // directives
-    HighlightDirective,
-  ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(AppRoutes, { useHash: true }),
-    FormsModule,
+    BrowserModule,              // <- core module
+    LayoutModule,               // <- layout module
+    PageModule,                 // <- public page module
+    EditModule,                 // <- admin edit module
+    AppRouteModule,             // <- app route module
     // HttpModule
   ],
-  providers: [ProfileService, ProfileStoreService, ProfileModelService],
+  declarations: [
+    AppComponent,               // <- entry app component
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

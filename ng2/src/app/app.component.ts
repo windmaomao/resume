@@ -14,13 +14,10 @@ import { ProfileService } from './app.service';
 @Component({
   selector: 'app-root',
   template: `
-    <cv-layout [profile]="profile"></cv-layout>
+    <layout></layout>
   `,
   // styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  profile: any;
-  constructor(private profileService: ProfileService) {
-    this.profile = profileService;
-  }
+  constructor() {}
 }

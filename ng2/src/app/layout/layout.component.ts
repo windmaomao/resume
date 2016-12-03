@@ -9,46 +9,46 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cv-layout',
-  inputs: ['profile'],
+  selector: 'layout',
+  // inputs: ['profile'],
   template: `
-    <cv-navbar></cv-navbar>
+    <navbar></navbar>
     <div class="container" id="wrap">
-      <cv-version></cv-version>
+      <version></version>
       <router-outlet></router-outlet>
-      <cv-footer></cv-footer>
+      <footer></footer>
     </div>
   `,
+
+  // <cv-navbar></cv-navbar>
+  // <div class="container" id="wrap">
+  //   <cv-version></cv-version>
+  //   <router-outlet></router-outlet>
+  //   <cv-footer></cv-footer>
+  // </div>
+
   // <cv-description [sections]="profile.sections"></cv-description>
   // <cv-recommend [section]="profile.sections.recommend"></cv-recommend>
   // <cv-experience [sections]="profile.sections.experience"></cv-experience>
   // <cv-architect [section]="profile.sections.skillset.architect"></cv-architect>
   // <cv-component [section]="profile.sections.skillset.component"></cv-component>
 })
-export class CVLayoutComponent { }
-
+export class LayoutComponent { }
 
 @Component({
-  selector: 'cv-navbar',
+  selector: 'navbar',
   templateUrl: './layout.navbar.html'
 })
-export class CVNavbarComponent { }
+export class NavbarComponent { }
 
 @Component({
-  selector: 'cv-version',
+  selector: 'version',
   templateUrl: './layout.version.html'
 })
-export class CVVersionComponent { }
+export class VersionComponent { }
 
 @Component({
-  selector: 'cv-header',
-  inputs: ['profile'],
-  templateUrl: './layout.header.html',
-})
-export class CVHeaderComponent { }
-
-@Component({
-  selector: 'cv-footer',
+  selector: 'footer',
   templateUrl: './layout.footer.html'
 })
-export class CVFooterComponent { }
+export class FooterComponent { }

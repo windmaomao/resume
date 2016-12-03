@@ -5,24 +5,20 @@
  * @author Fang Jin <windmaomao@gmail.com>
  * @date 10/10/16
  */
-import { Routes }         from '@angular/router';
+import { NgModule }               from '@angular/core';
+import { Routes, RouterModule }   from '@angular/router';
 
-import {
-  CVDescriptionComponent, CVRecommendComponent, CVExperienceComponent,
-  CVArchitectComponent, CVComponentComponent
-}                         from './page/page.component';
-import {
-  CVUpdateComponent
-}                         from './page/update.component';
-import {
-  CVEditComponent
-}                         from './edit/edit.component';
-
-export const AppRoutes: Routes = [
-  { path: '',             component: CVDescriptionComponent },
-  { path: 'recommend',    component: CVRecommendComponent },
-  { path: 'experience',   component: CVExperienceComponent },
-  { path: 'architect',    component: CVArchitectComponent },
-  { path: 'component',    component: CVComponentComponent },
-  { path: 'edit',         component: CVEditComponent }
+export const appRoutes: Routes = [
+  // forward to feature module
+  {
+    path: '',
+    redirectTo: 'professional',
+    pathMatch: 'full'
+  },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRouteModule {}
