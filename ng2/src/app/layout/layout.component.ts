@@ -13,7 +13,11 @@ import { Component } from '@angular/core';
   // inputs: ['profile'],
   template: `
     <navbar></navbar>
-    <router-outlet></router-outlet>
+    <div class="container" id="wrap">
+      <version></version>
+      <router-outlet></router-outlet>
+      <footer></footer>
+    </div>
   `,
 
   // <cv-navbar></cv-navbar>
@@ -36,12 +40,12 @@ export class LayoutComponent { }
   templateUrl: './layout.navbar.html'
 })
 export class NavbarComponent { }
-//
-// @Component({
-//   selector: 'cv-version',
-//   templateUrl: './layout.version.html'
-// })
-// export class CVVersionComponent { }
+
+@Component({
+  selector: 'version',
+  templateUrl: './layout.version.html'
+})
+export class VersionComponent { }
 //
 // @Component({
 //   selector: 'cv-header',
@@ -50,8 +54,8 @@ export class NavbarComponent { }
 // })
 // export class CVHeaderComponent { }
 //
-// @Component({
-//   selector: 'cv-footer',
-//   templateUrl: './layout.footer.html'
-// })
-// export class CVFooterComponent { }
+@Component({
+  selector: 'footer',
+  templateUrl: './layout.footer.html'
+})
+export class FooterComponent { }

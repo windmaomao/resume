@@ -24,7 +24,7 @@
  // }                             from './layout.component';
  import {
    LayoutComponent,
-   NavbarComponent,
+   NavbarComponent, VersionComponent, FooterComponent
  }                                from './layout.component';
 
  // import {
@@ -53,7 +53,7 @@
    declarations: [
     //  AppComponent,
      LayoutComponent,
-     NavbarComponent,
+     NavbarComponent, VersionComponent, FooterComponent
     //  CVNavbarComponent, CVVersionComponent,
     //  CVHeaderComponent, CVFooterComponent,
     //  CVSectionComponent,
