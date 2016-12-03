@@ -13,7 +13,7 @@ import { ProfileService } from '../app.service';
   selector: 'page',
   // inputs: ['profile'],
   template: `
-    <profile></profile>
+    <cv-profile></cv-profile>
     <router-outlet></router-outlet>
   `,
 })
@@ -25,8 +25,7 @@ export class PageComponent { }
 export class TestComponent { }
 
 @Component({
-  selector: 'profile',
-  // inputs: ['profile'],
+  selector: 'cv-profile',
   templateUrl: './page.header.html',
 })
 export class ProfileComponent {
@@ -35,33 +34,32 @@ export class ProfileComponent {
   }
 }
 
-// @Component({
-//   selector: 'cv-section',
-//   inputs: ['section'],
-//   templateUrl: './page.section.html'
-// })
-// export class CVSectionComponent { }
-//
-// @Component({
-//   selector: 'cv-description',
-//   inputs: ['sections'],
-//   template: `
-//     <cv-header [profile]="profile"></cv-header>
-//     <hr />
-//     <cv-section [section]="sections.professional"></cv-section>
-//     <hr />
-//     <cv-section [section]="sections.education"></cv-section>
-//     <hr />
-//     <cv-section [section]="sections.activity"></cv-section>
-//   `
-// })
-// export class CVDescriptionComponent {
-//   sections: any[];
-//   constructor(private profile: ProfileService) {
-//     this.sections = profile.sections;
-//   }
-// }
-//
+@Component({
+  selector: 'cv-section',
+  inputs: ['section'],
+  templateUrl: './page.section.html'
+})
+export class SectionComponent { }
+
+@Component({
+  selector: 'description',
+  inputs: ['sections'],
+  template: `
+    <hr />
+    <cv-section [section]="sections.professional"></cv-section>
+    <hr />
+    <cv-section [section]="sections.education"></cv-section>
+    <hr />
+    <cv-section [section]="sections.activity"></cv-section>
+  `
+})
+export class DescriptionComponent {
+  sections: any[];
+  constructor(private profile: ProfileService) {
+    this.sections = profile.sections;
+  }
+}
+
 // @Component({
 //   selector: 'cv-recommend',
 //   inputs: ['section'],

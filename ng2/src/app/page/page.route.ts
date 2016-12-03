@@ -7,17 +7,18 @@
  */
 import { NgModule }               from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
-import { PageComponent, TestComponent }          from './page.component';
+import {
+  PageComponent,
+  // TestComponent,
+  DescriptionComponent,
+}                                 from './page.component';
 
 export const pageRoutes: Routes = [
   {
-    path: 'test',
-    component: PageComponent,
+    path: 'test',                 component: PageComponent,
     children: [
-      {
-        path: '',
-        component: TestComponent
-      }
+      // { path: '',                 component: TestComponent },
+      { path: '',                 component: DescriptionComponent },
     ]
     // component: TestComponent
   },
