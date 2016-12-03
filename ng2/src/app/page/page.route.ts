@@ -9,7 +9,7 @@ import { NgModule }               from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
 import {
   PageComponent,
-  // TestComponent,
+  TestComponent,
   DescriptionComponent, RecommendComponent
 }                                 from './page.component';
 
@@ -18,10 +18,10 @@ export const pageRoutes: Routes = [
     path: '',
     component: PageComponent,
     children: [
-      // {
-      //   path: '',
-      //   component: TestComponent
-      // },
+      {
+        path: 'test',
+        component: TestComponent
+      },
       {
         path: '',
         component: DescriptionComponent
@@ -31,7 +31,6 @@ export const pageRoutes: Routes = [
         component: RecommendComponent
       },
     ]
-    // component: TestComponent
   },
   // { path: '',             component: CVDescriptionComponent },
   // { path: 'recommend',    component: CVRecommendComponent },
