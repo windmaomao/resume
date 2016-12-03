@@ -45,10 +45,13 @@ export const pageRoutes: Routes = [
       {
         path: 'component',
         component: ComponentComponent
+      },
+      {
+        path: 'contact',
+        component: TestComponent
       }
     ]
   },
-  // { path: 'edit',         component: CVEditComponent }
 ];
 
 @NgModule({
