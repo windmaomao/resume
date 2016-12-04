@@ -19,8 +19,9 @@
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
  import {
-   ProfileService, ProfileStoreService
- }                             from '../../services/profile/profile.service';
+   ProfileService, ProfileStoreService,
+   ProfileStaticService
+ }                             from '../../services/profile'; 
 
  @NgModule({
    imports: [
