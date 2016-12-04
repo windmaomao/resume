@@ -21,7 +21,7 @@
  import {
    ProfileService, ProfileStoreService,
    ProfileStaticService
- }                             from '../../services/profile'; 
+ }                             from '../../services/profile';
 
  @NgModule({
    imports: [
@@ -37,6 +37,6 @@
      HighlightDirective,
    ],
    exports: [],
-   providers: [ProfileService, ProfileStoreService],
+   providers: [ProfileService, ProfileStoreService, ProfileStaticService],
  })
  export class PageModule { }
