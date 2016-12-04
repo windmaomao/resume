@@ -19,7 +19,7 @@
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
  import {
-   ProfileService, ProfileStoreService,
+   ProfileService,
    ProfileStaticService
  }                             from '../../services/profile';
 
@@ -37,6 +37,6 @@
      HighlightDirective,
    ],
    exports: [],
-   providers: [ProfileService, ProfileStoreService, ProfileStaticService],
+   providers: [ProfileService, ProfileStaticService],
  })
  export class PageModule { }
