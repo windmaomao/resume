@@ -7,7 +7,7 @@
  * @date 10/09/16
  */
 import { Component }          from '@angular/core';
-import { ProfileService }     from '../../services/profile/profile.service';
+import { ProfileService }     from '../../services/profile';
 
 @Component({
   selector: 'page',
