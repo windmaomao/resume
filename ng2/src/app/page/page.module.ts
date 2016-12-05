@@ -19,8 +19,9 @@
  }                             from './page.component';
  import { PageRouteModule }    from './page.route';
  import {
-   ProfileService, ProfileStoreService
- }                             from '../../services/profile/profile.service';
+   ProfileService,
+   ProfileStaticService
+ }                             from '../../services/profile';
 
  @NgModule({
    imports: [
@@ -36,6 +37,6 @@
      HighlightDirective,
    ],
    exports: [],
-   providers: [ProfileService, ProfileStoreService],
+   providers: [ProfileService, ProfileStaticService],
  })
  export class PageModule { }
