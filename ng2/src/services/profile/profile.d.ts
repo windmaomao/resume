@@ -1,3 +1,5 @@
 interface ProfileInterface {
   name: string;
+  data: any;
+  sections: any;
 }

@@ -1,27 +1,14 @@
 /// <reference path="../../../node_modules/@types/jasmine/index.d.ts" />
 /// <reference path="../../../node_modules/@types/chai/index.d.ts" />
+/// <reference path="../../../node_modules/@types/lodash/index.d.ts" />
 /// <reference path="./profile.d.ts" />
 
-import { expect } from 'chai'; 
-
-class Profile implements ProfileInterface {
-  name: string;
-  data: any;
-  sections: any;
-  constructor(_name: string) {
-    this.name = _name;
-    this.data = {};
-    this.sections = {
-      professional: {
-          name: 'professional', title: 'Professional',
-      }
-    };
-  }
-};
+import { expect } from 'chai';
+import { Profile } from './profile.class';
 
 describe('Profile', () => {
   let name = 'Owner';
-  let profile: Profile;
+  let profile: ProfileInterface;
   beforeEach(() => {
     profile = new Profile(name);
   });
@@ -29,6 +16,9 @@ describe('Profile', () => {
     expect(profile.name).to.be.a('string');
     expect(profile.name).to.equal(name);
   });
-  it('should have profile sections', () => {
+  it('should have default profile sections', () => {
+    expect(profile.sections).to.be.an('object');
+    expect(profile.sections).have.ownProperty('profile');
+    expect(profile.data).have.ownProperty('profile');
   });
 });
