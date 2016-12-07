@@ -32,4 +32,14 @@ export class Profile implements ProfileInterface {
     };
     this.data[section] = [];
   }
+
+  addSection(section: string) {
+    if (!(section in this.sections)) {
+      this.initSection(section);
+    }
+  }
+
+  addSectionItem(section: string, item: any) {
+    this.data[section].push(item);
+  }
 };

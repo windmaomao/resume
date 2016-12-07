@@ -21,4 +21,24 @@ describe('Profile', () => {
     expect(profile.sections).have.ownProperty('profile');
     expect(profile.data).have.ownProperty('profile');
   });
+  it('should init profile', () => {
+    profile.data.profile.push('data');
+    profile.init();
+    expect(profile.data.profile).to.be.empty;
+  });
+  it('should init profile section', () => {
+    profile.data.profile.push('data');
+    profile.init();
+    expect(profile.data.profile).to.be.empty;
+  });
+  it('should set profile data', () => {
+    let item = { title: 'test' };
+    profile.addSectionItem('profile', item);
+    expect(profile.data.profile[0]).to.equal(item);
+  });
+  it('should more sections', () => {
+    profile.addSection('custom');
+    expect(profile.sections).have.ownProperty('custom');
+    expect(profile.data).have.ownProperty('custom');
+  });
 });
