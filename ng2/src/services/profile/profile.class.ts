@@ -1,8 +1,7 @@
 /// <reference path="../../../node_modules/@types/lodash/index.d.ts" />
 /// <reference path="./profile.d.ts" />
 
-import { expect } from 'chai';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 export class Profile implements ProfileInterface {
   name: string;
@@ -11,7 +10,13 @@ export class Profile implements ProfileInterface {
   defaultSections = ['profile', 'professional'];
 
   constructor(_name: string) {
-    this.name = _name;
+    this.init(_name);
+  }
+
+  init(_name?: string) {
+    if (_name) {
+      this.name = _name;
+    }
     // clear sections and data
     this.sections = {};
     this.data = {};
