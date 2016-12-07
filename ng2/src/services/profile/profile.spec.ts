@@ -8,6 +8,8 @@ import { Profile } from './profile.class';
 
 describe('Profile', () => {
   let name = 'Owner';
+  let item = { title: 'test' };
+  let section = [item];
   let profile: ProfileInterface;
   beforeEach(() => {
     profile = new Profile(name);
@@ -22,23 +24,49 @@ describe('Profile', () => {
     expect(profile.data).have.ownProperty('profile');
   });
   it('should init profile', () => {
-    profile.data.profile.push('data');
+    profile.data.profile.push(item);
     profile.init();
     expect(profile.data.profile).to.be.empty;
   });
   it('should init profile section', () => {
-    profile.data.profile.push('data');
+    profile.data.profile.push(item);
     profile.init();
     expect(profile.data.profile).to.be.empty;
   });
   it('should set profile data', () => {
-    let item = { title: 'test' };
-    profile.addSectionItem('profile', item);
+    profile.addSection('profile');
+    profile.addItem('profile', item);
     expect(profile.data.profile[0]).to.equal(item);
   });
-  it('should more sections', () => {
+  it('should add section', () => {
     profile.addSection('custom');
     expect(profile.sections).have.ownProperty('custom');
     expect(profile.data).have.ownProperty('custom');
+  });
+  it('should add section with data', () => {
+    profile.addSection('custom', section);
+    expect(profile.getItem('custom', '0')).to.equal(item);
+  });
+  it('should add section item', () => {
+    profile.addSection('custom');
+    profile.addItem('custom', item);
+    expect(profile.getItem('custom', '0')).to.equal(item);
+  });
+  it('should clear section items', () => {
+    profile.addSection('custom');
+    profile.addItem('custom', item);
+    let sec = profile.getSection('custom');
+    profile.clearItems('custom');
+    expect(profile.getSection('custom')).to.equal(sec);
+    expect(profile.getSection('custom')).to.be.empty;
+  });
+  it('should set section items', () => {
+    profile.addSection('custom');
+    profile.addItem('custom', item);
+    let sec = profile.getSection('custom');
+    let data = [{ title: 'test2' }];
+    profile.setSection('custom', data);
+    expect(profile.getItem('custom', '0')).to.equal(data[0]);
+    expect(profile.getSection('custom')).to.equal(sec);
   });
 });

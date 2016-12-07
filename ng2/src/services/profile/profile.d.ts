@@ -4,7 +4,12 @@ interface ProfileInterface {
   sections: any;
 
   init(): any;
-  initSection(section: string): any;
-  addSection(section: string): any;
-  addSectionItem(section: string, item: any): any;
+  addSection(section: string, items?: any[]): any;
+  setSection(section: string, items: any[]): any;
+  getSection(section: string): any[];
+  hasSection(section: string): boolean;
+  addItem(section: string, item: any): any;
+  getItem(section: string, key: string): any;
+  addItems(section: string, items: any[]): any;
+  clearItems(section: string): any;
 }
