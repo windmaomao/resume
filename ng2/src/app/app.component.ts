@@ -5,7 +5,6 @@
  * @date 10/15/16
  */
 import { Component } from '@angular/core';
-import { ProfileService } from './app.service';
 
 /**
  * App component
