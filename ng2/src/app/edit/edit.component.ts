@@ -16,6 +16,7 @@ import * as _ from "lodash";
   template: `
     <br />
     <cv-profile-edit></cv-profile-edit>
+    <cv-section-edit></cv-section-edit>
     <cv-experience-edit></cv-experience-edit>
   `
 })
@@ -45,6 +46,53 @@ export class ProfileEditComponent {
   }
   onUpdate() {
     return this._pm.save('profile', this.profile);
+  }
+}
+
+@Component({
+  selector: 'cv-section-edit',
+  inputs: [],
+  templateUrl: './section.edit.html'
+})
+export class SectionEditComponent {
+  private _pm: any;
+  section: any;
+  mode: string;
+  constructor(private pm: ProfileModelService) {
+    this._pm = pm;
+    this.onInit(false);
+  }
+  get sections() {
+    _.assign(this._pm.data.sections,
+      _.sortBy(this._pm.data.sections, ['order']));
+    return this._pm.data.sections;
+  }
+  onInit(on) {
+    this.section = {
+      profile: this._pm.id,
+      id: "", rev: "",
+      name: "", title: "", order: 0
+    };
+    this.mode = on;
+  }
+  onSelect(section) {
+    this.section = section;
+    this.mode = 'edit';
+  }
+  onUpdate() {
+    let edit = this;
+    if (!this.section.title) {
+      this.section.title = _.startCase(_.toLower(this.section.name));
+    }
+    return this._pm.save('section', this.section).then(() => {
+      edit.onInit(false);
+    });
+  }
+  onDelete() {
+    let edit = this;
+    return this._pm.del('section', this.section).then(() => {
+      edit.onInit(false);
+    });
   }
 }
 

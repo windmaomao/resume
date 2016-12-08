@@ -11,10 +11,11 @@
  import { FormsModule }        from '@angular/forms';
 
  import {
-   EditComponent, ProfileEditComponent, ExperienceEditComponent,
+   EditComponent, SectionEditComponent,
+   ProfileEditComponent, ExperienceEditComponent,
  }                              from './edit.component';
  import { EditRouteModule }     from './edit.route';
- import { ProfileModelService } from '../../services/profile/profile.model.service'; 
+ import { ProfileModelService } from '../../services/profile/profile.model.service';
 
  @NgModule({
    imports: [
@@ -23,7 +24,8 @@
      EditRouteModule,
    ],
    declarations: [
-     EditComponent, ProfileEditComponent, ExperienceEditComponent,
+     EditComponent, SectionEditComponent,
+     ProfileEditComponent, ExperienceEditComponent,
    ],
    exports: [],
    providers: [ProfileModelService],

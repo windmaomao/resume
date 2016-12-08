@@ -53,12 +53,22 @@ export class ProfileModelService {
           // experiences: { hasMany: 'experience' }
           experiences: {
             hasMany: { type: 'experience', options: {queryInverse: 'profile'}}
+          },
+          sections: {
+            hasMany: { type: 'section', options: {queryInverse: 'profile'}}
           }
         }
       },
       {
         singular: 'experience',
         plural: 'experiences',
+        relations: {
+          profile: { belongsTo: 'profile' }
+        }
+      },
+      {
+        singular: 'section',
+        plural: 'sections',
         relations: {
           profile: { belongsTo: 'profile' }
         }
