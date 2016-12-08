@@ -4,69 +4,50 @@
 /// <reference path="./profile.d.ts" />
 
 import { expect } from 'chai';
-import { Profile } from './profile.class';
+import { ProfileStatic, SectionStatic } from './profile.static';
 
-describe('Profile', () => {
-  let name = 'Owner';
-  let item = { title: 'test' };
-  let section = [item];
+describe('ProfileStatic', () => {
   let profile: ProfileInterface;
+
   beforeEach(() => {
-    profile = new Profile(name);
+    profile = new ProfileStatic();
   });
-  it('should have a person\'s name', () => {
-    expect(profile.name).to.be.a('string');
-    expect(profile.name).to.equal(name);
+
+  it('should have id', () => {
+    expect(profile.id).not.to.be.empty;
   });
-  it('should have default profile sections', () => {
-    expect(profile.sections).to.be.an('object');
-    expect(profile.sections).have.ownProperty('profile');
-    expect(profile.data).have.ownProperty('profile');
+
+  it('should have data', () => {
+    expect(profile.data).to.be.an('object');
   });
-  it('should init profile', () => {
-    profile.data.profile.push(item);
-    profile.init();
-    expect(profile.data.profile).to.be.empty;
+
+  it('should have sections', () => {
+    expect(profile.sections).to.be.an('array');
+    expect(profile.sections.length).to.be.a('number');
   });
-  it('should init profile section', () => {
-    profile.data.profile.push(item);
-    profile.init();
-    expect(profile.data.profile).to.be.empty;
+});
+
+describe('SectionStatic', () => {
+  let profile: ProfileInterface;
+  let section: SectionInterface;
+
+  beforeEach(() => {
+    profile = new ProfileStatic();
+    section = new SectionStatic(profile, {
+      title: 'abc',
+      items: []
+    });
   });
-  it('should set profile data', () => {
-    profile.addSection('profile');
-    profile.addItem('profile', item);
-    expect(profile.data.profile[0]).to.equal(item);
+
+  it('should be children', () => {
+    expect(section.profile).to.equal(profile);
   });
-  it('should add section', () => {
-    profile.addSection('custom');
-    expect(profile.sections).have.ownProperty('custom');
-    expect(profile.data).have.ownProperty('custom');
+
+  it('should have data', () => {
+    expect(section.data).to.be.an('object');
   });
-  it('should add section with data', () => {
-    profile.addSection('custom', section);
-    expect(profile.getItem('custom', '0')).to.equal(item);
-  });
-  it('should add section item', () => {
-    profile.addSection('custom');
-    profile.addItem('custom', item);
-    expect(profile.getItem('custom', '0')).to.equal(item);
-  });
-  it('should clear section items', () => {
-    profile.addSection('custom');
-    profile.addItem('custom', item);
-    let sec = profile.getSection('custom');
-    profile.clearItems('custom');
-    expect(profile.getSection('custom')).to.equal(sec);
-    expect(profile.getSection('custom')).to.be.empty;
-  });
-  it('should set section items', () => {
-    profile.addSection('custom');
-    profile.addItem('custom', item);
-    let sec = profile.getSection('custom');
-    let data = [{ title: 'test2' }];
-    profile.setSection('custom', data);
-    expect(profile.getItem('custom', '0')).to.equal(data[0]);
-    expect(profile.getSection('custom')).to.equal(sec);
+
+  it('should have items', () => {
+    expect(section.items).to.be.an('array');
   });
 });
