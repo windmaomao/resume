@@ -13,3 +13,16 @@ interface ProfileInterface {
   addItems(section: string, items: any[]): any;
   clearItems(section: string): any;
 }
+
+interface ProfileInterface2 {
+  id: string;
+  name: string;
+  title: string;
+  sections: any[];
+}
+
+interface SectionInterface2 {
+  id: string;
+  name: string;
+  items: any[];
+}
