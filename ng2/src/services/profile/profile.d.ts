@@ -18,6 +18,9 @@ interface ProfileInterface {
   data: any;
   id: string;
   sections: SectionInterface[];
+
+  // create(): any;
+  // load(id: string): any;
 }
 
 interface SectionInterface {

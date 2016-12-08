@@ -30,6 +30,8 @@ export class ProfileStatic implements ProfileInterface {
   get data() { return this._data; }
   get id() { return this._data.id; }
   get sections() { return this._sections; }
+  // create() {}
+  // load(id: string) {}
 
   constructor() {
     this._data = {
