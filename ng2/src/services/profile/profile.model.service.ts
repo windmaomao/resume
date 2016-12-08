@@ -70,7 +70,17 @@ export class ProfileModelService {
         singular: 'section',
         plural: 'sections',
         relations: {
-          profile: { belongsTo: 'profile' }
+          profile: { belongsTo: 'profile' },
+          items: {
+            hasMany: { type: 'item', options: {queryInverse: 'section'}}
+          },
+        }
+      },
+      {
+        singular: 'item',
+        plural: 'items',
+        relations: {
+          profile: { belongsTo: 'section' }
         }
       }
     ];
