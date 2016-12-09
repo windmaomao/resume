@@ -5,23 +5,19 @@
 
 import { expect } from 'chai';
 import { PouchDB } from './pouchdb';
+import { ProfilePouch } from './profile.pouch';
 
-describe('PouchDB', () => {
+describe('ProfilePouch', () => {
+  let profile: ProfileInterface;
   let db: PouchDBInterface;
-  let host = 'https://windmaomao.cloudant.com/';
-  let database = 'cvs';
 
   beforeEach(() => {
-    db = new PouchDB(host, database);
+    db = new PouchDB('123', 'cvs');
+    profile = new ProfilePouch(db);
   });
 
-  it('should init with host and database', () => {
-    expect(db.host).to.equal(host);
-    expect(db.database).to.equal(database);
-  });
-
-  it('should setup database connection', () => {
-    db.connect();
+  it('should have id', () => {
+    expect(profile.id).not.to.be.empty;
   });
 
 });
