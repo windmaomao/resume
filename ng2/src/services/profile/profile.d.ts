@@ -29,3 +29,10 @@ interface SectionInterface {
   id: string;
   items: any[];
 }
+
+interface PouchDBInterface {
+  host: string;
+  database: string;
+  connect(): any;
+  load(id: string): any;
+}
