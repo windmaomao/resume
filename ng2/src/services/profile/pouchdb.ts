@@ -16,5 +16,9 @@ export class PouchDB implements PouchDBInterface {
     this.database = db;
   }
   connect() {}
-  load(id: string) {}
+  load(id: string) {
+    return new Promise((resolve, reject) => {
+      resolve({id: id});
+    });
+  }
 }

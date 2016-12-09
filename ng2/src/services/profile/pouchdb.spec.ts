@@ -24,4 +24,12 @@ describe('PouchDB', () => {
     db.connect();
   });
 
+  it('should fetch', (done) => {
+    let id = '1';
+    db.load(id).then((raw) => {
+      expect(raw.id).to.equal(id);
+      done();
+    });
+  });
+
 });
