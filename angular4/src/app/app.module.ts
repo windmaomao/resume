@@ -5,8 +5,13 @@ import { HttpModule } from '@angular/http';
 import { RestangularModule } from 'ng2-restangular';
 import { MdModule } from 'ng2-md';
 
-import { AppComponent } from './app.component';
-import { ResumeService } from '../service/resume.service';
+// import { AppComponent } from './app.component';
+import { ResumeService } from './app.service';
+import {
+  AppComponent,
+  HeaderComponent, FooterComponent,
+  ResumeComponent, SectionComponent
+} from './app.component';
 
 export function restProvider(RestangularProvider) {
   RestangularProvider.setBaseUrl('https://windmaomao.cloudant.com');
@@ -22,13 +27,16 @@ export function restProvider(RestangularProvider) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent, FooterComponent,
+    ResumeComponent, SectionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RestangularModule.forRoot(restProvider),
+    MdModule,
   ],
   providers: [
     ResumeService
