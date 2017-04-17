@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RestangularModule }    from 'ng2-restangular';
+import { RestangularModule } from 'ng2-restangular';
+import { MdModule } from 'ng2-md';
 
 import { AppComponent } from './app.component';
 import { ResumeService } from '../service/resume.service';
