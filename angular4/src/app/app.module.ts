@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RestangularModule }    from 'ng2-restangular';
 
 import { AppComponent } from './app.component';
+import { ResumeService } from '../service/resume.service';
 
 export function restProvider(RestangularProvider) {
   RestangularProvider.setBaseUrl('https://windmaomao.cloudant.com');
@@ -28,7 +29,9 @@ export function restProvider(RestangularProvider) {
     HttpModule,
     RestangularModule.forRoot(restProvider),
   ],
-  providers: [],
+  providers: [
+    ResumeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
