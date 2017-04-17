@@ -6,7 +6,13 @@ import * as _                   from "lodash";
   selector: 'my-app',
   template: `
   <my-header></my-header>
-  <resume></resume>
+  <div class="container" style="margin-top: 80px; min-height: 500px;">
+    <div class="row justify-content-md-center">
+      <div class="col-md-12 col-lg-10 col-md-auto">
+        <resume></resume>
+      </div>
+    </div>
+  </div>
   <my-footer></my-footer>
 `
 })
