@@ -2,8 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RestangularModule }    from 'ng2-restangular';
 
 import { AppComponent } from './app.component';
+
+export function restProvider(RestangularProvider) {
+  RestangularProvider.setBaseUrl('https://windmaomao.cloudant.com');
+  RestangularProvider.setDefaultHeaders({
+    'Content-Type': 'application/json'
+  });
+  RestangularProvider.setDefaultHeaders({
+    'Authorization': 'Basic d2luZG1hb21hbzp6amYyNzNqZmpm'
+  });
+  // RestangularProvider.setDefaultHttpFields({ withCredentials: true });
+  RestangularProvider.setDefaultHttpFields({ withCredentials: true });
+}
 
 @NgModule({
   declarations: [
@@ -12,7 +25,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RestangularModule.forRoot(restProvider),
   ],
   providers: [],
   bootstrap: [AppComponent]
