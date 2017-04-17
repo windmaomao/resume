@@ -119,7 +119,7 @@ export class ResumeComponent {
                   }
                 });
                 that.resume = resume;
-                console.log(resume);
+                // console.log(resume);
               }
             )
           ;
