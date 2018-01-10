@@ -1,3 +1,5 @@
+export const body = `
+
 I develop websites in public sectors, including healthcare, banking, real estate and university etc.. I apply *Modular design* and *Reusable components* while architecting websites and designing *UI/UX* elements. Overall my projects have reached 11 million users in production. And I have 60% Avg project success rate for the last three years, with success being product launched and used in the market. Since 2016, this rate reaches 90%.
   
 > My latest accomplishment is a web framework supporting dark light theme as well as pluggable branding components such as header/footer, menu, and forms. These components can be plugged into any fresh application with no more than 10 lines of code.
@@ -22,3 +24,5 @@ Contact
 - Email: windmaomao at gmail
 - Phone: (949) 302-7928
 - Location: Raleigh NC, USA
+
+`
