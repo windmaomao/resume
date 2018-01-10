@@ -1,0 +1,14 @@
+{
+    "_id": "cd843ba235bad75e391ab266479d4397",
+    "_rev": "23-8a526fb179afd1e06caf86e14fa908d3",
+    "type": "experience",
+    "section": "company",
+    "title": "People Designs",
+    "name": "people-designs",
+    "description": "",
+    "url": "https://www.peopledesigns.com",
+    "createdAt": "2014-10-14",
+    "updatedAt": "2015-08-15",
+    "subtitle": "Lead AngularJS / Laravel Developer",
+    "notes": "*People Designs* is a health communications consulting and development firm located in Durham, North Carolina. We work with health organizations and health researchers throughout the United States and the world to develop and implement health communications interventions.\n"
+  }

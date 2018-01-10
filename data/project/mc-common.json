@@ -1,0 +1,15 @@
+{
+    "_id": "efd5918c0e9b121329e5337bf1ce9687",
+    "_rev": "35-8aff54227e24d8895d20eb2880ba6d1c",
+    "type": "experience",
+    "section": "project",
+    "title": "Market Clearing Common",
+    "subtitle": "Large scale reusable UI framework",
+    "company": "Deutsche Bank, Cary NC",
+    "description": "",
+    "createdAt": "2017-01-18",
+    "updatedAt": "",
+    "keywords": "AngularJS, Bootstrap, Webpack, SASS, HTML5",
+    "name": "db-mc-console",
+    "highlights": "Component: Design fly-in menu for switching between angular applications\nCSS: Modular layout and component design \nTesting: Work with a test team to facilliate UI automation"
+  }
