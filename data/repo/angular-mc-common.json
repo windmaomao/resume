@@ -1,0 +1,15 @@
+{
+    "_id": "4fe713096f0b313634889a12bb0dc2d0",
+    "_rev": "32-19a303eaed6b0fa5e1c844316dcc147d",
+    "type": "experience",
+    "section": "repo",
+    "name": "angular-mc-common",
+    "title": "Angular MC Common",
+    "subtitle": "Common stylesheet and angular modules",
+    "project": "mc-common",
+    "description": "",
+    "createdAt": "2017-01-18",
+    "updatedAt": "",
+    "keywords": "AngularJS, NPM, Webpack, Reusable Component",
+    "url": "https://bitbucket.org/qplot/mc-common/src"
+  }
