@@ -1,0 +1,13 @@
+{
+    "_id": "52dc33de31edb1ec438f355bb6861506",
+    "_rev": "46-0c73f2309c6428937d45aaf4d336d1d5",
+    "type": "experience",
+    "section": "company",
+    "title": "Deutsche Bank",
+    "name": "deutsche-bank",
+    "subtitle": "UI / AngularJS Architect",
+    "createdAt": "2015-09-16",
+    "keywords": "",
+    "description": "",
+    "notes": "![](http://www.zerohedge.com/sites/default/files/images/user5/imageroot/deutsche%20bank%20logo_0.jpg#thumbnail)\n\nThe knowledge it gathered from usages by various teams thus is used to shape the component further to fit various environment via configuration settings.\n"
+  }

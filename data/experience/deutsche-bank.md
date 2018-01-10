@@ -1,0 +1,3 @@
+Serves *UI* and *AngularJS* architect in Market Clearing domain for 45+ banking applications. Attributing to the low development and maintenance cost, *modular design and reusable component* is the essential toolsets used in architecting UI element, and data services.
+
+I created for Deutsche Bank Market Clearing branding header, menu, fly-in menu, form as well as dark and light theme switch. I also made these components pluggable with no more than 10 lines of code for other developers to reuse them in their JSP or Angular native applications. I also designed swappable authorization services for components to be aware of the domain server while obtaining user permissions and settings.
